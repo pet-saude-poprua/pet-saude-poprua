@@ -43,7 +43,7 @@ A cada Pull Request, um verificador automático roda o **lint do Ren'Py** e acus
 ## Como o grupo trabalha aqui
 
 - **[Issues](../../issues)** — toda tarefa, bug ou decisão vira uma issue. Use os modelos prontos (botão *New issue*); as etiquetas indicam a frente (conteúdo, arte, código, docs) e os *milestones* marcam a semana do cronograma.
-- **[Quadro do projeto](https://github.com/users/Deivison-Costaa/projects/2)** — visão geral do que está *A fazer / Em andamento / Concluído*, atualizada pelas issues.
+- **[Quadro do projeto](https://github.com/orgs/pet-saude-poprua/projects/1)** — visão geral do que está *A fazer / Em andamento / Concluído*, atualizada pelas issues.
 - **Pull Requests** — mudanças no jogo entram por PR, com pelo menos 1 revisão. Um verificador automático (lint do Ren'Py) roda em cada PR.
 - **Reuniões** — quartas-feiras; atas no Livro de Atas do grupo.
 

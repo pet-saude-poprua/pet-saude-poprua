@@ -1,0 +1,26 @@
+{
+ "_comentario": "Lista de imagens para scripts/gerar_imagens.py. Campos por item: nome (obrigatório), prompt (obrigatório, em inglês, só o CONTEÚDO — o bloco de estilo é anexado pelo script), estilo (cenario|objeto|personagem|ui|nenhum), e opcionalmente tamanho, transparente, saida, bloco_extra.",
+ "imagens": [
+  {
+   "nome": "cen_recepcao_upa",
+   "estilo": "cenario",
+   "prompt": "Waiting room of a Brazilian UPA 24h emergency unit during the day: rows of empty plastic chairs, a reception counter in the background, large windows with soft daylight, worn floor tiles, blank sign shapes only, no people"
+  },
+  {
+   "nome": "obj_mochila_renato",
+   "estilo": "objeto",
+   "prompt": "A worn travel backpack resting on the ground, faded olive-green canvas, frayed straps, a rolled blanket tied on top, dusty and well used"
+  },
+  {
+   "nome": "sprite_agente_saude",
+   "estilo": "personagem",
+   "prompt": "A Brazilian community health agent woman around 35: medium build, brown skin, dark hair tied back, teal polo uniform shirt and dark trousers, ID badge on a lanyard, holding a clipboard, calm and welcoming expression"
+  },
+  {
+   "nome": "ui_botao_verde",
+   "estilo": "ui",
+   "saida": "assets-gerados/ui",
+   "prompt": "A hand-painted button plate in muted sage-green watercolor wash, irregular pooled edges, lighter bloom in the center"
+  }
+ ]
+}
