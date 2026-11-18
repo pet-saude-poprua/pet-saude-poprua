@@ -70,5 +70,6 @@ Regras de texto:
 ## 5. Antes do PR
 
 - `python3 scripts/simular_historia.py <id>`: confere a tabela e a linha canônica.
+- `python3 scripts/testar_logica.py <id>`: executa a lógica Python (desfecho, mapa, caderno, barras) em todos os caminhos.
 - O lint do Ren'Py roda no PR.
 - Jogue a linha canônica inteira e pelo menos um caminho de cada desfecho.

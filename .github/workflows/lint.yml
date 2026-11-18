@@ -29,4 +29,6 @@ jobs:
         run: ./renpy-sdk/renpy.sh . lint
 
       - name: Conferir tabelas de decisões (roteiro × jogo)
-        run: python3 scripts/simular_historia.py renato
+        run: |
+          python3 scripts/simular_historia.py renato
+          python3 scripts/testar_logica.py renato
