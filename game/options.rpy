@@ -64,6 +64,9 @@ init python:
     ## é um catch-all ("**", "all"), sem estas linhas o SDK inteiro (3532
     ## arquivos, ~340 MB) vai empacotado dentro de cada build do jogo.
     build.classify('renpy-sdk/**', None)
+    build.classify('renpy*.tar.bz2', None)
+    build.classify('rapt.zip', None)
+    build.classify('*.keystore', None)  # chaves de assinatura do CI nunca entram no pacote
     build.classify('dist/**', None)
     build.classify('AppDir/**', None)
     build.classify('appimagetool', None)

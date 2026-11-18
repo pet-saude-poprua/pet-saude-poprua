@@ -24,6 +24,7 @@ jobs:
           curl -sSL -o renpy.tar.bz2 https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2
           mkdir renpy-sdk
           tar -xjf renpy.tar.bz2 -C renpy-sdk --strip-components=1
+          rm renpy.tar.bz2  # senão o tarball (~150 MB) entra nos pacotes do jogo
 
       - name: Rodar lint
         run: ./renpy-sdk/renpy.sh . lint
