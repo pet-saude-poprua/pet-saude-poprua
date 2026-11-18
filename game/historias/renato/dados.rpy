@@ -145,3 +145,37 @@ init python:
         elif not tem("sem_plano_b"):
             L.append("Se não encontrar a equipe: Centro POP.")
         return L
+
+
+## ── Atalhos para o teste de usabilidade (Apêndice B-l) ──────────────────────
+## Começam a história numa cena com as escolhas canônicas anteriores já
+## aplicadas. Aparecem em Casos enquanto MOSTRAR_ATALHOS_TESTE for True.
+
+define MOSTRAR_ATALHOS_TESTE = True
+define RENATO_ATALHOS = [("Cena 4", "renato_atalho_cena4"),
+                         ("Cena 6", "renato_atalho_cena6"),
+                         ("Cena 7", "renato_atalho_cena7")]
+
+init python:
+    def renato_preparar_atalho(ate_decisao):
+        iniciar_historia("renato")
+        for n in range(1, ate_decisao + 1):
+            escolher(n, CANONICA_RENATO[n])
+
+label renato_atalho_cena4:
+    $ renato_preparar_atalho(3)
+    show screen seu_olhar
+    play music "audio/music/ambiente_upa.ogg" fadein 2.0
+    jump renato_cena4
+
+label renato_atalho_cena6:
+    $ renato_preparar_atalho(6)
+    show screen seu_olhar
+    play music "audio/music/ambiente_upa.ogg" fadein 2.0
+    jump renato_cena6
+
+label renato_atalho_cena7:
+    $ renato_preparar_atalho(8)
+    show screen seu_olhar
+    play music "audio/music/ambiente_upa.ogg" fadein 2.0
+    jump renato_cena7

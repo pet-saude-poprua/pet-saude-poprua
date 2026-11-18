@@ -47,6 +47,13 @@ screen capitulos():
                         null height 6
                         textbutton _("Jogar esta história  ›") action Start(h["label"]) text_size 17
 
+                        if MOSTRAR_ATALHOS_TESTE and h["id"] == "renato":
+                            hbox:
+                                spacing 14
+                                text "Atalhos para teste:" size 13 color "#6f8494" italic True yalign 0.5
+                                for rotulo, destino in RENATO_ATALHOS:
+                                    textbutton rotulo action Start(destino) text_size 13
+
                 else:
                     frame:
                         background "#101820aa"
