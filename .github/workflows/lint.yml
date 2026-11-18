@@ -27,3 +27,6 @@ jobs:
 
       - name: Rodar lint
         run: ./renpy-sdk/renpy.sh . lint
+
+      - name: Conferir tabelas de decisões (roteiro × jogo)
+        run: python3 scripts/simular_historia.py renato

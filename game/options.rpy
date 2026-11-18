@@ -1,9 +1,9 @@
 ## options.rpy — PET-Saúde: Pop Rua
 ## Configurações do projeto
 
-define config.name = _("Caminhos do Cuidado")
+define config.name = _("Além da Rua")
 define gui.show_name = True
-define config.version = "0.3"
+define config.version = "0.4.0-dev"
 
 define gui.about = _p("""
 Visual novel educacional sobre o cuidado à população em situação de rua.
@@ -57,6 +57,7 @@ init python:
     build.classify('*.txt', None)
     build.classify('01-07/**', None)
     build.classify('Imagens-*/**', None)
+    build.classify('scripts/**', None)
     ## Ferramentas e saídas de build que ficam na pasta do projeto.
     ## O CI extrai o SDK em renpy-sdk/ dentro do workspace e passa o próprio
     ## workspace como projeto para o distribute. Como a regra final do Ren'Py

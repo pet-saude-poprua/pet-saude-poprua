@@ -1,7 +1,10 @@
-## characters.rpy — Personagens e imagens do jogo
-## História 1 — "Ele não parece morador de rua" (roteiro atualizado, cenas 0–7)
+## nucleo/personagens.rpy — Personagens comuns, cenários, sprites e transforms
+## Personagens próprios de uma história ficam na pasta dela
+## (ex.: game/historias/renato/dados.rpy define Renato).
+## Regra do roteiro: a narração não marca o gênero do profissional jogável;
+## os nomes exibidos usam a forma "(a)".
 
-init python:
+init -5 python:
     ## A arte da caixa (1280x170) vira Frame para acompanhar gui.textbox_height:
     ## como Image de tamanho fixo, falas de 4 linhas vazavam para fora da caixa
     ## no celular, onde a fonte é maior.
@@ -20,41 +23,30 @@ init python:
 define narr   = Character(None, what_italic=True, what_color="#dddddd",
                           window_background=textbox_frame())
 
-## Paciente central
-define renato = Character("Renato",
-                          color="#9BC5E0",
-                          window_background=textbox_tinted("#5C8FB3"))
-
-## Perspectivas jogáveis — o avatar do jogador muda a cada cena
+## Perspectivas jogáveis ("você")
 define recep  = Character("Recepcionista (você)",
                           color="#A9C7E8",
                           window_background=textbox_tinted("#4A7FB5"))
-define med    = Character("Médico (você)",
-                          color="#D87E7E",
-                          window_background=textbox_tinted("#A55858"))
-define tec    = Character("Técnica de Enfermagem (você)",
-                          color="#A8D8AE",
-                          window_background=textbox_tinted("#7CA982"))
-define enf    = Character("Enfermeiro (você)",
+define enf    = Character("Enfermeiro(a) (você)",
                           color="#A8D8AE",
                           window_background=textbox_tinted("#5E8C61"))
-define prof   = Character("Profissional (você)",
-                          color="#C9D4DE",
-                          window_background=textbox_tinted("#6E8296"))
+define med    = Character("Médico(a) (você)",
+                          color="#D87E7E",
+                          window_background=textbox_tinted("#A55858"))
+define tec    = Character("Técnico(a) de Enfermagem (você)",
+                          color="#A8D8AE",
+                          window_background=textbox_tinted("#7CA982"))
+define assist_voce = Character("Assistente Social (você)",
+                          color="#D9B080",
+                          window_background=textbox_tinted("#B38B59"))
 
-## Equipe e NPCs
-define assist    = Character("Assistente Social",
-                             color="#D9B080",
-                             window_background=textbox_tinted("#B38B59"))
-define marcos    = Character("Marcos (CNR, ao telefone)",
-                             color="#8FD0C6",
-                             window_background=textbox_tinted("#4E9A8E"))
-define senhora_c = Character("Senhora da sala de espera",
-                             color="#D8B8C8",
-                             window_background=textbox_tinted("#9A7286"))
-define outro_pac = Character("Outro paciente",
-                             color="#C8B8A0",
-                             window_background=textbox_tinted("#8A7A5E"))
+## Equipe (não jogável)
+define assist     = Character("Assistente Social",
+                              color="#D9B080",
+                              window_background=textbox_tinted("#B38B59"))
+define colega_enf = Character("Colega da enfermagem",
+                              color="#C8D8B0",
+                              window_background=textbox_tinted("#7F9A5E"))
 
 ## ── Backgrounds aquarela (padrão visual aprovado em 01/07) ───────────────────
 image bg titulo           = "bg/menu_upa.jpg"
@@ -70,9 +62,11 @@ image bg neutro_cor       = "bg/neutro_cor.webp"
 image bg neutro_quente    = "bg/neutro_quente.webp"
 image bg neutro_frio      = "bg/neutro_frio.webp"
 image bg neutro_corredor  = "bg/neutro_corredor.webp"
-image bg consulta_anamnese = "bg/consulta_anamnese.webp"
-image bg teste001         = Transform("bg/Teste001.webp", size=(1280, 720))
-image bg img2             = Transform("bg/Img2.webp", size=(1280, 720))
+
+## Fundos provisórios até existir arte própria (Apêndice B-j do roteiro v4)
+image bg aqua_classificacao  = "bg/aqua_consultorio.jpg"
+image bg aqua_observacao     = "bg/aqua_box.jpg"
+image bg aqua_servico_social = "bg/aqua_consultorio.jpg"
 
 ## Overlay do e-SUS (tela de registro)
 image esus = "bg/aqua_esus.jpg"
