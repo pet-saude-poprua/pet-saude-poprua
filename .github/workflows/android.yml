@@ -106,7 +106,11 @@ jobs:
         run: |
           APK=$(ls dist/*.apk | head -1)
           echo "Antes:"; du -h "$APK"
-          zip -q -d "$APK" "assets/x-rapt.zip" "assets/x-renpy.tar.bz2"
+          # Desde 19/11/2026 o options.rpy exclui renpy*.tar.bz2 e rapt.zip da
+          # raiz do projeto, e os dois x-* deixaram de entrar no APK. O zip
+          # devolve 12 ("nada a fazer") nesse caso; mantemos a etapa como
+          # garantia caso eles voltem.
+          zip -q -d "$APK" "assets/x-rapt.zip" "assets/x-renpy.tar.bz2" || [ $? -eq 12 ]
           BUILD_TOOLS=$(ls -d "$ANDROID_SDK_DIR"/build-tools/*/ | sort -V | tail -1)
           APKSIGNER="${BUILD_TOOLS}apksigner"
           "$APKSIGNER" sign --ks "$KEYSTORE_PATH" --ks-key-alias android \
