@@ -137,6 +137,6 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
-          name: apk-caminhos-do-cuidado
+          name: apk-alem-da-rua
           path: dist/*.apk
           retention-days: 5

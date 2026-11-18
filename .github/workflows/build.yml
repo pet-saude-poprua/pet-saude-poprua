@@ -48,7 +48,7 @@ jobs:
           chmod +x AppDir/AppRun
           cat > AppDir/petsaude-pop-rua.desktop << 'DKEOF'
           [Desktop Entry]
-          Name=Caminhos do Cuidado
+          Name=Além da Rua
           Comment=Visual novel educacional sobre cuidado a populacao em situacao de rua
           Exec=petsaude-pop-rua.sh
           Icon=petsaude-pop-rua
@@ -59,7 +59,7 @@ jobs:
           cp AppDir/game/gui/window_icon.png AppDir/petsaude-pop-rua.png
           curl -sSL -o appimagetool https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
           chmod +x appimagetool
-          APPIMAGE_EXTRACT_AND_RUN=1 ./appimagetool AppDir "dist/Caminhos-do-Cuidado-x86_64.AppImage"
+          APPIMAGE_EXTRACT_AND_RUN=1 ./appimagetool AppDir "dist/Alem-da-Rua-x86_64.AppImage"
           ls -la dist/
 
       # A release é o entregável oficial: assets de release não consomem a cota
@@ -80,6 +80,6 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
-          name: builds-caminhos-do-cuidado
+          name: builds-alem-da-rua
           path: dist/*
           retention-days: 5
