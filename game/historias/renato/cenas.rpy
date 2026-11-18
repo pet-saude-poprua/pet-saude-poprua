@@ -109,7 +109,7 @@ label renato_cena2:
     narr "Sala de classificação. Você fecha a porta."
     enf "Seu Renato? Pode sentar. O que é que o senhor tá sentindo?"
     renato "Essa dor de cabeça aqui atrás, desde a madrugada. E o coração, que dispara do nada. Hoje, quando levantei, fiquei tonto."
-    narr "Você afere os sinais vitais. Pressão arterial: 182 x 120 mmHg. Frequência cardíaca: 96 bpm, regular. Saturação de oxigênio: 97%. Temperatura: 36,4 °C. Glicemia capilar: 104 mg/dL."
+    narr "Você afere os sinais vitais. Pressão arterial: 182 x 120 mmHg. Frequência cardíaca: 96 bpm, regular. Saturação de oxigênio: 97%%. Temperatura: 36,4 °C. Glicemia capilar: 104 mg/dL."
     enf "De zero a dez, quanto tá essa dor?"
     renato "Uns seis."
     enf "Essa dor começou de repente, de uma vez, ou foi aumentando? Vomitou?"
