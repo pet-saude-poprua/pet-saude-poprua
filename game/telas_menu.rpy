@@ -2,18 +2,14 @@
 ## Redes de apoio e Sobre o jogo (estrutura de docs/estrutura-telas.md).
 ## Conteúdo de Materiais/Redes é provisório — validar textos com o grupo.
 
-## ── Progresso persistente ─────────────────────────────────────────────────────
-default persistent.h1_concluida = False
-default persistent.h1_desfecho = ""
-default persistent.h1_medidores = {}
-default persistent.h1_nos = {}
+## O progresso fica em persistent.progresso (ver game/nucleo/estado.rpy):
+## {id_da_historia: {"desfecho", "barras", "nos", "vezes"}}.
 
 
 ## ─────────────────────────────────────────────────────────────────────────────
-## CASOS — chamado de "Capítulos" no protótipo inicial; renomeado na issue #34
-## para bater com o termo usado por Luana e Laiene nas discussões do jogo.
-## Identificador interno da screen (`capitulos`) mantido para não quebrar
-## `ShowMenu("capitulos")`/navegação — só o texto exibido ao jogador mudou.
+## CASOS — uma ficha por história registrada (game/historias/<nome>/dados.rpy).
+## O identificador interno da screen (`capitulos`) foi mantido para não quebrar
+## ShowMenu("capitulos") na navegação.
 ## ─────────────────────────────────────────────────────────────────────────────
 
 screen capitulos():
@@ -25,59 +21,64 @@ screen capitulos():
         vbox:
             spacing 18
 
-            ## História 1 — jogável
-            frame:
-                background "#0d1f2dee"
-                padding (24, 18)
-                xfill True
+            for h in historias_em_ordem():
+                $ prog = (persistent.progresso or {}).get(h["id"])
 
-                has vbox
-                spacing 6
+                if h["jogavel"]:
+                    frame:
+                        background "#0d1f2dee"
+                        padding (24, 18)
+                        xfill True
 
-                hbox:
-                    spacing 12
-                    text "DIA 1" size 15 color "#3E7CB1" bold True
-                    if persistent.h1_concluida:
-                        text ("concluída — desfecho " + persistent.h1_desfecho) size 13 color "#8FD0C6" italic True yalign 0.5
-                    else:
-                        text "não iniciada" size 13 color "#8899aa" italic True yalign 0.5
+                        has vbox
+                        spacing 6
 
-                text "“Ele não parece morador de rua”" font gui.titulo_font size 26 color "#f0f0f0"
-                text "Renato, 54 anos, chega à UPA com dor no peito. Quem é essa população — e o que o seu olhar decide antes da ficha?" size 15 color "#b8c4ce"
+                        hbox:
+                            spacing 12
+                            text h["subtitulo"].upper() size 15 color "#3E7CB1" bold True
+                            if prog:
+                                text ("concluída — desfecho " + prog["desfecho"]) size 13 color "#8FD0C6" italic True yalign 0.5
+                            else:
+                                text "não iniciada" size 13 color "#8899aa" italic True yalign 0.5
 
-                null height 6
-                textbutton _("Jogar esta história  ›") action Start() text_size 17
+                        text h["titulo"] font gui.titulo_font size 26 color "#f0f0f0"
+                        text h["sinopse"] size 15 color "#b8c4ce"
 
-            ## Histórias futuras — bloqueadas
-            for titulo, tema in [
-                ("DIA 2 — Vínculo e rede", "novo paciente, novo recorte do território"),
-                ("DIA 3 — Documento e acesso", "a regularização documental como parte do cuidado"),
-                ("DIA 4 — Estigma e cuidado", "o enfrentamento do estigma na continuidade")]:
+                        null height 6
+                        textbutton _("Jogar esta história  ›") action Start(h["label"]) text_size 17
 
-                frame:
-                    background "#101820aa"
-                    padding (24, 14)
-                    xfill True
+                        if MOSTRAR_ATALHOS_TESTE and h["id"] == "renato":
+                            hbox:
+                                spacing 14
+                                text "Atalhos para teste:" size 13 color "#6f8494" italic True yalign 0.5
+                                for rotulo, destino in RENATO_ATALHOS:
+                                    textbutton rotulo action Start(destino) text_size 13
 
-                    has vbox
-                    spacing 3
+                else:
+                    frame:
+                        background "#101820aa"
+                        padding (24, 14)
+                        xfill True
 
-                    hbox:
-                        spacing 10
-                        text titulo size 17 color "#5a6773" bold True
-                        text "em desenvolvimento" size 12 color "#4a555e" italic True yalign 0.5
-                    text tema size 13 color "#4a555e" italic True
+                        has vbox
+                        spacing 3
+
+                        hbox:
+                            spacing 10
+                            text (h["subtitulo"] + " — " + h["titulo"]) size 17 color "#5a6773" bold True
+                            text "em desenvolvimento" size 12 color "#4a555e" italic True yalign 0.5
+                        text h["sinopse"] size 13 color "#4a555e" italic True
 
 
 ## ─────────────────────────────────────────────────────────────────────────────
-## PROGRESSO (persistente entre sessões) — renomeado de "Perfil / Progresso"
-## na issue #35: não existe sistema de perfil de usuário, só acompanhamento
-## de progresso/medidores, então o nome antigo sugeria algo que não existe.
+## PROGRESSO (persistente entre sessões)
 ## ─────────────────────────────────────────────────────────────────────────────
 
 screen perfil():
 
     tag menu
+
+    $ progresso = persistent.progresso or {}
 
     use game_menu(_("Progresso"), scroll="viewport"):
 
@@ -88,52 +89,54 @@ screen perfil():
 
             hbox:
                 spacing 12
-                frame:
-                    background ("#14524A" if persistent.h1_concluida else "#1a2229")
-                    padding (14, 10)
-                    text ("Dia 1  {font=DejaVuSans.ttf}✓{/font}" if persistent.h1_concluida else "Dia 1") size 15 color ("#B8EDE4" if persistent.h1_concluida else "#5a6773") bold True
-                for n in ["Dia 2", "Dia 3", "Dia 4"]:
+                box_wrap True
+                for h in historias_em_ordem():
+                    $ feita = h["id"] in progresso
                     frame:
-                        background "#1a2229"
+                        background ("#14524A" if feita else "#1a2229")
                         padding (14, 10)
-                        text n size 15 color "#4a555e"
+                        text h["titulo"] size 15 color ("#B8EDE4" if feita else "#5a6773") bold True
 
-            if persistent.h1_concluida:
+            if progresso:
 
-                null height 8
-                text "Última jogada — Dia 1 (desfecho [persistent.h1_desfecho])" size 17 color "#c8d4de" bold True
+                for h in historias_em_ordem():
+                    if h["id"] in progresso:
+                        $ p = progresso[h["id"]]
 
-                vbox:
-                    spacing 8
-                    for nome, valor in persistent.h1_medidores.items():
+                        null height 8
+                        text (h["titulo"] + " — última jogada (desfecho " + p["desfecho"] + ")") size 17 color "#c8d4de" bold True
+
+                        vbox:
+                            spacing 8
+                            for chave, nome in DIMENSOES:
+                                $ valor = p["barras"].get(chave, 0)
+                                hbox:
+                                    spacing 12
+                                    text nome size 14 color "#b8c4ce" min_width 300
+                                    bar:
+                                        value StaticValue(valor, 100)
+                                        xsize 300
+                                        ysize 12
+                                        yalign 0.5
+                                        left_bar Solid("#3E7CB1")
+                                        right_bar Solid("#1a2229")
+
+                        null height 4
+                        text "Rede" size 15 color "#8FD0C6" bold True
                         hbox:
-                            spacing 12
-                            text nome size 14 color "#b8c4ce" min_width 260
-                            bar:
-                                value StaticValue(valor, 100)
-                                xsize 300
-                                ysize 12
-                                yalign 0.5
-                                left_bar Solid("#3E7CB1")
-                                right_bar Solid("#1a2229")
-                            text "[valor]/100" size 13 color "#b8c4ce" yalign 0.5
-
-                null height 6
-                text "Nós da rede acesos" size 15 color "#8FD0C6" bold True
-                hbox:
-                    spacing 8
-                    box_wrap True
-                    for nome, aceso in persistent.h1_nos.items():
-                        frame:
-                            background (Solid("#14524A") if aceso else Solid("#1a2229"))
-                            padding (8, 6)
-                            text nome size 12 color ("#B8EDE4" if aceso else "#4a555e")
+                            spacing 8
+                            box_wrap True
+                            for nome, estado in p["nos"].items():
+                                frame:
+                                    background (Solid("#14524A") if estado == "aceso" else Solid("#1a2229"))
+                                    padding (8, 6)
+                                    text nome size 12 color ("#B8EDE4" if estado == "aceso" else ("#8FD0C6" if estado == "contorno" else "#4a555e"))
 
                 null height 10
-                textbutton _("Apagar progresso") action Confirm("Apagar todo o progresso salvo?", yes=[SetField(persistent, "h1_concluida", False), SetField(persistent, "h1_desfecho", ""), SetField(persistent, "h1_medidores", {}), SetField(persistent, "h1_nos", {})]) text_size 14
+                textbutton _("Apagar progresso") action Confirm("Apagar todo o progresso salvo?", yes=SetField(persistent, "progresso", {})) text_size 14
 
             else:
-                text "Você ainda não concluiu nenhuma história. Os medidores da sua jogada aparecem aqui ao final do Dia 1." size 15 color "#8899aa" italic True
+                text "Você ainda não concluiu nenhuma história. As dimensões do cuidado da sua jogada aparecem aqui ao final de cada dia." size 15 color "#8899aa" italic True
 
 
 ## ─────────────────────────────────────────────────────────────────────────────
@@ -238,7 +241,7 @@ screen sobre_jogo():
         vbox:
             spacing 14
 
-            text "Caminhos do Cuidado {size=-8}{i}(nome provisório){/i}{/size}" font gui.titulo_font size 30 color "#f0f0f0"
+            text "Além da Rua" font gui.titulo_font size 30 color "#f0f0f0"
             text "Um jogo sobre acolhimento, direito e empatia." size 16 color "#b8c4ce" italic True
 
             null height 4
@@ -258,9 +261,9 @@ screen sobre_jogo():
                 xfill True
                 has vbox
                 spacing 6
-                text "Como funcionam as missões" font gui.titulo_font size 22 color "#3E7CB1"
+                text "Como funcionam as histórias" font gui.titulo_font size 22 color "#3E7CB1"
                 text "Em cada história você troca de perspectiva profissional (recepção, medicina, enfermagem, serviço social) e toma decisões que movem quatro dimensões do cuidado: Direito em Saúde, Conhecimento da Rede, Empatia e Acolhimento. Nenhuma delas aparece durante o jogo — todas são reveladas no epílogo, junto com o mapa da rede." size 15 color "#b8c4ce"
-                text "Os pesos das escolhas são provisórios e serão calibrados com profissionais de saúde após os testes." size 13 color "#8899aa" italic True
+                text "O jogo não avalia certo ou errado: as escolhas abrem reflexões sobre o cuidado, e as dimensões aparecem só no fim de cada dia." size 13 color "#8899aa" italic True
 
             frame:
                 background "#0d1f2dee"

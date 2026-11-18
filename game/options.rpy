@@ -1,9 +1,9 @@
 ## options.rpy — PET-Saúde: Pop Rua
 ## Configurações do projeto
 
-define config.name = _("Caminhos do Cuidado")
+define config.name = _("Além da Rua")
 define gui.show_name = True
-define config.version = "0.3"
+define config.version = "0.4.0-dev"
 
 define gui.about = _p("""
 Visual novel educacional sobre o cuidado à população em situação de rua.
@@ -57,12 +57,16 @@ init python:
     build.classify('*.txt', None)
     build.classify('01-07/**', None)
     build.classify('Imagens-*/**', None)
+    build.classify('scripts/**', None)
     ## Ferramentas e saídas de build que ficam na pasta do projeto.
     ## O CI extrai o SDK em renpy-sdk/ dentro do workspace e passa o próprio
     ## workspace como projeto para o distribute. Como a regra final do Ren'Py
     ## é um catch-all ("**", "all"), sem estas linhas o SDK inteiro (3532
     ## arquivos, ~340 MB) vai empacotado dentro de cada build do jogo.
     build.classify('renpy-sdk/**', None)
+    build.classify('renpy*.tar.bz2', None)
+    build.classify('rapt.zip', None)
+    build.classify('*.keystore', None)  # chaves de assinatura do CI nunca entram no pacote
     build.classify('dist/**', None)
     build.classify('AppDir/**', None)
     build.classify('appimagetool', None)
