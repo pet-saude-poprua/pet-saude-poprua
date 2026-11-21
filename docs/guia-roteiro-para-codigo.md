@@ -60,7 +60,7 @@ Regras de texto:
 
 ## 4. Epílogo
 
-1. Contexto real: `call screen contexto_real(titulo, subtitulo, BLOCOS, FONTES)`.
+1. Contexto real: `call screen contexto_real(titulo, subtitulo, BLOCOS, FONTES, mais=BLOCOS_MAIS)`. `mais` é opcional: os blocos dele (por exemplo, a base conceitual) e as fontes abrem numa tela à parte, pelo botão “Saiba mais”, para o card principal não ficar longo demais.
 2. Reflexão final.
 3. Caderno (opcional): `call screen pagina_caderno(linhas)`.
 4. Mapa da rede: acender e contornar os nós (`acender`, `contornar`), depois `call screen painel_final("A rede de …")`.

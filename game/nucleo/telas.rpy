@@ -134,7 +134,9 @@ screen pagina_caderno(linhas):
 ## Contexto real — conteúdo vem da história: lista de (título, [parágrafos])
 ## ─────────────────────────────────────────────────────────────────────────────
 
-screen contexto_real(titulo, subtitulo, blocos, fontes):
+## `mais` (opcional): blocos que ficam atrás do botão "Saiba mais", numa tela à
+## parte, junto com as fontes. Sem `mais`, as fontes aparecem no fim do card.
+screen contexto_real(titulo, subtitulo, blocos, fontes, mais=None):
     zorder 130
     modal True
 
@@ -171,10 +173,52 @@ screen contexto_real(titulo, subtitulo, blocos, fontes):
             null height 10
             add Solid("#2a3a4a", xysize=(960, 1)) xalign 0.5
             null height 6
-            text "[fontes!q]" size 13 color "#5a7a8a" italic True
+            if mais:
+                textbutton "Saiba mais: base conceitual e fontes  ›" action Show("contexto_real_mais", blocos=mais, fontes=fontes) xalign 0.5 text_size 16 text_color "#7a9ab0" text_hover_color "#ffffff"
+            else:
+                text "[fontes!q]" size 13 color "#5a7a8a" italic True
 
             null height 20
             textbutton "Continuar  ›" action Return() xalign 0.5 text_size 17 text_color "#3E7CB1" text_hover_color "#ffffff"
+            null height 20
+
+
+screen contexto_real_mais(blocos, fontes):
+    zorder 140
+    modal True
+
+    add Solid("#04101a")
+
+    viewport:
+        xalign 0.5
+        yalign 0.5
+        xsize 1080
+        ysize 680
+        mousewheel True
+        draggable True
+        scrollbars "vertical"
+        pagekeys True
+
+        frame:
+            xsize 1080
+            background "#00000000"
+            padding (60, 40, 60, 40)
+            has vbox
+            spacing 12
+
+            for nome, paragrafos in blocos:
+                null height 8
+                text "[nome!q]" size 19 color "#dddddd" bold True
+                for p in paragrafos:
+                    text "[p!q]" size 18 color "#cccccc" layout "subtitle"
+
+            null height 10
+            add Solid("#2a3a4a", xysize=(960, 1)) xalign 0.5
+            null height 6
+            text "[fontes!q]" size 13 color "#5a7a8a" italic True
+
+            null height 20
+            textbutton "‹  Voltar" action Hide("contexto_real_mais") xalign 0.5 text_size 17 text_color "#3E7CB1" text_hover_color "#ffffff"
             null height 20
 
 

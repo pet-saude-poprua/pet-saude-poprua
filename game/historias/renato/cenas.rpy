@@ -63,7 +63,7 @@ label renato_cena1:
             recep "O endereço ainda é esse, no Conjunto Esperança?"
             narr "Renato demora para responder. Olha para trás, para a fila."
             renato "{i}(baixo){/i} Faz tempo que não. Eu tô sem casa."
-            narr "Ele falou baixo, mas a primeira fileira está a dois metros. Uma senhora levanta os olhos do celular e cutuca o marido. Você não altera o campo: na UPA, o endereço não se atualiza."
+            narr "Ele falou baixo, mas a primeira fileira está a dois metros. Uma senhora levanta os olhos do celular e cutuca o marido."
             call resultado("A pergunta é de rotina, mas, num guichê aberto, expõe mais quem não tem endereço para dar. E a resposta nem seria usada: na UPA, o endereço não se atualiza.")
 
         "Pedir um documento com foto antes de seguir: um número anotado num caderno não comprova que o cadastro é dele.":
@@ -71,7 +71,6 @@ label renato_cena1:
             recep "O senhor não tem nenhum documento com foto? Só o número não confirma que é o senhor."
             renato "Levaram minha mochila. Foi tudo junto."
             narr "Ele fica parado diante do balcão, com o caderno aberto. Atrás dele, alguém da fila suspira alto."
-            narr "Você lembra que a identificação não depende de documento: há o fluxo do serviço para isso, e o cadastro pode ser confirmado por outros dados."
             call resultado("Conferir a identidade é trabalho da recepção, mas a falta de documento não pode atrasar o atendimento. CPF, data de nascimento e nome da mãe confirmam o cadastro.")
 
     window show
@@ -86,6 +85,8 @@ label renato_cena1:
         show senhora at left_np(0.31) with dissolve
         narr "Quando ele passa pela primeira fileira, a senhora puxa a bolsa da cadeira vazia ao lado e a acomoda no colo. Renato desvia da cadeira e vai ficar de pé no fundo da sala, encostado na parede."
         hide senhora with dissolve
+    elif tem("barreira_doc"):
+        narr "Ele agradece e vai procurar uma cadeira, com o caderno debaixo do braço."
     else:
         narr "Ele agradece e vai procurar uma cadeira, com o caderno debaixo do braço. Passou pelo balcão como qualquer pessoa da fila, sem precisar dizer em voz alta onde dorme."
 
@@ -302,11 +303,10 @@ label renato_cena4:
             renato "Desde que eu tô na rua. Lá a gente não dorme direito, fica de olho nas coisas."
             med "E o ânimo, como tá? Tem hora que o senhor pensa que não vale a pena viver? Já pensou em tirar a própria vida?"
             renato "{i}(pausa){/i} Não. Isso não."
-            narr "Num paciente com depressão sem tratamento e insônia, a pergunta sobre ideias de morte não pode faltar. Feita de forma direta, ela não induz a ideia. Se a resposta fosse sim, a alta mudaria."
             med "Se esse pensamento aparecer, o senhor procura a equipe que for acompanhar o senhor, ou vem aqui, a qualquer hora."
             med "Vou anotar tudo isso, pra quem for cuidar do senhor lá fora saber. Aqui na urgência a gente não tem como tratar o sono. E remédio pra depressão tem no SUS, de graça."
             renato "Eu não sabia."
-            call resultado("Três perguntas couberam no tempo da urgência. O sono e a depressão não se tratam na UPA, mas agora estão registrados para quem vai acompanhá-lo, e a pergunta mais difícil foi feita.")
+            call resultado("Três perguntas couberam no tempo da urgência. Perguntar diretamente sobre ideias de morte não induz a ideia. O sono e a depressão não se tratam na UPA, mas agora estão registrados para quem vai acompanhá-lo.")
 
     hide renato with dissolve
     jump renato_cena5
@@ -368,7 +368,7 @@ label renato_cena5:
     if tem("sem_repasse"):
         narr "Às 13h50, no posto, você atualiza a anotação de Renato. A colega ao lado lê a ficha por cima do seu ombro e gira a cadeira na sua direção."
     else:
-        narr "Às 13h50, no posto, você liga para o consultório 2 e passa, em voz baixa, o que anotou. Quando desliga, a colega ao lado, que ouviu a ligação, gira a cadeira na sua direção."
+        narr "Às 13h50, você leva a anotação ao consultório 2 e passa ao médico, em voz baixa, o que Renato contou. De volta ao posto, a colega ao lado, que leu a anotação por cima do seu ombro, gira a cadeira na sua direção."
     colega_enf "O da poltrona 6 tá na rua? Nem parece. Tá até limpinho."
 
     menu:
@@ -407,7 +407,7 @@ label renato_cena5:
     show renato normal at center
     if tem("exposto_obs"):
         narr "Quando Renato volta do banheiro, o senhor da poltrona 5 puxa a sacola para perto dos pés. Renato percebe, senta e abre o caderno sem escrever nada."
-    narr "Às 14h10, a pressão arterial está em 148 x 92 mmHg, e a frequência cardíaca, em 84 bpm. Você avisa o consultório 2, e Renato é chamado para a reavaliação."
+    narr "Às 14h10, a pressão arterial está em 148 x 92 mmHg, e a frequência cardíaca, em 84 bpm. Você vai ao consultório 2 avisar, e Renato é chamado para a reavaliação."
 
     call reflexao("Na UPA, a consulta tem de ser rápida e objetiva. Mesmo assim, uma pergunta aberta no começo e um minuto de conversa na hora de medir a pressão cabem nesse tempo e trazem informações que a ficha não tem.", "O que o paciente conta só ajuda se chegar a quem vai cuidar dele depois. Para isso, é preciso acolher a preocupação, avisá-lo do que vai ser feito, registrar no lugar certo e não deixar o assunto virar conversa de corredor.")
 
@@ -474,7 +474,7 @@ label renato_d7:
             med "Vou pedir pra assistente social ver o seu caso, tá? Ela entra em contato com o senhor."
             renato "Tá bom."
             narr "Ele não tem telefone, mas não diz nada."
-            call resultado("O pedido ficou registrado, e isso é importante. Mas Renato não tem telefone nem endereço: um encaminhamento que depende de encontrá-lo depois, sem que ele saiba, dificilmente se completa.")
+            call resultado("O pedido ficou registrado, e isso é importante. Mas Renato não tem telefone nem endereço: um encaminhamento que depende de encontrá-lo depois, sem dia nem lugar combinados, dificilmente se completa.")
 
     window show
     show receita at obj_dir with dissolve
