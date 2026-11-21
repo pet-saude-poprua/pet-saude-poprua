@@ -32,8 +32,10 @@ jobs:
           curl -sSL -o renpy.tar.bz2 https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2
           mkdir renpy-sdk
           tar -xjf renpy.tar.bz2 -C renpy-sdk --strip-components=1
+          rm renpy.tar.bz2  # senão o tarball (~150 MB) entra nos pacotes do jogo
           curl -sSL -o rapt.zip https://www.renpy.org/dl/8.5.3/renpy-8.5.3-rapt.zip
           unzip -q rapt.zip -d renpy-sdk
+          rm rapt.zip
 
       - name: Restaurar chaves de assinatura (secrets)
         run: |
@@ -104,7 +106,11 @@ jobs:
         run: |
           APK=$(ls dist/*.apk | head -1)
           echo "Antes:"; du -h "$APK"
-          zip -q -d "$APK" "assets/x-rapt.zip" "assets/x-renpy.tar.bz2"
+          # Desde 19/11/2026 o options.rpy exclui renpy*.tar.bz2 e rapt.zip da
+          # raiz do projeto, e os dois x-* deixaram de entrar no APK. O zip
+          # devolve 12 ("nada a fazer") nesse caso; mantemos a etapa como
+          # garantia caso eles voltem.
+          zip -q -d "$APK" "assets/x-rapt.zip" "assets/x-renpy.tar.bz2" || [ $? -eq 12 ]
           BUILD_TOOLS=$(ls -d "$ANDROID_SDK_DIR"/build-tools/*/ | sort -V | tail -1)
           APKSIGNER="${BUILD_TOOLS}apksigner"
           "$APKSIGNER" sign --ks "$KEYSTORE_PATH" --ks-key-alias android \
@@ -135,6 +141,6 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
-          name: apk-caminhos-do-cuidado
+          name: apk-alem-da-rua
           path: dist/*.apk
           retention-days: 5

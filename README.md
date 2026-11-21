@@ -1,8 +1,8 @@
-# Caminhos do Cuidado *(nome provisório)*
+# Além da Rua
 
-Visual novel educacional sobre o cuidado à **população em situação de rua (PSR)**, desenvolvida pelo **PET-Saúde · GT6 Pop Rua · UFPB** — Frente TI.
+Serious game em formato de visual novel sobre o cuidado à **população em situação de rua (PSR)**, desenvolvido pelo **PET-Saúde Digital · GT06 População em Situação de Rua · UFPB**, Frente TI.
 
-O jogador é um profissional de saúde numa UPA e, a cada cena, troca de perspectiva (recepção, medicina, enfermagem, serviço social). Suas escolhas movem quatro dimensões do cuidado — **Direito em Saúde, Conhecimento da Rede, Empatia e Acolhimento** — reveladas apenas no epílogo, junto com o mapa dos nós da rede que foram (ou não) acionados.
+O jogo terá cinco histórias. Em cada uma, o jogador acompanha o atendimento pelo olhar de diferentes profissionais (recepção, enfermagem, medicina, serviço social) e escolhe condutas em momentos de decisão. As escolhas movem quatro dimensões do cuidado (**Direito em Saúde, Conhecimento da Rede, Empatia e Acolhimento**), reveladas só no fim de cada dia, junto com o mapa da rede. O jogo não avalia certo ou errado: as escolhas abrem reflexões.
 
 ## Como rodar o jogo
 
@@ -14,19 +14,25 @@ O jogador é um profissional de saúde numa UPA e, a cada cena, troca de perspec
 
 | Pasta | O que tem |
 |---|---|
-| `game/` | O jogo (roteiro em `missao1.rpy`, telas, imagens, áudio, fontes) |
-| [`docs/`](docs/) | Cronograma, fluxograma de navegação, estrutura de telas, padrões visuais e mockups |
-| `assets-gerados/` | Imagens geradas por IA (com os prompts documentados em `PROMPTS-GERADOS.md`) |
+| `game/nucleo/` | Peças comuns às cinco histórias: decisões, medidores, mapa da rede, telas, personagens, início |
+| `game/historias/<nome>/` | Uma pasta por história (dados, cenas, epílogo) |
+| `game/` (raiz) | Interface: `gui.rpy`, `screens.rpy`, `telas_menu.rpy`, `options.rpy` |
+| `scripts/` | `simular_historia.py` e `testar_logica.py` (conferem as decisões e executam todos os caminhos no CI) e `gerar_imagens.py` |
+| [`docs/`](docs/) | Cronograma, fluxo de trabalho, guia do roteiro ao código, histórias, telas e padrões visuais |
+| `assets-gerados/` | Imagens geradas por IA (com os prompts em `PROMPTS-GERADOS.md`) |
+| [`docs/arquivo/`](docs/arquivo/) | Material do protótipo de 2026 (cronograma antigo, documento de missões, quadro de caminhos) |
 
 ## Documentação
 
 | Documento | O que tem |
 |---|---|
-| [`docs/CRONOGRAMA.md`](docs/CRONOGRAMA.md) | Cronograma de desenvolvimento do protótipo (S0–S3, entrega 05/08) |
-| [`docs/estrutura-telas.md`](docs/estrutura-telas.md) | Estrutura de menus e telas (10 telas + telas in-game, direção visual) |
-| [`docs/fluxograma-navegacao.md`](docs/fluxograma-navegacao.md) | Fluxograma de navegação em Mermaid (menus + fluxo interno da História 1) |
-| [`docs/padroes-visuais.md`](docs/padroes-visuais.md) | Padrões visuais — estilo aquarela, personagens, pipeline de geração |
-| [`docs/mockups/`](docs/mockups/) | Mockups das telas (diálogo, decisão, objeto, menu) |
+| [`docs/CRONOGRAMA.md`](docs/CRONOGRAMA.md) | Cronograma até ago/2027 e estado das cinco histórias |
+| [`docs/fluxo-de-trabalho.md`](docs/fluxo-de-trabalho.md) | Issues, etiquetas, branches, PRs e builds |
+| [`docs/guia-roteiro-para-codigo.md`](docs/guia-roteiro-para-codigo.md) | Como transformar um roteiro em cenas usando o núcleo |
+| [`docs/historias/`](docs/historias/) | Documento de acompanhamento de cada história (dimensões, caso inspirador) e inventários |
+| [`docs/estrutura-telas.md`](docs/estrutura-telas.md) | Estrutura de menus e telas |
+| [`docs/fluxograma-navegacao.md`](docs/fluxograma-navegacao.md) | Fluxograma de navegação (Mermaid) |
+| [`docs/padroes-visuais.md`](docs/padroes-visuais.md) | Padrões visuais: estilo aquarela, personagens, geração de imagens |
 
 ## Baixar o jogo pronto (builds)
 
@@ -42,16 +48,13 @@ A cada Pull Request, um verificador automático roda o **lint do Ren'Py** e acus
 
 ## Como o grupo trabalha aqui
 
-- **[Issues](../../issues)** — toda tarefa, bug ou decisão vira uma issue. Use os modelos prontos (botão *New issue*); as etiquetas indicam a frente (conteúdo, arte, código, docs) e os *milestones* marcam a semana do cronograma.
-- **[Quadro do projeto](https://github.com/orgs/pet-saude-poprua/projects/1)** — visão geral do que está *A fazer / Em andamento / Concluído*, atualizada pelas issues.
-- **Pull Requests** — mudanças no jogo entram por PR, com pelo menos 1 revisão. Um verificador automático (lint do Ren'Py) roda em cada PR.
-- **Reuniões** — quartas-feiras; atas no Livro de Atas do grupo.
+Ver [`docs/fluxo-de-trabalho.md`](docs/fluxo-de-trabalho.md). Em resumo: toda tarefa é uma issue; mudanças entram por Pull Request com revisão; o CI roda o lint do Ren'Py e a conferência das decisões. Quadro do projeto: [Projects](https://github.com/orgs/pet-saude-poprua/projects/1).
 
 ## Referências do projeto
 
-- Roteiro da História 1: `ROTEIRO-VISUAL-NOVEL.docx` (Dia 1 — "Ele não parece morador de rua")
-- Base pedagógica: `REFLEXOES-JOGO.docx` (4 casos: Renato, Cleide, Seu Zé, Andressa)
-- Fontes citadas no jogo: MDHC (Diagnóstico Federal 2023) · Portaria GM/MS 940/2011 · PNAB 2017 · Decreto 7053/2009 · PNH/HumanizaSUS
+- Roteiros: pasta "Frente TI - GT06" no Google Drive (Renato v4, revisões de 19 e 21/11/2026; Cleide v1.0).
+- Atas: Livro de ATAS da Frente TI e Classroom da turma.
+- Fontes citadas no jogo: ver o card "Contexto real" de cada história.
 
 ## Licenças de terceiros
 

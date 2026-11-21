@@ -78,34 +78,6 @@ style frame:
 
 
 ################################################################################
-## HUD de medidores — PET-Saúde
-################################################################################
-
-## Só a EMPATIA fica visível em tempo real (visibilidade pedagógica — roteiro).
-## Direito, Rede e Acolhimento são computados em silêncio e revelados no Epílogo.
-screen medidores():
-    zorder 110
-
-    frame:
-        xalign 0.985
-        ypos 8
-        yanchor 0.0
-        background "#000000bb"
-        padding (14, 8, 14, 10)
-
-        has vbox
-        spacing 3
-
-        text "EMPATIA" size 13 color "#D8A8B8" bold True
-        bar:
-            value VariableValue("empatia", 100)
-            xsize 210
-            ysize 13
-            left_bar Solid("#B07286")
-            right_bar Solid("#1a2b3a")
-
-
-################################################################################
 ## Telas em jogo
 ################################################################################
 
@@ -297,7 +269,7 @@ screen navigation():
                 style "navigation_button_primary"
                 action Start()
 
-            textbutton _("Casos") action ShowMenu("capitulos")
+            textbutton _("Casos") action ShowMenu("casos")
 
             textbutton _("Progresso") action ShowMenu("perfil")
 
@@ -438,13 +410,13 @@ screen main_menu():
             ypos 34
             spacing 4
 
-            text "Caminhos":
+            text "Além":
                 font gui.titulo_font
                 size gui.main_menu_title_size
                 color "#1d3d5c"
                 line_leading -6
 
-            text "do Cuidado":
+            text "da Rua":
                 font gui.titulo_font
                 size gui.main_menu_title_size
                 color "#1d3d5c"
@@ -472,7 +444,7 @@ screen main_menu():
             color "#ebf0f4"
             bold True
 
-        text "protótipo — nome provisório · v[config.version]":
+        text "versão em desenvolvimento · v[config.version]":
             xalign 0.99
             yalign 0.5
             size gui.main_menu_footer_version_size

@@ -25,7 +25,7 @@ Logos UFPB · PET-Saúde · GT6 Pop Rua sobre fundo neutro aquarela (N7), ~2s, p
 ### 2. Menu principal
 | Elemento | Conteúdo | Status |
 |---|---|---|
-| Título | Nome provisório "Caminhos do Cuidado" + tagline "Um jogo sobre acolhimento, direito e empatia" | nome final em aberto (ata) |
+| Título | "Além da Rua" (nome definido; antes, "Caminhos do Cuidado") + tagline "Um jogo sobre acolhimento, direito e empatia" | nome final em aberto (ata) |
 | Botão **Jogar** | vai a Capítulos (se há jogo salvo, oferece "Continuar") | definido |
 | Botão **Perfil / Progresso** | tela 4 | definido |
 | Botões **Materiais · Redes de apoio · Sobre o jogo · Créditos** | telas 5–8 | conteúdo provisório |

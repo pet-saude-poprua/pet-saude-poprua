@@ -11,7 +11,7 @@
 flowchart TD
     SPLASH["Tela de abertura\n(logos UFPB / PET-Saúde / GT6)"] --> MENU
 
-    MENU["MENU PRINCIPAL\nCaminhos do Cuidado"]
+    MENU["MENU PRINCIPAL\nAlém da Rua"]
 
     MENU -->|Iniciar jogo / Continuar| CAP["CAPÍTULOS\n(seleção de história)"]
     MENU --> PERFIL["PERFIL / PROGRESSO\nhistórias concluídas x pendentes\nmedidores da última jogada"]
