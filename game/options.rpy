@@ -55,8 +55,6 @@ init python:
     build.classify('*.jpg', None)
     build.classify('*.jpeg', None)
     build.classify('*.txt', None)
-    build.classify('01-07/**', None)
-    build.classify('Imagens-*/**', None)
     build.classify('scripts/**', None)
     ## Ferramentas e saídas de build que ficam na pasta do projeto.
     ## O CI extrai o SDK em renpy-sdk/ dentro do workspace e passa o próprio

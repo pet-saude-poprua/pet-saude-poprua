@@ -49,7 +49,6 @@ define colega_enf = Character("Colega da enfermagem",
                               window_background=textbox_tinted("#7F9A5E"))
 
 ## ── Backgrounds aquarela (padrão visual aprovado em 01/07) ───────────────────
-image bg titulo           = "bg/menu_upa.jpg"
 image bg aqua_fachada     = "bg/aqua_fachada.jpg"
 image bg aqua_recepcao    = "bg/aqua_recepcao.jpg"
 image bg aqua_espera      = "bg/aqua_espera.jpg"
@@ -61,7 +60,6 @@ image bg aqua_saida       = "bg/aqua_saida.jpg"
 image bg neutro_cor       = "bg/neutro_cor.webp"
 image bg neutro_quente    = "bg/neutro_quente.webp"
 image bg neutro_frio      = "bg/neutro_frio.webp"
-image bg neutro_corredor  = "bg/neutro_corredor.webp"
 
 ## Fundos provisórios até existir arte própria (Apêndice B-j do roteiro v4)
 image bg aqua_classificacao  = "bg/aqua_consultorio.jpg"
@@ -75,38 +73,20 @@ image esus = "bg/aqua_esus.jpg"
 image renato normal     = "chars/renato_normal.webp"
 image renato hesitante  = "chars/renato_hesitante.webp"
 image renato aberto     = "chars/renato_aberto.webp"
-image renato emocionado = "chars/renato_emocionado.webp"
 image renato despedida  = "chars/renato_despedida.webp"
 
 ## ── Sprites da equipe e NPCs ─────────────────────────────────────────────────
-image tecnica        = "chars/tecnica.webp"
 image assistente     = "chars/assistente_social.webp"
-image medico         = "chars/medico.webp"
 image senhora        = "chars/senhora.webp"
-image senhora_fofoqueira = "chars/SenhoraFofoqueira.webp"
-image senhor_fofoqueiro  = "chars/SenhorFofoqueiro.webp"
-image renato_fofocado    = "chars/RenatoFofocado.webp"
-image recepcionista_chamando_renato = "chars/RecepcionistaChamandoRenato.webp"
-image outro_paciente = "chars/outro_paciente.webp"
 
 ## Médico de plantão da UPA (meio-corpo, 747x1232 — recorte já sem margens)
 image medico_upa     = "chars/medico_upa.webp"
 
-## Ilustração de cena (1536x1024, alpha recortando o fundo): médico e Renato
-## sentados na consulta — usada sobre o corredor neutro.
-image consulta_medico_renato = "chars/consulta_medico_renato.webp"
-
 ## ── Objetos das cenas (recorte com alpha) ────────────────────────────────────
 image caderno  = "obj/caderno_renato.webp"
-image carteira = "obj/obj_carteira_trabalho.webp"
-image cartao   = "obj/obj_cartao_sus.webp"
 image receita  = "obj/obj_receita_medica.webp"
 
-## ── Fundos de cor sólida (epílogo e transições) ──────────────────────────────
-image bg_escuro   = Solid("#0a1a2a")
-image bg_card     = Solid("#0d1f2d")
-image bg_positivo = Solid("#0a1a0a")
-image bg_negativo = Solid("#1a0a0a")
+## ── Fundo de cor sólida (encerramento) ───────────────────────────────────────
 image bg_preto    = Solid("#080808")
 
 ## ── Transforms de posicionamento ─────────────────────────────────────────────
@@ -141,13 +121,6 @@ transform primeiro_plano_centro:
     yalign 1.0
     zoom 0.42
 
-## Ilustração de cena (1536x1024) ocupando a altura da tela, centralizada.
-## zoom 0.7031 → 1080x720; o fundo aparece nas laterais.
-transform ilustracao_centro:
-    xalign 0.5
-    yalign 1.0
-    zoom 0.7031
-
 ## Sprites novos 1024x1536 (figura ocupa o canvas inteiro): zoom calibrado para
 ## ficarem um pouco MENORES que o Renato (504px) — senhora 0.31≈465px,
 ## outro paciente 0.33≈494px.
@@ -157,23 +130,7 @@ transform left_np(z=0.32):
     yalign 1.0
     zoom z
 
-transform right_np(z=0.32):
-    xanchor 0.5
-    xpos 0.84
-    yalign 1.0
-    zoom z
-
-## objetos em destaque (1024x1024)
-transform obj_centro:
-    xalign 0.5
-    yalign 0.42
-    zoom 0.45
-
-transform obj_esq:
-    xalign 0.32
-    yalign 0.42
-    zoom 0.42
-
+## Objeto em destaque (1024x1024)
 transform obj_dir:
     xalign 0.68
     yalign 0.45
@@ -186,3 +143,45 @@ transform overlay_esus:
     xalign 0.5
     yalign 0.5
     zoom 0.8
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## Arte sem uso no roteiro v4 — mantida até a revisão de arte com a equipe.
+## Os arquivos continuam em game/images; apagar só depois dessa decisão.
+## ─────────────────────────────────────────────────────────────────────────────
+image bg titulo           = "bg/menu_upa.jpg"
+image bg neutro_corredor  = "bg/neutro_corredor.webp"
+image renato emocionado = "chars/renato_emocionado.webp"
+image tecnica        = "chars/tecnica.webp"
+image medico         = "chars/medico.webp"
+image senhora_fofoqueira = "chars/SenhoraFofoqueira.webp"
+image senhor_fofoqueiro  = "chars/SenhorFofoqueiro.webp"
+image renato_fofocado    = "chars/RenatoFofocado.webp"
+image recepcionista_chamando_renato = "chars/RecepcionistaChamandoRenato.webp"
+image outro_paciente = "chars/outro_paciente.webp"
+image consulta_medico_renato = "chars/consulta_medico_renato.webp"
+image carteira = "obj/obj_carteira_trabalho.webp"
+image cartao   = "obj/obj_cartao_sus.webp"
+
+## Ilustração de cena (1536x1024) ocupando a altura da tela, centralizada.
+## zoom 0.7031 → 1080x720; o fundo aparece nas laterais.
+transform ilustracao_centro:
+    xalign 0.5
+    yalign 1.0
+    zoom 0.7031
+
+transform right_np(z=0.32):
+    xanchor 0.5
+    xpos 0.84
+    yalign 1.0
+    zoom z
+
+transform obj_centro:
+    xalign 0.5
+    yalign 0.42
+    zoom 0.45
+
+transform obj_esq:
+    xalign 0.32
+    yalign 0.42
+    zoom 0.42

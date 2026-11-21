@@ -27,7 +27,15 @@ jobs:
           rm renpy.tar.bz2  # senão o tarball (~150 MB) entra nos pacotes do jogo
 
       - name: Rodar lint
-        run: ./renpy-sdk/renpy.sh . lint
+        # O lint do Ren'Py sai com código 0 mesmo quando acha problemas; cada
+        # problema vem numa linha "game/arquivo.rpy:N ...", então o passo
+        # falha se aparecer alguma.
+        run: |
+          ./renpy-sdk/renpy.sh . lint 2>&1 | tee lint.txt
+          if grep -E '^game/.+\.rpy:[0-9]+' lint.txt; then
+            echo "::error::O lint do Ren'Py encontrou problemas (linhas acima)."
+            exit 1
+          fi
 
       - name: Conferir tabelas de decisões (roteiro × jogo)
         run: |

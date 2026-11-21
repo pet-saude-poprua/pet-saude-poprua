@@ -6,7 +6,7 @@ Documento pedido na ata de 11/11/2026: registra as dimensões que a história tr
 |---|---|
 | Personagem | Renato, 54 anos, ex-técnico de manutenção industrial, na rua há cerca de oito meses |
 | Cenário | UPA de João Pessoa, uma quarta-feira (8h50 às 16h10) |
-| Roteiro | Google Doc "ROTEIRO-VISUAL-NOVEL-v4 – Renato (corrigido + decisões)", pasta Frente TI - GT06 (revisão de 19/11/2026) |
+| Roteiro | Google Doc "ROTEIRO-VISUAL-NOVEL-v4 – Renato (corrigido + decisões)", pasta Frente TI - GT06 (revisões de 19 e 21/11/2026) |
 | Código | `game/historias/renato/` (`dados.rpy`, `cenas.rpy`, `epilogo.rpy`) |
 | Estado | Linha canônica validada pela equipe de saúde (v3, out–nov/2026). Decisões definidas pela Frente TI com base nas correções da saúde (Apêndice C do roteiro) |
 

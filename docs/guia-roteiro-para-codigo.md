@@ -23,7 +23,7 @@ Para criar a história nova, copie a pasta `renato/` como modelo.
 
 ## 2. `dados.rpy`
 
-1. `registrar_historia("id", ordem=…, titulo=…, subtitulo=…, sinopse=…, label="id", decisoes=…, nos=[…])`. A ficha aparece sozinha no menu Casos.
+1. `registrar_historia("id", ordem=…, titulo=…, subtitulo=…, sinopse=…, label="id", decisoes=…, nos=[…], atalhos=[("Cena 4", "id_atalho_cena4")])`. A ficha aparece sozinha no menu Casos. `atalhos` é opcional: cada par (rótulo, label) vira um botão de teste na ficha, enquanto `MOSTRAR_ATALHOS_TESTE` (em `nucleo/estado.rpy`) for `True`. O label do atalho aplica as escolhas canônicas anteriores e pula para a cena (ver `renato_preparar_atalho` em `historias/renato/dados.rpy`).
 2. A tabela de decisões copia o Quadro D1 do Apêndice D do roteiro:
 
 ```python
@@ -57,6 +57,8 @@ Regras de texto:
 - Falas e narrações com mais de ~220 caracteres viram duas linhas, divididas num ponto final, sem mudar o texto.
 - Use aspas curvas (“ ”).
 - Não escreva `[` nem `{` no texto: o Ren'Py usa esses sinais. Se precisar, escreva `[[` ou `{{`.
+- Use só caracteres que a fonte do jogo tem. Setas como “→” aparecem como quadradinho: use “›” ou reescreva a frase.
+- Escreva `%` como `%%` dentro de falas e narrações.
 
 ## 4. Epílogo
 
@@ -71,5 +73,5 @@ Regras de texto:
 
 - `python3 scripts/simular_historia.py <id>`: confere a tabela e a linha canônica.
 - `python3 scripts/testar_logica.py <id>`: executa a lógica Python (desfecho, mapa, caderno, barras) em todos os caminhos.
-- O lint do Ren'Py roda no PR.
+- O lint do Ren'Py roda no PR e falha se apontar algum problema.
 - Jogue a linha canônica inteira e pelo menos um caminho de cada desfecho.

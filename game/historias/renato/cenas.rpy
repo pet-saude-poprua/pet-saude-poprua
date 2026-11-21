@@ -1,5 +1,5 @@
 ## historias/renato/cenas.rpy — Dia 1: Renato · Cenas 1 a 8
-## Texto fiel ao roteiro v4 (revisão de 19/11/2026). Cada [Se flag: …] do
+## Texto fiel ao roteiro v4 (revisão de 21/11/2026). Cada [Se flag: …] do
 ## roteiro vira um if; as decisões chamam escolher(n, "letra"), que aplica os
 ## efeitos e as flags da tabela em dados.rpy. Falas com mais de ~220
 ## caracteres foram divididas em duas telas, sem mudar o texto.
@@ -232,11 +232,13 @@ label renato_d3:
     jump renato_cena4
 
 
+define RENATO_REFLEXAO1_LINHA2 = "Defender o direito de Renato ao atendimento é compromisso ético-político de quem trabalha no SUS. A desconfiança contra quem está na rua vem da desigualdade, do racismo e de uma longa história de exclusão, e também aparece dentro dos serviços de saúde."
+
 label renato_reflexao1:
     if tem("exposto_recepcao"):
-        call reflexao("Uma pergunta de rotina, feita em voz alta no balcão, bastou para a primeira fileira saber que Renato está na rua. Depois disso, a espera ficou mais pesada para ele do que para os outros.", "Defender o direito de Renato ao atendimento é compromisso ético-político de quem trabalha no SUS. A desconfiança contra quem está na rua vem da desigualdade, do racismo e de uma longa história de exclusão, e também aparece dentro dos serviços de saúde.")
+        call reflexao("Uma pergunta de rotina, feita em voz alta no balcão, bastou para a primeira fileira saber que Renato está na rua. Depois disso, a espera ficou mais pesada para ele do que para os outros.", RENATO_REFLEXAO1_LINHA2)
     else:
-        call reflexao("Ninguém reparou em Renato na chegada nem na espera: a informação de que ele está na rua ficou só com quem precisava dela para cuidar dele. Uma pergunta em voz alta no balcão, um comentário entre colegas ou o vigilante de olho nele bastariam para que a sala de espera inteira ficasse sabendo.", "Defender o direito de Renato ao atendimento é compromisso ético-político de quem trabalha no SUS. A desconfiança contra quem está na rua vem da desigualdade, do racismo e de uma longa história de exclusão, e também aparece dentro dos serviços de saúde.")
+        call reflexao("Ninguém reparou em Renato na chegada nem na espera: a informação de que ele está na rua ficou só com quem precisava dela para cuidar dele. Uma pergunta em voz alta no balcão, um comentário entre colegas ou o vigilante de olho nele bastariam para que a sala de espera inteira ficasse sabendo.", RENATO_REFLEXAO1_LINHA2)
     return
 
 

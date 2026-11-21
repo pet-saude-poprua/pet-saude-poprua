@@ -29,9 +29,11 @@ init -10 python:
     def registrar_historia(id, **dados):
         """Registra uma história. Campos usados pelo núcleo:
         ordem, titulo, subtitulo, sinopse, label (início), decisoes, nos,
+        atalhos (lista de (rótulo, label) para os testes de usabilidade) e
         jogavel (False = aparece em Casos como "em desenvolvimento")."""
         dados["id"] = id
         dados.setdefault("jogavel", True)
+        dados.setdefault("atalhos", [])
         dados.setdefault("decisoes", {})
         dados.setdefault("nos", [])
         HISTORIAS[id] = dados
@@ -53,6 +55,7 @@ init -10 python:
         store.nos_rede = {n: "apagado" for n in h["nos"]}
         store.pontos_retomada = {}
         store.olhar_atual = ""
+        store.desfecho = ""
 
     ## ── Decisões e flags ──────────────────────────────────────────────────────
 
@@ -69,10 +72,6 @@ init -10 python:
     def tem(*nomes):
         """True se alguma das flags estiver gravada."""
         return any(f in store.flags for f in nomes)
-
-    def marcar(*nomes):
-        for f in nomes:
-            store.flags.add(f)
 
     ## ── Medidores ─────────────────────────────────────────────────────────────
 
@@ -151,3 +150,7 @@ default olhar_atual = ""
 default desfecho = ""
 
 default persistent.progresso = {}
+
+## Atalhos de teste em Casos (cada história declara os seus em registrar_historia).
+## Desligar antes da versão de coleta de dados.
+define MOSTRAR_ATALHOS_TESTE = True

@@ -5,7 +5,8 @@ game/historias/<nome>/dados.rpy com um store simulado e percorre todos os
 caminhos de decisão, chamando as mesmas funções que o jogo chama
 (escolher, desfecho, mapa, caderno, barras, guardar/restaurar ponto,
 concluir_historia). Pega erros que o lint do Ren'Py não vê, porque só
-apareceriam durante a partida.
+apareceriam durante a partida. Antes, confere as cenas contra a tabela de
+decisões e os atalhos de teste (conferir_cenas).
 
 Uso: python3 scripts/testar_logica.py renato
 """
@@ -78,9 +79,30 @@ def caminho_renato(e):
     return jog + [9, 10, 11], None
 
 
+def conferir_cenas(nome, ns):
+    """Confere o texto das cenas contra o registro da história:
+    cada escolher(n, "X") usa uma opção da tabela, cada opção da tabela
+    aparece em alguma cena e cada atalho aponta para um label existente."""
+    pasta = RAIZ / "game" / "historias" / nome
+    texto = "\n".join(p.read_text(encoding="utf-8") for p in sorted(pasta.glob("*.rpy")))
+    h = ns["HISTORIAS"][nome]
+    tabela = {(n, letra) for n, ops in h["decisoes"].items() for letra in ops}
+    nas_cenas = {(int(n), letra) for n, letra in re.findall(r'escolher\(\s*(\d+)\s*,\s*"([A-C])"\s*\)', texto)}
+    erros = [f"escolher({n}, \"{l}\") nas cenas não existe na tabela" for n, l in sorted(nas_cenas - tabela)]
+    erros += [f"opção {n}{l} da tabela não aparece em nenhuma cena" for n, l in sorted(tabela - nas_cenas)]
+    labels = set(re.findall(r"^label\s+(\w+)", texto, re.M))
+    erros += [f"atalho {r!r} aponta para o label inexistente {lab!r}" for r, lab in h["atalhos"] if lab not in labels]
+    if h.get("label") and h["label"] not in labels:
+        erros.append(f"label de início {h['label']!r} não existe")
+    if erros:
+        sys.exit("\n".join("ERRO: " + e for e in erros))
+    print(f"{nome}: cenas conferidas com a tabela ({len(tabela)} opções, {len(h['atalhos'])} atalhos)")
+
+
 def main():
     nome = sys.argv[1] if len(sys.argv) > 1 else "renato"
     ns = carregar(nome)
+    conferir_cenas(nome, ns)
     if nome != "renato":
         print(f"{nome}: lógica carregada (sem simulação de caminhos)")
         return

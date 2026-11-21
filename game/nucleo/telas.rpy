@@ -263,7 +263,11 @@ screen painel_final(titulo_mapa):
                 vbox:
                     spacing 4
                     xsize 205
-                    text nome.upper() size 12 color claro bold True
+                    ## altura fixa: rótulos de uma ou duas linhas deixam as barras alinhadas
+                    fixed:
+                        xsize 205
+                        ysize 32
+                        text nome.upper() size 12 color claro bold True yalign 1.0
                     bar:
                         value StaticValue(valores[chave], 100)
                         xsize 200

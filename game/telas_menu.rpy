@@ -1,6 +1,6 @@
 ## telas_menu.rpy — Telas de menu: Casos, Progresso, Materiais,
 ## Redes de apoio e Sobre o jogo (estrutura de docs/estrutura-telas.md).
-## Conteúdo de Materiais/Redes é provisório — validar textos com o grupo.
+## Materiais e Redes de apoio resumem o card de contexto real do roteiro v4.
 
 ## O progresso fica em persistent.progresso (ver game/nucleo/estado.rpy):
 ## {id_da_historia: {"desfecho", "barras", "nos", "vezes"}}.
@@ -8,11 +8,9 @@
 
 ## ─────────────────────────────────────────────────────────────────────────────
 ## CASOS — uma ficha por história registrada (game/historias/<nome>/dados.rpy).
-## O identificador interno da screen (`capitulos`) foi mantido para não quebrar
-## ShowMenu("capitulos") na navegação.
 ## ─────────────────────────────────────────────────────────────────────────────
 
-screen capitulos():
+screen casos():
 
     tag menu
 
@@ -39,7 +37,7 @@ screen capitulos():
                             if prog:
                                 text ("concluída — desfecho " + prog["desfecho"]) size 13 color "#8FD0C6" italic True yalign 0.5
                             else:
-                                text "não iniciada" size 13 color "#8899aa" italic True yalign 0.5
+                                text "não concluída" size 13 color "#8899aa" italic True yalign 0.5
 
                         text h["titulo"] font gui.titulo_font size 26 color "#f0f0f0"
                         text h["sinopse"] size 15 color "#b8c4ce"
@@ -47,11 +45,11 @@ screen capitulos():
                         null height 6
                         textbutton _("Jogar esta história  ›") action Start(h["label"]) text_size 17
 
-                        if MOSTRAR_ATALHOS_TESTE and h["id"] == "renato":
+                        if MOSTRAR_ATALHOS_TESTE and h["atalhos"]:
                             hbox:
                                 spacing 14
                                 text "Atalhos para teste:" size 13 color "#6f8494" italic True yalign 0.5
-                                for rotulo, destino in RENATO_ATALHOS:
+                                for rotulo, destino in h["atalhos"]:
                                     textbutton rotulo action Start(destino) text_size 13
 
                 else:
@@ -140,7 +138,7 @@ screen perfil():
 
 
 ## ─────────────────────────────────────────────────────────────────────────────
-## MATERIAIS (conteúdo provisório — validar com o grupo)
+## MATERIAIS — resumo do card de contexto real do roteiro v4 (revisão de 21/11/2026)
 ## ─────────────────────────────────────────────────────────────────────────────
 
 screen materiais():
@@ -152,47 +150,26 @@ screen materiais():
         vbox:
             spacing 14
 
-            text "Conteúdos educativos sobre a população em situação de rua e o atendimento em saúde. {i}(textos provisórios — em validação pelo grupo){/i}" size 15 color "#8899aa"
+            text "Conteúdos sobre a população em situação de rua e o atendimento em saúde, os mesmos do card “Contexto real” ao fim de cada história." size 15 color "#8899aa"
 
-            frame:
-                background "#0d1f2dee"
-                padding (22, 16)
-                xfill True
-                has vbox
-                spacing 6
-                text "Quem é a população em situação de rua?" font gui.titulo_font size 22 color "#f0f0f0"
-                text "É heterogênea: não existe um perfil único. Os motivos mais citados (dados de 2022) são problemas familiares, desemprego e uso de substâncias. A surpresa de que alguém “não parece morador de rua” é, ela mesma, um sinal de que o imaginário precisa ser revisado." size 15 color "#b8c4ce"
-
-            frame:
-                background "#0d1f2dee"
-                padding (22, 16)
-                xfill True
-                has vbox
-                spacing 6
-                text "O direito ao atendimento" font gui.titulo_font size 22 color "#f0f0f0"
-                text "O SUS é universal. A Portaria GM/MS 940/2011 garante o cadastro do Cartão SUS mesmo com dados incompletos ou sem documento. Exigir endereço ou documentação para atender é uma barreira ilegal." size 15 color "#b8c4ce"
-
-            frame:
-                background "#0d1f2dee"
-                padding (22, 16)
-                xfill True
-                has vbox
-                spacing 6
-                text "Registro que vira cuidado" font gui.titulo_font size 22 color "#f0f0f0"
-                text "A codificação CIAP-2 e o campo de vulnerabilidade social no e-SUS fazem o caso circular pela rede: busca ativa do Consultório na Rua, vinculação à UBS de referência, prioridade nos fluxos. Texto livre é carta que não chega." size 15 color "#b8c4ce"
-
-            frame:
-                background "#0d1f2dee"
-                padding (22, 16)
-                xfill True
-                has vbox
-                spacing 6
-                text "Fontes" font gui.titulo_font size 22 color "#f0f0f0"
-                text "MDHC — Diagnóstico Federal 2023 · Portaria GM/MS 940/2011 · PNAB 2017 · Decreto 7053/2009 (Política Nacional para a PSR) · Política Nacional de Humanização (HumanizaSUS)." size 14 color "#8899aa" italic True
+            for titulo, corpo in [
+                ("Quem é a população em situação de rua?", "É heterogênea: não existe um perfil único. Entre os motivos mais declarados para estar na rua estão problemas familiares, desemprego, álcool e/ou outras drogas e perda de moradia, muitas vezes combinados (CadÚnico, dezembro de 2022). Quando alguém diz que uma pessoa “nem parece” estar na rua, está partindo de uma imagem pronta dessa população."),
+                ("O direito ao atendimento", "O SUS é universal. A falta de documento, de Cartão SUS ou de endereço não pode impedir o atendimento, e o CPF é o número de identificação no SUS. Na UBS, a pessoa em situação de rua não precisa comprovar endereço: o cadastro pode usar um endereço de referência, como o do Centro POP."),
+                ("Registro que vira cuidado", "Registrar a situação de rua no prontuário, em linguagem objetiva e no campo certo, orienta quem atende depois sem expor a pessoa. Na UPA, o médico registra e aciona o Serviço Social, que comunica o caso ao Consultório na Rua com o consentimento da pessoa."),
+                ("Fontes", "MDHC, População em situação de rua: diagnóstico com base nos dados e informações disponíveis em registros administrativos e sistemas do Governo Federal (2023) · Portaria GM/MS 940/2011 · Lei 14.534/2023 · Decreto 7.053/2009 · Tipificação Nacional de Serviços Socioassistenciais (Resolução CNAS 109/2009) · PNH/HumanizaSUS · comentários da equipe do Consultório na Rua de João Pessoa (novembro de 2026)."),
+            ]:
+                frame:
+                    background "#0d1f2dee"
+                    padding (22, 16)
+                    xfill True
+                    has vbox
+                    spacing 6
+                    text titulo font gui.titulo_font size 22 color "#f0f0f0"
+                    text corpo size (14 if titulo == "Fontes" else 15) color ("#8899aa" if titulo == "Fontes" else "#b8c4ce") italic (titulo == "Fontes")
 
 
 ## ─────────────────────────────────────────────────────────────────────────────
-## REDES DE APOIO (conteúdo provisório)
+## REDES DE APOIO — serviços do roteiro v4, com o fluxo de João Pessoa
 ## ─────────────────────────────────────────────────────────────────────────────
 
 screen redes_apoio():
@@ -204,16 +181,15 @@ screen redes_apoio():
         vbox:
             spacing 12
 
-            text "Os principais serviços de atendimento e como eles se conectam. {i}(conteúdo provisório){/i}" size 15 color "#8899aa"
+            text "Os serviços que aparecem nas histórias e como eles se conectam, no fluxo da rede de João Pessoa." size 15 color "#8899aa"
 
             for nome, desc in [
-                ("UPA — Unidade de Pronto Atendimento", "urgência e emergência 24h; a prioridade é dada pela Classificação de Risco Clínica, não pela condição de moradia."),
-                ("Serviço Social", "presente na UPA; é a ponte entre o atendimento clínico e o restante da rede — CNR, CRAS, Defensoria."),
-                ("CNR — Consultório na Rua", "equipe que atende na rua, com busca ativa. Funciona com nome, voz e ponto combinado."),
-                ("UBS — Unidade Básica de Saúde", "referência para a continuidade do cuidado: acompanhamento, renovação de receitas, saúde mental."),
-                ("CRAS — Centro de Referência de Assistência Social", "documentação, benefícios e programas sociais; recebe encaminhamentos do Serviço Social."),
-                ("Farmácia da UPA", "dispensação imediata da medicação na alta — garante que o paciente saia medicado."),
-                ("Defensoria Pública", "assistência jurídica gratuita: regularização documental e garantia de direitos; acionada via ofício do Serviço Social com anuência do paciente.")]:
+                ("UPA — Unidade de Pronto Atendimento", "Urgência e emergência, 24 horas. A prioridade vem da classificação de risco, por critérios clínicos; a condição social não muda a cor. A farmácia da UPA não entrega remédio para depois da alta."),
+                ("Serviço Social da UPA", "Faz a entrevista social, aciona o Consultório na Rua por mensagem, com o consentimento da pessoa, e encaminha por escrito à assistência social (Centro POP)."),
+                ("Consultório na Rua", "Equipe da atenção primária (enfermeiro, médico, assistente social, psicólogo e agente social) que atende a pessoa onde ela está e faz a ponte com a UBS. Em João Pessoa, recebe os casos por mensagem, em dias úteis, das 8h às 19h."),
+                ("UBS — Unidade Básica de Saúde", "Referência para a continuidade do cuidado: acompanhamento da pressão, receitas e saúde mental. O remédio da receita do SUS sai de graça na farmácia de qualquer UBS, sem Cartão SUS."),
+                ("Centro POP", "Serviço da assistência social: documentação civil, CadÚnico, benefícios, guarda de pertences e endereço de referência. Em João Pessoa, na Rua Treze de Maio, 508, Centro, das 8h às 17h."),
+                ("Casa de acolhimento", "Cama, banho e comida. Em João Pessoa, o acesso às Casas de Acolhida é pelo Centro POP, pela abordagem social ou pelo Consultório na Rua.")]:
 
                 frame:
                     background "#0d1f2dee"
@@ -225,7 +201,7 @@ screen redes_apoio():
                     text desc size 14 color "#b8c4ce"
 
             null height 6
-            text "Caminho típico do Dia 1:  UPA → Serviço Social → CNR → UBS → CRAS/Defensoria" size 14 color "#3E7CB1" bold True
+            text "Caminho do Dia 1: UPA › Serviço Social › Consultório na Rua › UBS, com o Centro POP e o acolhimento pela assistência social." size 14 color "#3E7CB1" bold True
 
 
 ## ─────────────────────────────────────────────────────────────────────────────

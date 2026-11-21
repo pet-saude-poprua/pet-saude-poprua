@@ -17,9 +17,10 @@ O jogo terá cinco histórias. Em cada uma, o jogador acompanha o atendimento pe
 | `game/nucleo/` | Peças comuns às cinco histórias: decisões, medidores, mapa da rede, telas, personagens, início |
 | `game/historias/<nome>/` | Uma pasta por história (dados, cenas, epílogo) |
 | `game/` (raiz) | Interface: `gui.rpy`, `screens.rpy`, `telas_menu.rpy`, `options.rpy` |
-| `scripts/` | `simular_historia.py` (confere as decisões no CI) e `gerar_imagens.py` |
+| `scripts/` | `simular_historia.py` e `testar_logica.py` (conferem as decisões e executam todos os caminhos no CI) e `gerar_imagens.py` |
 | [`docs/`](docs/) | Cronograma, fluxo de trabalho, guia do roteiro ao código, histórias, telas e padrões visuais |
 | `assets-gerados/` | Imagens geradas por IA (com os prompts em `PROMPTS-GERADOS.md`) |
+| [`docs/arquivo/`](docs/arquivo/) | Material do protótipo de 2026 (cronograma antigo, documento de missões, quadro de caminhos) |
 
 ## Documentação
 
@@ -51,7 +52,7 @@ Ver [`docs/fluxo-de-trabalho.md`](docs/fluxo-de-trabalho.md). Em resumo: toda ta
 
 ## Referências do projeto
 
-- Roteiros: pasta "Frente TI - GT06" no Google Drive (Renato v4, revisão de 19/11/2026; Cleide v1.0).
+- Roteiros: pasta "Frente TI - GT06" no Google Drive (Renato v4, revisões de 19 e 21/11/2026; Cleide v1.0).
 - Atas: Livro de ATAS da Frente TI e Classroom da turma.
 - Fontes citadas no jogo: ver o card "Contexto real" de cada história.
 

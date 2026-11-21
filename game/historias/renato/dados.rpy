@@ -1,4 +1,4 @@
-## historias/renato/dados.rpy — Dia 1: Renato (roteiro v4, revisão de 19/11/2026)
+## historias/renato/dados.rpy — Dia 1: Renato (roteiro v4, revisão de 21/11/2026)
 ## Registro da história, tabela de decisões (Apêndice D, Quadro D1),
 ## regras de desfecho (Quadro D3), nós do mapa (Quadro D4) e caderno (Quadro D5).
 ## Roteiro: Google Doc "ROTEIRO-VISUAL-NOVEL-v4 – Renato (corrigido + decisões)".
@@ -65,6 +65,9 @@ init python:
         label="renato",
         decisoes=DECISOES_RENATO,
         nos=NOS_RENATO,
+        atalhos=[("Cena 4", "renato_atalho_cena4"),
+                 ("Cena 6", "renato_atalho_cena6"),
+                 ("Cena 7", "renato_atalho_cena7")],
     )
 
     ## Histórias seguintes: aparecem em "Casos" como em desenvolvimento.
@@ -149,33 +152,25 @@ init python:
 
 ## ── Atalhos para o teste de usabilidade (Apêndice B-l) ──────────────────────
 ## Começam a história numa cena com as escolhas canônicas anteriores já
-## aplicadas. Aparecem em Casos enquanto MOSTRAR_ATALHOS_TESTE for True.
-
-define MOSTRAR_ATALHOS_TESTE = True
-define RENATO_ATALHOS = [("Cena 4", "renato_atalho_cena4"),
-                         ("Cena 6", "renato_atalho_cena6"),
-                         ("Cena 7", "renato_atalho_cena7")]
+## aplicadas. Aparecem em Casos (campo `atalhos` do registro acima) enquanto
+## MOSTRAR_ATALHOS_TESTE for True (game/nucleo/estado.rpy).
 
 init python:
     def renato_preparar_atalho(ate_decisao):
         iniciar_historia("renato")
         for n in range(1, ate_decisao + 1):
             escolher(n, CANONICA_RENATO[n])
+        renpy.show_screen("seu_olhar")
+        renpy.music.play("audio/music/ambiente_upa.ogg", fadein=2.0)
 
 label renato_atalho_cena4:
     $ renato_preparar_atalho(3)
-    show screen seu_olhar
-    play music "audio/music/ambiente_upa.ogg" fadein 2.0
     jump renato_cena4
 
 label renato_atalho_cena6:
     $ renato_preparar_atalho(6)
-    show screen seu_olhar
-    play music "audio/music/ambiente_upa.ogg" fadein 2.0
     jump renato_cena6
 
 label renato_atalho_cena7:
     $ renato_preparar_atalho(8)
-    show screen seu_olhar
-    play music "audio/music/ambiente_upa.ogg" fadein 2.0
     jump renato_cena7

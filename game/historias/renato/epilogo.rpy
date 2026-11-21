@@ -23,7 +23,7 @@ define RENATO_CONTEXTO = [
 define RENATO_CONTEXTO_MAIS = [
     ("Base conceitual: as quatro dimensões", [
         "Direito em Saúde: acesso universal e equânime, sem barreira de documento ou endereço; sigilo; informação; participação nas decisões. Defender esses direitos é compromisso ético-político e pede um olhar crítico sobre o que produz a situação de rua: desigualdade, racismo, machismo, heranças coloniais, uma longa história de exclusão. Para o Serviço Social, a “defesa intransigente dos direitos humanos” é princípio do Código de Ética da profissão.",
-        "Conhecimento da Rede: saber o que cada serviço faz e acionar o serviço certo. UPA → Serviço Social → Consultório na Rua → UBS, com o Centro POP e o acolhimento pela assistência social.",
+        "Conhecimento da Rede: saber o que cada serviço faz e acionar o serviço certo. UPA › Serviço Social › Consultório na Rua › UBS, com o Centro POP e o acolhimento pela assistência social.",
         "Empatia / Sensibilidade Social: reconhecer a pessoa antes do rótulo; considerar o que a situação de rua muda no cuidado, sem reduzir a pessoa a ela.",
         "Acolhimento: qualidade do encontro. Escuta, informação clara e construção do plano com a pessoa, como propõe a Política Nacional de Humanização.",
     ]),

@@ -7,7 +7,8 @@ game/historias/<nome>/dados.rpy (a mesma tabela que o jogo usa) e verifica:
   lista de flags;
 - a linha canônica (opções ★) é o máximo em todas as dimensões, de modo que
   ela dá 100 nas quatro barras do epílogo;
-- (Renato) todos os caminhos terminam em um desfecho A, B ou C.
+- (Renato) conta os caminhos distintos e quantos terminam em cada desfecho
+  (os números do Apêndice D do roteiro).
 
 Uso: python3 scripts/simular_historia.py renato
 Sai com código 1 se algo falhar (o CI usa isso).
@@ -57,19 +58,15 @@ def validar(dec, canon):
 
 
 def jogar_renato(e):
-    """Mesma lógica de game/historias/renato (cenas, Quadro D3)."""
-    f = set()
-    if e[2] == "C":
-        f.add("sem_orientacao")
-    if e[3] == "B":
-        return "C"
-    if e[3] == "A" and "sem_orientacao" in f:
-        return "C"
-    if e[7] in ("A", "C"):
-        return "B"
+    """Mesma lógica de game/historias/renato (cenas e Quadro D3).
+    Retorna (decisões jogadas, desfecho)."""
+    if e[3] == "B" or (e[3] == "A" and e[2] == "C"):  # Renato vai embora na Cena 3
+        return (1, 2, 3), "C"
+    if e[7] in ("A", "C"):  # sai da UPA sem passar pelo Serviço Social
+        return tuple(range(1, 9)), "B"
     if e[9] == "B" and e[10] != "A" and e[11] != "B":
-        return "B"
-    return "A"
+        return tuple(range(1, 12)), "B"
+    return tuple(range(1, 12)), "A"
 
 
 def main():
@@ -77,16 +74,16 @@ def main():
     dec, canon = carregar(nome)
     erros = validar(dec, canon)
     if nome == "renato":
-        if jogar_renato(canon) != "A":
+        if jogar_renato(canon)[1] != "A":
             erros.append("linha canônica não termina no Desfecho A")
-        cont = Counter()
+        caminhos = {}
         for combo in itertools.product(*[sorted(dec[k]) for k in sorted(dec)]):
-            d = jogar_renato(dict(zip(sorted(dec), combo)))
-            if d not in "ABC":
-                erros.append(f"caminho sem desfecho: {combo}")
-                break
-            cont[d] += 1
-        print(f"{nome}: {len(dec)} decisões; combinações por desfecho: {dict(cont)}")
+            e = dict(zip(sorted(dec), combo))
+            jogadas, d = jogar_renato(e)
+            caminhos[tuple(e[j] for j in jogadas)] = d
+        cont = Counter(caminhos.values())
+        print(f"{nome}: {len(dec)} decisões; {len(caminhos)} caminhos distintos "
+              f"(A: {cont['A']}, B: {cont['B']}, C: {cont['C']}; Apêndice D do roteiro)")
     if erros:
         print("\n".join("ERRO: " + e for e in erros))
         sys.exit(1)
