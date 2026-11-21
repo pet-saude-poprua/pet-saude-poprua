@@ -19,7 +19,8 @@
     "game/images/bg/aqua_recepcao.jpg"
    ],
    "issue_mae": 112,
-   "prioridade": "alta"
+   "prioridade": "alta",
+   "issue": 123
   },
   {
    "id": "aqua_observacao",
@@ -34,7 +35,8 @@
     "game/images/bg/aqua_corredor.jpg"
    ],
    "issue_mae": 112,
-   "prioridade": "alta"
+   "prioridade": "alta",
+   "issue": 124
   },
   {
    "id": "aqua_servico_social",
@@ -49,7 +51,8 @@
     "game/images/bg/aqua_recepcao.jpg"
    ],
    "issue_mae": 112,
-   "prioridade": "alta"
+   "prioridade": "alta",
+   "issue": 125
   },
   {
    "id": "colega_enfermagem",
@@ -65,7 +68,8 @@
     "game/images/chars/assistente_social.webp"
    ],
    "issue_mae": 114,
-   "prioridade": "media"
+   "prioridade": "media",
+   "issue": 126
   },
   {
    "id": "obj_pulseira_amarela",
@@ -79,7 +83,8 @@
     "game/images/obj/caderno_renato.webp"
    ],
    "issue_mae": 113,
-   "prioridade": "media"
+   "prioridade": "media",
+   "issue": 127
   },
   {
    "id": "obj_pulseira_laranja",
@@ -93,7 +98,8 @@
     "a pulseira amarela aprovada (imagem entregue no pedido obj_pulseira_amarela)"
    ],
    "issue_mae": 113,
-   "prioridade": "media"
+   "prioridade": "media",
+   "issue": 128
   },
   {
    "id": "obj_encaminhamento",
@@ -107,7 +113,8 @@
     "game/images/obj/obj_receita_medica.webp"
    ],
    "issue_mae": 113,
-   "prioridade": "baixa"
+   "prioridade": "baixa",
+   "issue": 129
   },
   {
    "id": "ovl_prontuario",
@@ -121,7 +128,8 @@
     "game/images/bg/aqua_esus.jpg"
    ],
    "issue_mae": 113,
-   "prioridade": "baixa"
+   "prioridade": "baixa",
+   "issue": 130
   }
  ]
 }

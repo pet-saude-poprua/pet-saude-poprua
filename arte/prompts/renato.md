@@ -2,7 +2,7 @@
 
 Gerado por `scripts/arte.py prompts --historia renato` a partir de `arte/pedidos/renato.json`. Não edite à mão: mude o JSON e gere de novo.
 
-## aqua_classificacao
+## aqua_classificacao (#123)
 
 **Cena:** Cena 2 — Classificação de risco  
 **Tipo:** cenario — Fundo de cena (sem pessoas). Formato: 16:9 (paisagem).  
@@ -34,7 +34,7 @@ Interior of a small risk-classification (triage) room in a Brazilian public emer
 ### 5. Entregue
 Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
 
-## aqua_observacao
+## aqua_observacao (#124)
 
 **Cena:** Cena 5 — Sala de observação  
 **Tipo:** cenario — Fundo de cena (sem pessoas). Formato: 16:9 (paisagem).  
@@ -66,7 +66,7 @@ Interior of an observation room in a Brazilian public emergency unit: a row of b
 ### 5. Entregue
 Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
 
-## aqua_servico_social
+## aqua_servico_social (#125)
 
 **Cena:** Cena 7 — Serviço Social  
 **Tipo:** cenario — Fundo de cena (sem pessoas). Formato: 16:9 (paisagem).  
@@ -98,7 +98,7 @@ Interior of a small social work office inside a Brazilian public emergency unit:
 ### 5. Entregue
 Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
 
-## colega_enfermagem
+## colega_enfermagem (#126)
 
 **Cena:** Cena 5 — Sala de observação (a colega no posto)  
 **Tipo:** sprite — Personagem recortado, corpo inteiro, para aparecer por cima do cenário. Formato: 2:3 (retrato), fundo transparente.  
@@ -131,7 +131,7 @@ Full body standing pose, body turned three-quarters to the viewer's left as if t
 ### 5. Entregue
 Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
 
-## obj_pulseira_amarela
+## obj_pulseira_amarela (#127)
 
 **Cena:** Cena 2 — Classificação de risco (pulseira amarela)  
 **Tipo:** objeto — Objeto em destaque (caderno, receita, pulseira...). Formato: 1:1 (quadrado), fundo transparente.  
@@ -162,7 +162,7 @@ A plastic hospital identification wristband in yellow, the kind used for emergen
 ### 5. Entregue
 Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
 
-## obj_pulseira_laranja
+## obj_pulseira_laranja (#128)
 
 **Cena:** Cena 2 — Classificação de risco (pulseira laranja)  
 **Tipo:** objeto — Objeto em destaque (caderno, receita, pulseira...). Formato: 1:1 (quadrado), fundo transparente.  
@@ -193,7 +193,7 @@ The same plastic hospital identification wristband as the reference, now in oran
 ### 5. Entregue
 Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
 
-## obj_encaminhamento
+## obj_encaminhamento (#129)
 
 **Cena:** Cena 7 — Serviço Social (encaminhamento escrito)  
 **Tipo:** objeto — Objeto em destaque (caderno, receita, pulseira...). Formato: 1:1 (quadrado), fundo transparente.  
@@ -224,7 +224,7 @@ A single sheet of white paper referral form folded once, with a soft blue instit
 ### 5. Entregue
 Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
 
-## ovl_prontuario
+## ovl_prontuario (#130)
 
 **Cena:** Cenas 1, 4 e 6 — tela do prontuário eletrônico  
 **Tipo:** overlay — Tela ou papel que aparece por cima da cena (prontuário, celular, documento). Exceção: não é aquarela. Formato: 16:9 (paisagem).  
