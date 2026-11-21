@@ -1,0 +1,61 @@
+{
+ "_comentario": "Ficha fixa de cada personagem. A 'aparencia' (em inglês) entra igual em todo prompt em que o personagem aparece; a model sheet deve ser anexada na ferramenta de imagem. Ao criar personagem novo: gere a model sheet primeiro, guarde na pasta Personagens do Drive e acrescente a ficha aqui.",
+ "drive_pasta_arte": "https://drive.google.com/drive/folders/1LJwdm2SyJAL7FwMZ1yuR0zbXdJ3yln7p",
+ "personagens": {
+  "renato": {
+   "nome": "Renato",
+   "historia": "renato",
+   "papel": "Paciente, 54 anos, em situação de rua há cerca de 8 meses. Reservado, educado, reflexivo. Ex-técnico de manutenção industrial.",
+   "aparencia": "Renato, a Brazilian man aged 54, lean build, light-brown weathered skin, short messy salt-and-pepper gray hair, short gray stubble, tired but gentle dark eyes, faint lines on the forehead; wears a faded blue-gray plaid flannel shirt with rolled sleeves over a dark gray t-shirt, worn brown work trousers, old dark-brown leather boots, a simple wristwatch; his clothes are simple and clean but worn; often holds an old brown notebook",
+   "expressoes_no_jogo": ["normal", "hesitante", "aberto", "despedida"],
+   "sprites_no_jogo": ["game/images/chars/renato_normal.webp", "game/images/chars/renato_hesitante.webp", "game/images/chars/renato_aberto.webp", "game/images/chars/renato_despedida.webp"],
+   "model_sheet": "https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view"
+  },
+  "medico_upa": {
+   "nome": "Médico da UPA (consultório 2)",
+   "historia": "renato",
+   "papel": "Médico do consultório 2. Aparece na Cena 4 e na alta.",
+   "aparencia": "a Brazilian male doctor in his mid-30s, dark brown skin, short black curly hair, neat short black beard, calm confident expression; wears a white lab coat over navy-blue scrubs, a stethoscope around the neck and a hospital ID badge",
+   "expressoes_no_jogo": ["neutro"],
+   "sprites_no_jogo": ["game/images/chars/medico_upa.webp"],
+   "model_sheet": "https://drive.google.com/drive/folders/1iKtSz57ASM9myTdTdguqHM8OKjvbgH6Q"
+  },
+  "assistente_social": {
+   "nome": "Camila Ferreira, assistente social da UPA",
+   "historia": "renato",
+   "papel": "Assistente social, 38 anos, há 7 anos na UPA. Empática, firme e organizada.",
+   "aparencia": "Camila, a Brazilian woman aged 38, light-tan skin, shoulder-length wavy dark-brown hair tied in a low ponytail, thin dark-rimmed glasses, attentive kind expression; wears a brown knit cardigan over a patterned blouse in earthy tones, dark gray trousers, flat brown shoes, an ID badge on a lanyard; often holds beige paper folders",
+   "expressoes_no_jogo": ["neutra"],
+   "sprites_no_jogo": ["game/images/chars/assistente_social.webp"],
+   "model_sheet": "https://drive.google.com/file/d/1HALke0Qm9M-Y8eA84WGSH89Zrqjd23jR/view"
+  },
+  "colega_enfermagem": {
+   "nome": "Lívia Souza, técnica de enfermagem (a colega da Cena 5)",
+   "historia": "renato",
+   "papel": "Técnica de enfermagem, 41 anos, há 6 anos na UPA. Na v4 é a colega do posto de enfermagem na Cena 5.",
+   "aparencia": "Livia, a Brazilian woman aged 41, warm tan skin, dark hair pulled back in a neat bun, welcoming face; wears a green nursing scrub uniform (top and trousers), white sneakers, a visible ID badge, a stethoscope around the neck, sometimes a clipboard",
+   "expressoes_no_jogo": [],
+   "sprites_no_jogo": [],
+   "observacao": "O sprite antigo game/images/chars/tecnica.webp usa uniforme branco; a model sheet pede uniforme verde. Seguir a model sheet.",
+   "model_sheet": "https://drive.google.com/file/d/12H-TEYWnKjrgXOhcxwhgS_JREBYudS7j/view"
+  },
+  "recepcionista": {
+   "nome": "Recepcionista da UPA",
+   "historia": "renato",
+   "papel": "Primeira pessoa do serviço a perceber o que acontece na sala de espera. Na v4 é o papel do jogador na Cena 1 (não aparece como sprite).",
+   "aparencia": "the UPA receptionist exactly as in the attached model sheet: attentive, welcoming and firm, wearing the UPA staff uniform with an ID badge",
+   "expressoes_no_jogo": [],
+   "sprites_no_jogo": [],
+   "model_sheet": "https://drive.google.com/file/d/1jOE3WdKmWc9WL5nwVAeYgFMakFz5gSD6/view"
+  },
+  "senhora": {
+   "nome": "Senhora da primeira fileira",
+   "historia": "renato",
+   "papel": "Paciente na sala de espera (ramo em que Renato é exposto na recepção).",
+   "aparencia": "a Brazilian woman in her early 60s, fuller plus-size body, light-brown skin, gray-streaked hair in a low bun, simple floral yellow blouse and long brown skirt, flat brown shoes, small purse, arms crossed, disapproving expression",
+   "expressoes_no_jogo": ["desconfiada"],
+   "sprites_no_jogo": ["game/images/chars/senhora.webp"],
+   "model_sheet": ""
+  }
+ }
+}

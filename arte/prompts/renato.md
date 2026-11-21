@@ -1,0 +1,255 @@
+# Prompts de arte — Renato
+
+Gerado por `scripts/arte.py prompts --historia renato` a partir de `arte/pedidos/renato.json`. Não edite à mão: mude o JSON e gere de novo.
+
+## aqua_classificacao (#123)
+
+**Cena:** Cena 2 — Classificação de risco  
+**Tipo:** cenario — Fundo de cena (sem pessoas). Formato: 16:9 (paisagem).  
+**No jogo:** `bg aqua_classificacao` → `game/images/bg/aqua_classificacao.webp`
+**Parte de:** #112
+
+**O que é:** Sala de classificação de risco da UPA: pequena, porta fechada, mesa com computador, aparelho de pressão, oxímetro, termômetro, glicosímetro, cadeira do paciente. Hoje o jogo usa o consultório como provisório.
+
+### 1. Abra o assistente de arte
+Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- [game/images/bg/aqua_consultorio.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_consultorio.jpg)
+- [game/images/bg/aqua_recepcao.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_recepcao.jpg)
+
+### 3. Cole o prompt
+```text
+Interior of a small risk-classification (triage) room in a Brazilian public emergency unit (UPA 24h): a simple desk with a computer monitor turned slightly away, a digital blood pressure monitor, a pulse oximeter and a thermometer on the desk, a small glucometer case, a patient chair facing the desk, a closed door, a wall shelf with color-coded triage wristbands as small soft shapes (red, orange, yellow, green, blue), soft fluorescent ceiling light, warm muted institutional palette. digital watercolor illustration, soft loose washes, muted faded pastel palette, simplified almost cartoonish shapes, minimal fine detail, gentle soft edges, light paper texture, slightly desaturated, calm subdued mood, soft background blur, mobile visual novel background, clean uncluttered composition, eye-level view, no text, no letters, no logos, empty center and lower foreground reserved for characters, no people, no characters, 16:9 landscape. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
+- [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
+- [ ] Formato paisagem 16:9.
+- [ ] Sem pessoas.
+- [ ] Centro e parte de baixo livres para o personagem.
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
+
+## aqua_observacao (#124)
+
+**Cena:** Cena 5 — Sala de observação  
+**Tipo:** cenario — Fundo de cena (sem pessoas). Formato: 16:9 (paisagem).  
+**No jogo:** `bg aqua_observacao` → `game/images/bg/aqua_observacao.webp`
+**Parte de:** #112
+
+**O que é:** Sala de observação com oito poltronas reclináveis e quatro macas, um posto de enfermagem num canto, suportes de soro, um cilindro de oxigênio. Cheia, mas sem pessoas desenhadas (os pacientes entram como sugestão de volume).
+
+### 1. Abra o assistente de arte
+Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- [game/images/bg/aqua_box.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_box.jpg)
+- [game/images/bg/aqua_corredor.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_corredor.jpg)
+
+### 3. Cole o prompt
+```text
+Interior of an observation room in a Brazilian public emergency unit: a row of blue reclining patient armchairs along one wall, four hospital stretchers separated by light curtains on the other side, IV drip stands, a wall oxygen outlet and a small oxygen cylinder, a nursing station desk in a corner with a computer and paperwork, soft clinical lighting, muted teal and white palette, busy but calm, the armchairs and stretchers empty. digital watercolor illustration, soft loose washes, muted faded pastel palette, simplified almost cartoonish shapes, minimal fine detail, gentle soft edges, light paper texture, slightly desaturated, calm subdued mood, soft background blur, mobile visual novel background, clean uncluttered composition, eye-level view, no text, no letters, no logos, empty center and lower foreground reserved for characters, no people, no characters, 16:9 landscape. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
+- [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
+- [ ] Formato paisagem 16:9.
+- [ ] Sem pessoas.
+- [ ] Centro e parte de baixo livres para o personagem.
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
+
+## aqua_servico_social (#125)
+
+**Cena:** Cena 7 — Serviço Social  
+**Tipo:** cenario — Fundo de cena (sem pessoas). Formato: 16:9 (paisagem).  
+**No jogo:** `bg aqua_servico_social` → `game/images/bg/aqua_servico_social.webp`
+**Parte de:** #112
+
+**O que é:** Sala do Serviço Social: pequena, uma mesa, duas cadeiras, o celular do serviço sobre a mesa, um mural com a lista de contatos da rede (números riscados e reescritos, sem texto legível).
+
+### 1. Abra o assistente de arte
+Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- [game/images/bg/aqua_consultorio.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_consultorio.jpg)
+- [game/images/bg/aqua_recepcao.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_recepcao.jpg)
+
+### 3. Cole o prompt
+```text
+Interior of a small social work office inside a Brazilian public emergency unit: one simple desk with two chairs facing each other, a basic smartphone lying on the desk next to a folder and a pen, a cork board on the wall with a handwritten contact list and pinned notes rendered as illegible scribbles with some lines crossed out, a small window with soft afternoon light, a filing cabinet, a potted plant, warm muted earthy palette, intimate and quiet. digital watercolor illustration, soft loose washes, muted faded pastel palette, simplified almost cartoonish shapes, minimal fine detail, gentle soft edges, light paper texture, slightly desaturated, calm subdued mood, soft background blur, mobile visual novel background, clean uncluttered composition, eye-level view, no text, no letters, no logos, empty center and lower foreground reserved for characters, no people, no characters, 16:9 landscape. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
+- [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
+- [ ] Formato paisagem 16:9.
+- [ ] Sem pessoas.
+- [ ] Centro e parte de baixo livres para o personagem.
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
+
+## colega_enfermagem (#126)
+
+**Cena:** Cena 5 — Sala de observação (a colega no posto)  
+**Tipo:** sprite — Personagem recortado, corpo inteiro, para aparecer por cima do cenário. Formato: 2:3 (retrato), fundo transparente.  
+**No jogo:** `image colega_enfermagem` → `game/images/chars/colega_enfermagem.webp`
+**Parte de:** #114
+
+**O que é:** Sprite de corpo inteiro da colega da enfermagem (Lívia), de pé, olhando para o lado, em conversa.
+
+### 1. Abra o assistente de arte
+Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- Model sheet de Lívia Souza, técnica de enfermagem (a colega da Cena 5): https://drive.google.com/file/d/12H-TEYWnKjrgXOhcxwhgS_JREBYudS7j/view
+- [game/images/chars/assistente_social.webp](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/chars/assistente_social.webp)
+
+### 3. Cole o prompt
+```text
+Full body standing pose, body turned three-quarters to the viewer's left as if talking to a colleague, one hand resting on a clipboard held against the chest, neutral curious expression with a slight raised eyebrow. Character: Livia, a Brazilian woman aged 41, warm tan skin, dark hair pulled back in a neat bun, welcoming face; wears a green nursing scrub uniform (top and trousers), white sneakers, a visible ID badge, a stethoscope around the neck, sometimes a clipboard. Keep this character identical to the attached model sheet (face, hair, body, clothes, colors, badge). clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
+- [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
+- [ ] Corpo inteiro, retrato (vertical).
+- [ ] Fundo transparente (PNG). Se a ferramenta não deixar, peça de novo “transparent background, PNG”.
+- [ ] Igual à model sheet (rosto, cabelo, roupa, cores, crachá).
+- [ ] Mãos e rosto sem deformação.
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
+
+## obj_pulseira_amarela (#127)
+
+**Cena:** Cena 2 — Classificação de risco (pulseira amarela)  
+**Tipo:** objeto — Objeto em destaque (caderno, receita, pulseira...). Formato: 1:1 (quadrado), fundo transparente.  
+**No jogo:** `image pulseira_amarela` → `game/images/obj/obj_pulseira_amarela.webp`
+**Parte de:** #113
+
+**O que é:** Pulseira hospitalar de identificação, amarela (classificação de risco).
+
+### 1. Abra o assistente de arte
+Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- [game/images/obj/caderno_renato.webp](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/obj/caderno_renato.webp)
+
+### 3. Cole o prompt
+```text
+A plastic hospital identification wristband in yellow, the kind used for emergency triage, closed in a loop and lying at a slight angle, a small white label area with illegible soft gray lines. digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
+- [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
+- [ ] Quadrado, objeto centralizado.
+- [ ] Fundo transparente (PNG).
+- [ ] Sem mãos nem pessoas.
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
+
+## obj_pulseira_laranja (#128)
+
+**Cena:** Cena 2 — Classificação de risco (pulseira laranja)  
+**Tipo:** objeto — Objeto em destaque (caderno, receita, pulseira...). Formato: 1:1 (quadrado), fundo transparente.  
+**No jogo:** `image pulseira_laranja` → `game/images/obj/obj_pulseira_laranja.webp`
+**Parte de:** #113
+
+**O que é:** A mesma pulseira, laranja. Gerar depois da amarela, pedindo “a mesma pulseira, só que laranja”.
+
+### 1. Abra o assistente de arte
+Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- a pulseira amarela aprovada (imagem entregue no pedido obj_pulseira_amarela)
+
+### 3. Cole o prompt
+```text
+The same plastic hospital identification wristband as the reference, now in orange, same angle and lighting. digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
+- [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
+- [ ] Quadrado, objeto centralizado.
+- [ ] Fundo transparente (PNG).
+- [ ] Sem mãos nem pessoas.
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
+
+## obj_encaminhamento (#129)
+
+**Cena:** Cena 7 — Serviço Social (encaminhamento escrito)  
+**Tipo:** objeto — Objeto em destaque (caderno, receita, pulseira...). Formato: 1:1 (quadrado), fundo transparente.  
+**No jogo:** `image encaminhamento` → `game/images/obj/obj_encaminhamento.webp`
+**Parte de:** #113
+
+**O que é:** Folha de encaminhamento que a assistente social entrega a Renato, dobrada uma vez, com carimbo e assinatura ilegíveis.
+
+### 1. Abra o assistente de arte
+Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- [game/images/obj/obj_receita_medica.webp](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/obj/obj_receita_medica.webp)
+
+### 3. Cole o prompt
+```text
+A single sheet of white paper referral form folded once, with a soft blue institutional header shape, handwritten illegible blue-ink lines, a faint round stamp and a signature scribble, a corner slightly bent. digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
+- [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
+- [ ] Quadrado, objeto centralizado.
+- [ ] Fundo transparente (PNG).
+- [ ] Sem mãos nem pessoas.
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
+
+## ovl_prontuario (#130)
+
+**Cena:** Cenas 1, 4 e 6 — tela do prontuário eletrônico  
+**Tipo:** overlay — Tela ou papel que aparece por cima da cena (prontuário, celular, documento). Exceção: não é aquarela. Formato: 16:9 (paisagem).  
+**No jogo:** `image esus` → `game/images/bg/ovl_prontuario.webp`
+**Parte de:** #113
+
+**O que é:** Tela do prontuário eletrônico que aparece por cima da cena (substitui a atual aqua_esus.jpg). Campos e textos como blocos, sem letras.
+
+### 1. Abra o assistente de arte
+Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- [game/images/bg/aqua_esus.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_esus.jpg)
+
+### 3. Cole o prompt
+```text
+A flat electronic patient record screen in the style of the Brazilian e-SUS system shown on a computer monitor frame: a header bar, a left sidebar with menu blocks, form panels with labeled fields drawn as gray placeholder bars, a vital signs panel with small chart shapes, a large free-text notes area, soft blue and white UI. flat minimal interface or document illustration, clean flat design, soft blue, white and gray palette, simple rounded panels, placeholder blocks and soft lines instead of readable text, no photo, no watercolor, no people, centered, 16:9 landscape. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
+- [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
+- [ ] Formato paisagem 16:9.
+- [ ] Visual limpo de interface/documento (não é aquarela).
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.

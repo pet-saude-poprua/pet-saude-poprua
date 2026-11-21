@@ -11,8 +11,8 @@ Uso em lote (recomendado):
 A chave da API vem de OPENAI_API_KEY (variável de ambiente ou arquivo .env na
 raiz do projeto — .env já está no .gitignore).
 
-Cada estilo abaixo replica os blocos usados na entrega de 14-15/07/2026,
-documentados em assets-gerados/PROMPTS-GERADOS.md.
+Os blocos de estilo ficam em arte/estilo.json (seção "api"); são os mesmos da
+entrega de 14-15/07/2026. Para gerar sem API, use scripts/arte.py (prompts prontos).
 """
 
 from __future__ import annotations
@@ -37,50 +37,10 @@ QUALIDADES_VALIDAS = ("low", "medium", "high", "auto")
 # Blocos de estilo (sufixados ao prompt de conteúdo)
 # --------------------------------------------------------------------------
 
-ESTILOS: dict[str, dict] = {
-    "cenario": {
-        "bloco": (
-            "digital watercolor illustration, soft loose washes, muted faded pastel palette, "
-            "simplified almost cartoonish shapes, minimal fine detail, gentle soft edges, "
-            "light paper texture, slightly desaturated, calm subdued mood, soft background blur, "
-            "mobile visual novel background, clean uncluttered composition, eye-level view, "
-            "no text, no letters, no logos"
-        ),
-        "tamanho": "1536x1024",
-        "transparente": False,
-    },
-    "objeto": {
-        "bloco": (
-            "digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, "
-            "simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, "
-            "calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, "
-            "mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers"
-        ),
-        "tamanho": "1024x1024",
-        "transparente": True,
-    },
-    "personagem": {
-        "bloco": (
-            "clean semi-realistic comic illustration style, soft cel shading, natural proportions, "
-            "warm approachable rendering, full body standing character for a visual novel sprite, "
-            "facing slightly toward viewer, isolated character cutout, plain empty transparent background, "
-            "no environment, no floor, no wall, no text, no watermark, "
-            "consistent with a Brazilian public health (SUS) educational game cast"
-        ),
-        "tamanho": "1024x1536",
-        "transparente": True,
-    },
-    "ui": {
-        "bloco": (
-            "digital watercolor illustration, soft loose washes, gentle soft edges, light paper texture, "
-            "slightly desaturated, hand-painted game UI element, single element centered, "
-            "transparent background, nothing else in frame, no text, no letters, no numbers, no logos"
-        ),
-        "tamanho": "1024x1024",
-        "transparente": True,
-    },
-    "nenhum": {"bloco": "", "tamanho": "1024x1024", "transparente": False},
-}
+# Os blocos vêm de arte/estilo.json (seção "api"), a fonte única do estilo do jogo,
+# também usada por scripts/arte.py.
+ESTILO_JSON = RAIZ / "arte" / "estilo.json"
+ESTILOS: dict[str, dict] = json.loads(ESTILO_JSON.read_text(encoding="utf-8"))["api"]
 
 
 # --------------------------------------------------------------------------

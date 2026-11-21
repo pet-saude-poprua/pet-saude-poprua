@@ -1,0 +1,60 @@
+name: "🎨 Pedido de arte"
+description: "Uma imagem que o jogo precisa (cenário, personagem, objeto, cena ou tela)"
+title: "Arte · "
+labels: ["frente:arte", "tipo:tarefa"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Uma issue por imagem. O Breno transforma o pedido em prompt pronto (`arte/pedidos/`) e a issue entra no Project.
+        Como gerar e entregar: [arte/README.md](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/arte/README.md).
+  - type: dropdown
+    id: historia
+    attributes:
+      label: História
+      options:
+        - Renato
+        - Cleide
+        - História 3
+        - História 4
+        - História 5
+        - Comum a todas (menu, interface)
+    validations:
+      required: true
+  - type: input
+    id: cena
+    attributes:
+      label: Cena
+      placeholder: "Ex.: Cena 3 — sala de vacina da UBS"
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de imagem
+      options:
+        - Cenário (fundo sem pessoas, 16:9)
+        - Sprite (personagem recortado, fundo transparente)
+        - Objeto (fundo transparente)
+        - Cena composta (personagem e cenário juntos)
+        - Tela ou documento por cima da cena (overlay)
+        - Interface (botão, moldura)
+    validations:
+      required: true
+  - type: textarea
+    id: o_que
+    attributes:
+      label: O que aparece
+      description: "Descreva como no roteiro: lugar, objetos, luz, horário. Para personagem: pose e expressão."
+    validations:
+      required: true
+  - type: input
+    id: personagens
+    attributes:
+      label: Personagens (se houver)
+      description: "Personagem novo precisa de model sheet antes (ver arte/README.md)."
+  - type: textarea
+    id: referencias
+    attributes:
+      label: Referências (opcional)
+      description: "Arraste imagens ou cole links (Drive, outras cenas do jogo)."

@@ -1,5 +1,7 @@
 # Padrões Visuais — Caminho de Criação das Telas da História do Renato
 
+> **Para gerar imagens novas, use o kit em [`arte/`](../arte/README.md)**: estilo, fichas dos personagens, prompts prontos e pedidos no Project. Este documento registra a direção visual definida no protótipo.
+
 **Projeto:** Visual novel educacional PET-Saúde Pop Rua (GT6) · **Versão:** 1.0 — 14/07/2026
 **Decisão de base (ata 01/07):** fundos em **aquarela digital suave** + **personagens em ilustração mais definida** que "saltam" sobre o fundo dessaturado.
 

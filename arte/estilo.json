@@ -1,0 +1,130 @@
+{
+ "_comentario": "Fonte única do estilo visual do Além da Rua. Lido por scripts/gerar_imagens.py (API) e scripts/arte.py (prompts, issues e importação). Prompts em inglês: rendem melhor nas IAs de imagem.",
+ "regras_de_ouro": [
+  "Cenários sem pessoas: os personagens entram por cima, como sprites.",
+  "Centro e terço inferior do cenário livres, para o personagem.",
+  "Cenário esmaecido, de baixo contraste e dessaturado; personagem mais detalhado (semi-realista) para se destacar.",
+  "Nenhum texto legível: placas, cartazes e telas viram manchas de cor.",
+  "Mesma paleta e mesma luz entre cenários internos da mesma história.",
+  "Ponto de vista à altura dos olhos, perspectiva calma de visual novel.",
+  "Personagens sempre iguais às model sheets: rosto, cabelo, roupa, cores e acessórios.",
+  "Retratar pessoas em situação de rua com dignidade: sem caricatura, sujeira exagerada ou miserabilismo."
+ ],
+ "negativo": "people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts",
+ "tipos": {
+  "cenario": {
+   "descricao": "Fundo de cena (sem pessoas).",
+   "estilo_api": "cenario",
+   "bloco": "digital watercolor illustration, soft loose washes, muted faded pastel palette, simplified almost cartoonish shapes, minimal fine detail, gentle soft edges, light paper texture, slightly desaturated, calm subdued mood, soft background blur, mobile visual novel background, clean uncluttered composition, eye-level view, no text, no letters, no logos, empty center and lower foreground reserved for characters, no people, no characters, 16:9 landscape",
+   "proporcao": "16:9 (paisagem)",
+   "jogo": {
+    "pasta": "bg",
+    "largura": 1600,
+    "altura": 900,
+    "transparente": false
+   }
+  },
+  "sprite": {
+   "descricao": "Personagem recortado, corpo inteiro, para aparecer por cima do cenário.",
+   "estilo_api": "personagem",
+   "bloco": "clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait",
+   "proporcao": "2:3 (retrato), fundo transparente",
+   "jogo": {
+    "pasta": "chars",
+    "altura_max": 1600,
+    "transparente": true
+   }
+  },
+  "objeto": {
+   "descricao": "Objeto em destaque (caderno, receita, pulseira...).",
+   "estilo_api": "objeto",
+   "bloco": "digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square",
+   "proporcao": "1:1 (quadrado), fundo transparente",
+   "jogo": {
+    "pasta": "obj",
+    "largura_max": 1024,
+    "transparente": true
+   }
+  },
+  "cena": {
+   "descricao": "Ilustração única com personagem e cenário juntos, para momentos de destaque.",
+   "estilo_api": "nenhum",
+   "bloco": "characters in clean semi-realistic comic illustration style with soft cel shading and natural proportions, matching the attached model sheets exactly, set inside a softer digital watercolor background with muted faded pastel palette, light paper texture and soft background blur; the characters are more detailed than the background; consistent lighting between characters and background, eye-level view, mobile visual novel illustration, no text, no letters, no logos, 16:9 landscape",
+   "proporcao": "16:9 (paisagem)",
+   "jogo": {
+    "pasta": "chars",
+    "largura": 1600,
+    "altura": 900,
+    "transparente": false
+   }
+  },
+  "overlay": {
+   "descricao": "Tela ou papel que aparece por cima da cena (prontuário, celular, documento). Exceção: não é aquarela.",
+   "estilo_api": "nenhum",
+   "bloco": "flat minimal interface or document illustration, clean flat design, soft blue, white and gray palette, simple rounded panels, placeholder blocks and soft lines instead of readable text, no photo, no watercolor, no people, centered, 16:9 landscape",
+   "proporcao": "16:9 (paisagem)",
+   "jogo": {
+    "pasta": "bg",
+    "largura": 1600,
+    "altura": 900,
+    "transparente": false
+   }
+  },
+  "ui": {
+   "descricao": "Peça de interface pintada à mão (botões, molduras).",
+   "estilo_api": "ui",
+   "bloco": "digital watercolor illustration, soft loose washes, gentle soft edges, light paper texture, slightly desaturated, hand-painted game UI element, single element centered, transparent background, nothing else in frame, no text, no letters, no numbers, no logos",
+   "proporcao": "1:1, fundo transparente",
+   "jogo": {
+    "pasta": "../gui/aquarela",
+    "largura_max": 1024,
+    "transparente": true
+   }
+  }
+ },
+ "api": {
+  "cenario": {
+   "bloco": "digital watercolor illustration, soft loose washes, muted faded pastel palette, simplified almost cartoonish shapes, minimal fine detail, gentle soft edges, light paper texture, slightly desaturated, calm subdued mood, soft background blur, mobile visual novel background, clean uncluttered composition, eye-level view, no text, no letters, no logos",
+   "tamanho": "1536x1024",
+   "transparente": false
+  },
+  "objeto": {
+   "bloco": "digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers",
+   "tamanho": "1024x1024",
+   "transparente": true
+  },
+  "personagem": {
+   "bloco": "clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast",
+   "tamanho": "1024x1536",
+   "transparente": true
+  },
+  "ui": {
+   "bloco": "digital watercolor illustration, soft loose washes, gentle soft edges, light paper texture, slightly desaturated, hand-painted game UI element, single element centered, transparent background, nothing else in frame, no text, no letters, no numbers, no logos",
+   "tamanho": "1024x1024",
+   "transparente": true
+  },
+  "nenhum": {
+   "bloco": "",
+   "tamanho": "1024x1024",
+   "transparente": false
+  }
+ },
+ "referencias_de_estilo": [
+  {
+   "arquivo": "game/images/bg/aqua_recepcao.jpg",
+   "para": "cenários internos (paleta e luz)"
+  },
+  {
+   "arquivo": "game/images/bg/aqua_consultorio.jpg",
+   "para": "salas de atendimento"
+  },
+  {
+   "arquivo": "game/images/chars/renato_normal.webp",
+   "para": "traço dos personagens"
+  },
+  {
+   "arquivo": "game/images/obj/caderno_renato.webp",
+   "para": "objetos"
+  }
+ ]
+}

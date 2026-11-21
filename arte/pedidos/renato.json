@@ -1,0 +1,135 @@
+{
+ "_comentario": "Imagens que a história do Renato ainda precisa. Campos: id (nome do arquivo e da imagem no código), tipo (cenario|sprite|objeto|cena|overlay|ui; ver arte/estilo.json), cena, uso (como a imagem é chamada no código), descricao (português, para quem lê a issue), conteudo (inglês, vai no prompt), personagens (chaves de arte/personagens.json), referencias (o que anexar), issue_mae, prioridade, issue (preenchido por scripts/arte.py).",
+ "historia": "renato",
+ "titulo": "Renato",
+ "prazo": "2027-01-31",
+ "milestone": "Jan/2027 – Renato jogável",
+ "projeto_historia": "Renato",
+ "pedidos": [
+  {
+   "id": "aqua_classificacao",
+   "tipo": "cenario",
+   "cena": "Cena 2 — Classificação de risco",
+   "uso": "bg aqua_classificacao",
+   "descricao": "Sala de classificação de risco da UPA: pequena, porta fechada, mesa com computador, aparelho de pressão, oxímetro, termômetro, glicosímetro, cadeira do paciente. Hoje o jogo usa o consultório como provisório.",
+   "conteudo": "Interior of a small risk-classification (triage) room in a Brazilian public emergency unit (UPA 24h): a simple desk with a computer monitor turned slightly away, a digital blood pressure monitor, a pulse oximeter and a thermometer on the desk, a small glucometer case, a patient chair facing the desk, a closed door, a wall shelf with color-coded triage wristbands as small soft shapes (red, orange, yellow, green, blue), soft fluorescent ceiling light, warm muted institutional palette",
+   "personagens": [],
+   "referencias": [
+    "game/images/bg/aqua_consultorio.jpg",
+    "game/images/bg/aqua_recepcao.jpg"
+   ],
+   "issue_mae": 112,
+   "prioridade": "alta",
+   "issue": 123
+  },
+  {
+   "id": "aqua_observacao",
+   "tipo": "cenario",
+   "cena": "Cena 5 — Sala de observação",
+   "uso": "bg aqua_observacao",
+   "descricao": "Sala de observação com oito poltronas reclináveis e quatro macas, um posto de enfermagem num canto, suportes de soro, um cilindro de oxigênio. Cheia, mas sem pessoas desenhadas (os pacientes entram como sugestão de volume).",
+   "conteudo": "Interior of an observation room in a Brazilian public emergency unit: a row of blue reclining patient armchairs along one wall, four hospital stretchers separated by light curtains on the other side, IV drip stands, a wall oxygen outlet and a small oxygen cylinder, a nursing station desk in a corner with a computer and paperwork, soft clinical lighting, muted teal and white palette, busy but calm, the armchairs and stretchers empty",
+   "personagens": [],
+   "referencias": [
+    "game/images/bg/aqua_box.jpg",
+    "game/images/bg/aqua_corredor.jpg"
+   ],
+   "issue_mae": 112,
+   "prioridade": "alta",
+   "issue": 124
+  },
+  {
+   "id": "aqua_servico_social",
+   "tipo": "cenario",
+   "cena": "Cena 7 — Serviço Social",
+   "uso": "bg aqua_servico_social",
+   "descricao": "Sala do Serviço Social: pequena, uma mesa, duas cadeiras, o celular do serviço sobre a mesa, um mural com a lista de contatos da rede (números riscados e reescritos, sem texto legível).",
+   "conteudo": "Interior of a small social work office inside a Brazilian public emergency unit: one simple desk with two chairs facing each other, a basic smartphone lying on the desk next to a folder and a pen, a cork board on the wall with a handwritten contact list and pinned notes rendered as illegible scribbles with some lines crossed out, a small window with soft afternoon light, a filing cabinet, a potted plant, warm muted earthy palette, intimate and quiet",
+   "personagens": [],
+   "referencias": [
+    "game/images/bg/aqua_consultorio.jpg",
+    "game/images/bg/aqua_recepcao.jpg"
+   ],
+   "issue_mae": 112,
+   "prioridade": "alta",
+   "issue": 125
+  },
+  {
+   "id": "colega_enfermagem",
+   "tipo": "sprite",
+   "cena": "Cena 5 — Sala de observação (a colega no posto)",
+   "uso": "image colega_enfermagem",
+   "descricao": "Sprite de corpo inteiro da colega da enfermagem (Lívia), de pé, olhando para o lado, em conversa.",
+   "conteudo": "Full body standing pose, body turned three-quarters to the viewer's left as if talking to a colleague, one hand resting on a clipboard held against the chest, neutral curious expression with a slight raised eyebrow",
+   "personagens": [
+    "colega_enfermagem"
+   ],
+   "referencias": [
+    "game/images/chars/assistente_social.webp"
+   ],
+   "issue_mae": 114,
+   "prioridade": "media",
+   "issue": 126
+  },
+  {
+   "id": "obj_pulseira_amarela",
+   "tipo": "objeto",
+   "cena": "Cena 2 — Classificação de risco (pulseira amarela)",
+   "uso": "image pulseira_amarela",
+   "descricao": "Pulseira hospitalar de identificação, amarela (classificação de risco).",
+   "conteudo": "A plastic hospital identification wristband in yellow, the kind used for emergency triage, closed in a loop and lying at a slight angle, a small white label area with illegible soft gray lines",
+   "personagens": [],
+   "referencias": [
+    "game/images/obj/caderno_renato.webp"
+   ],
+   "issue_mae": 113,
+   "prioridade": "media",
+   "issue": 127
+  },
+  {
+   "id": "obj_pulseira_laranja",
+   "tipo": "objeto",
+   "cena": "Cena 2 — Classificação de risco (pulseira laranja)",
+   "uso": "image pulseira_laranja",
+   "descricao": "A mesma pulseira, laranja. Gerar depois da amarela, pedindo “a mesma pulseira, só que laranja”.",
+   "conteudo": "The same plastic hospital identification wristband as the reference, now in orange, same angle and lighting",
+   "personagens": [],
+   "referencias": [
+    "a pulseira amarela aprovada (imagem entregue no pedido obj_pulseira_amarela)"
+   ],
+   "issue_mae": 113,
+   "prioridade": "media",
+   "issue": 128
+  },
+  {
+   "id": "obj_encaminhamento",
+   "tipo": "objeto",
+   "cena": "Cena 7 — Serviço Social (encaminhamento escrito)",
+   "uso": "image encaminhamento",
+   "descricao": "Folha de encaminhamento que a assistente social entrega a Renato, dobrada uma vez, com carimbo e assinatura ilegíveis.",
+   "conteudo": "A single sheet of white paper referral form folded once, with a soft blue institutional header shape, handwritten illegible blue-ink lines, a faint round stamp and a signature scribble, a corner slightly bent",
+   "personagens": [],
+   "referencias": [
+    "game/images/obj/obj_receita_medica.webp"
+   ],
+   "issue_mae": 113,
+   "prioridade": "baixa",
+   "issue": 129
+  },
+  {
+   "id": "ovl_prontuario",
+   "tipo": "overlay",
+   "cena": "Cenas 1, 4 e 6 — tela do prontuário eletrônico",
+   "uso": "image esus",
+   "descricao": "Tela do prontuário eletrônico que aparece por cima da cena (substitui a atual aqua_esus.jpg). Campos e textos como blocos, sem letras.",
+   "conteudo": "A flat electronic patient record screen in the style of the Brazilian e-SUS system shown on a computer monitor frame: a header bar, a left sidebar with menu blocks, form panels with labeled fields drawn as gray placeholder bars, a vital signs panel with small chart shapes, a large free-text notes area, soft blue and white UI",
+   "personagens": [],
+   "referencias": [
+    "game/images/bg/aqua_esus.jpg"
+   ],
+   "issue_mae": 113,
+   "prioridade": "baixa",
+   "issue": 130
+  }
+ ]
+}

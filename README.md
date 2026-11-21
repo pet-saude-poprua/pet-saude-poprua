@@ -17,7 +17,8 @@ O jogo terá cinco histórias. Em cada uma, o jogador acompanha o atendimento pe
 | `game/nucleo/` | Peças comuns às cinco histórias: decisões, medidores, mapa da rede, telas, personagens, início |
 | `game/historias/<nome>/` | Uma pasta por história (dados, cenas, epílogo) |
 | `game/` (raiz) | Interface: `gui.rpy`, `screens.rpy`, `telas_menu.rpy`, `options.rpy` |
-| `scripts/` | `simular_historia.py` e `testar_logica.py` (conferem as decisões e executam todos os caminhos no CI) e `gerar_imagens.py` |
+| `scripts/` | `simular_historia.py` e `testar_logica.py` (conferem as decisões e executam todos os caminhos no CI), `arte.py` (prompts, issues e importação de arte) e `gerar_imagens.py` |
+| [`arte/`](arte/) | Kit de arte: estilo, fichas dos personagens, pedidos de imagem por história e instruções do assistente (GPT/Gem) |
 | [`docs/`](docs/) | Cronograma, fluxo de trabalho, guia do roteiro ao código, histórias, telas e padrões visuais |
 | `assets-gerados/` | Imagens geradas por IA (com os prompts em `PROMPTS-GERADOS.md`) |
 | [`docs/arquivo/`](docs/arquivo/) | Material do protótipo de 2026 (cronograma antigo, documento de missões, quadro de caminhos) |
@@ -33,6 +34,7 @@ O jogo terá cinco histórias. Em cada uma, o jogador acompanha o atendimento pe
 | [`docs/estrutura-telas.md`](docs/estrutura-telas.md) | Estrutura de menus e telas |
 | [`docs/fluxograma-navegacao.md`](docs/fluxograma-navegacao.md) | Fluxograma de navegação (Mermaid) |
 | [`docs/padroes-visuais.md`](docs/padroes-visuais.md) | Padrões visuais: estilo aquarela, personagens, geração de imagens |
+| [`arte/README.md`](arte/README.md) | **Como gerar, entregar e importar as imagens do jogo** (pedidos de arte no Project) |
 
 ## Baixar o jogo pronto (builds)
 
