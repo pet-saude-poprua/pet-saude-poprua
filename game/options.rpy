@@ -56,6 +56,7 @@ init python:
     build.classify('*.jpeg', None)
     build.classify('*.txt', None)
     build.classify('scripts/**', None)
+    build.classify('arte/**', None)
     ## Ferramentas e saídas de build que ficam na pasta do projeto.
     ## O CI extrai o SDK em renpy-sdk/ dentro do workspace e passa o próprio
     ## workspace como projeto para o distribute. Como a regra final do Ren'Py

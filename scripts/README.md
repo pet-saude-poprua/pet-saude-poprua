@@ -1,5 +1,9 @@
 # scripts/
 
+## arte.py — fluxo de arte (prompts, issues e importação)
+
+Ver [`arte/README.md`](../arte/README.md). Lê `arte/estilo.json`, `arte/personagens.json` e `arte/pedidos/<historia>.json`.
+
 ## gerar_imagens.py — geração de arte com gpt-image-1 (OpenAI)
 
 Reproduz o pipeline usado na entrega de 14-15/07/2026 (ver `assets-gerados/PROMPTS-GERADOS.md`):
