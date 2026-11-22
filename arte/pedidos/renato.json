@@ -130,6 +130,91 @@
    "issue_mae": 113,
    "prioridade": "baixa",
    "issue": 130
+  },
+  {
+   "id": "renato_normal",
+   "cena": "Cenas 1 e 3 — sala de espera",
+   "uso": "image renato normal",
+   "descricao": "Renato sentado numa cadeira de madeira, cabeça baixa, lendo o caderno aberto nas mãos. Refaz o sprite antigo conforme a model sheet; manter a pose.",
+   "conteudo": "Full body, seated on a simple wooden chair, slightly hunched forward, head lowered, reading the open notebook held in both hands, quiet tired expression; include the wooden chair",
+   "referencias": [
+    "game/images/chars/renato_normal.webp (só a pose; roupa e rosto da model sheet)"
+   ],
+   "tipo": "sprite",
+   "personagens": [
+    "renato"
+   ],
+   "issue_mae": 114,
+   "prioridade": "media",
+   "issue": 131
+  },
+  {
+   "id": "renato_hesitante",
+   "cena": "Cenas 2, 4 e 5 — em pé, inseguro",
+   "uso": "image renato hesitante",
+   "descricao": "Renato em pé, inseguro: uma mão no queixo, a outra segurando o caderno contra o peito. Refaz o sprite antigo conforme a model sheet; manter a pose.",
+   "conteudo": "Full body standing, weight on one leg, one hand raised to his chin, the other holding the notebook against his chest, hesitant worried expression, looking slightly to the side",
+   "referencias": [
+    "game/images/chars/renato_hesitante.webp (só a pose; roupa e rosto da model sheet)"
+   ],
+   "tipo": "sprite",
+   "personagens": [
+    "renato"
+   ],
+   "issue_mae": 114,
+   "prioridade": "media",
+   "issue": 132
+  },
+  {
+   "id": "renato_aberto",
+   "cena": "Cenas 4 e 6 — conversa que se abre",
+   "uso": "image renato aberto",
+   "descricao": "Renato sentado, mãos nos joelhos, caderno aberto no colo, olhando para quem fala, expressão mais aberta. Refaz o sprite antigo conforme a model sheet; manter a pose.",
+   "conteudo": "Full body, seated on a simple wooden chair, hands resting on his knees, the notebook open on his lap, looking at the viewer with a gentle, more open and trusting expression, faint hopeful smile; include the wooden chair",
+   "referencias": [
+    "game/images/chars/renato_aberto.webp (só a pose; roupa e rosto da model sheet)"
+   ],
+   "tipo": "sprite",
+   "personagens": [
+    "renato"
+   ],
+   "issue_mae": 114,
+   "prioridade": "media",
+   "issue": 133
+  },
+  {
+   "id": "renato_despedida",
+   "cena": "Desfecho — saída da UPA",
+   "uso": "image renato despedida",
+   "descricao": "Renato de pé, virado de três quartos, olhando para trás por cima do ombro, mochila num ombro e caderno na mão. Refaz o sprite antigo conforme a model sheet; manter a pose.",
+   "conteudo": "Full body standing, body turned three-quarters away toward the exit, looking back over his shoulder at the viewer with a soft grateful half-smile, a worn olive canvas backpack on one shoulder, the notebook held in one hand",
+   "referencias": [
+    "game/images/chars/renato_despedida.webp (só a pose; roupa e rosto da model sheet)"
+   ],
+   "tipo": "sprite",
+   "personagens": [
+    "renato"
+   ],
+   "issue_mae": 114,
+   "prioridade": "media",
+   "issue": 134
+  },
+  {
+   "id": "assistente_social",
+   "tipo": "sprite",
+   "cena": "Cena 7 — Serviço Social",
+   "uso": "image assistente",
+   "descricao": "Camila em pé, segurando pastas, expressão neutra e atenta. Refaz o sprite antigo conforme a model sheet.",
+   "conteudo": "Full body standing, facing three-quarters toward the viewer, holding beige paper folders and a kraft notebook against her side with one arm, neutral attentive expression, relaxed posture",
+   "personagens": [
+    "assistente_social"
+   ],
+   "referencias": [
+    "game/images/chars/assistente_social.webp (só a pose; roupa e rosto da model sheet)"
+   ],
+   "issue_mae": 114,
+   "prioridade": "media",
+   "issue": 135
   }
  ]
 }

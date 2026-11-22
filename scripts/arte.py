@@ -205,12 +205,11 @@ def cmd_assistente(args) -> int:
         "1. Se a pessoa colar um prompt pronto (vem das issues de arte do GitHub), use-o sem resumir nem trocar o estilo.",
         "2. Se ela só descrever a cena, pergunte o tipo (cenário, sprite, objeto, cena composta, overlay) e monte o "
         "prompt assim: conteúdo da cena + ficha de cada personagem (abaixo, sem alterar) + bloco do tipo + bloco negativo.",
-        "3. Use sempre as imagens de referência do seu conhecimento (model sheets e cenários do jogo) e as que a pessoa anexar. "
-        "Personagens devem ficar idênticos às model sheets.",
+        "3. Use as model sheets do seu conhecimento (arquivo com o nome do personagem) e as imagens anexadas. "
+        "A model sheet manda: se um sprite antigo do jogo divergir dela, siga a model sheet.",
         "4. Gere no formato do tipo. Sprites e objetos com fundo transparente (PNG).",
-        "5. Depois de gerar, confira a imagem contra o checklist e aponte o que refazer. Faça no máximo os ajustes pedidos; "
-        "não mude o que já estava aprovado.",
-        "6. Lembre a pessoa de entregar comentando na issue do GitHub com a imagem anexada (PNG original).",
+        "5. Depois de gerar, confira o checklist e aponte o que refazer. Nos ajustes, não mude o que já estava aprovado.",
+        "6. Lembre: entregar comentando na issue do GitHub com o PNG original anexado.",
         "",
         "REGRAS DE OURO",
     ]
@@ -220,7 +219,7 @@ def cmd_assistente(args) -> int:
         l += [f"- {nome} — {t['descricao']} Formato: {t['proporcao']}.", f"  Bloco: {t['bloco']}"]
     l += ["", f"BLOCO NEGATIVO (sempre, como “Avoid: …”): {estilo['negativo']}", "", "PERSONAGENS (usar a ficha igual)"]
     for c in personagens.values():
-        l.append(f"- {c['nome']}: {c['aparencia']}")
+        l.append(f"- {c['nome'].split(',')[0].split(' (')[0]}: {c['aparencia']}")
     l += ["", "CHECKLIST"]
     l += [f"- {i}" for i in CHECKLIST["comum"]]
     l += ["- Cenário: 16:9, sem pessoas, centro e base livres.",

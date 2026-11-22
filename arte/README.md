@@ -54,7 +54,9 @@ Personagem novo: gere primeiro a **model sheet** (frente, perfil, costas, expres
 
 ## Criar o GPT e o Gem (uma vez)
 
-**Arquivos de conhecimento** (os mesmos nos dois): as model sheets da pasta Personagens do Drive (`renato.jpeg`, `assistente social.jpeg`, `tecnica de enfermagem.jpeg`, `recepcionista da upa.jpeg`, `medico.jpeg`, sprites da pasta Sprites), `game/images/bg/aqua_recepcao.jpg`, `game/images/bg/aqua_consultorio.jpg`, `game/images/chars/renato_normal.webp`, `arte/estilo.json` e `arte/personagens.json`.
+**Arquivos de conhecimento** (os mesmos nos dois): as model sheets da pasta Personagens do Drive, renomeadas com o nome do personagem (`renato_model_sheet.jpg`, `camila_assistente_social_model_sheet.jpg`, `livia_tecnica_enfermagem_model_sheet.jpg`, `medico_upa_model_sheet.jpg`, `recepcionista_upa_model_sheet.jpg`), `game/images/bg/aqua_recepcao.jpg`, `game/images/bg/aqua_consultorio.jpg`, `game/images/chars/medico_upa.webp` (único sprite já no visual das model sheets), `arte/estilo.json` e `arte/personagens.json`.
+
+**A model sheet manda.** Os sprites antigos de Renato e Camila (camisa xadrez, cardigã) destoam das model sheets e estão sendo refeitos; não use esses sprites como referência de personagem, só de pose.
 
 **ChatGPT (precisa de Plus para criar):** Explorar GPTs → Criar → Configurar. Nome “Arte Além da Rua”; em Instruções, cole `assistente/INSTRUCOES.txt`; em Conhecimento, envie os arquivos acima; em Recursos, deixe **Geração de imagens** ligada. Compartilhar → “Qualquer pessoa com o link”.
 
