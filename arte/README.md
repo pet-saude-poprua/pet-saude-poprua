@@ -48,7 +48,8 @@ Para gerar direto pela API da OpenAI (pago), use `scripts/gerar_imagens.py`, que
 | `personagens.json` | Ficha fixa de cada personagem (aparência em inglês) e link da model sheet |
 | `pedidos/<historia>.json` | Imagens que a história precisa; `id` = nome do arquivo e da imagem no código |
 | `prompts/<historia>.md` | Gerado: prompts prontos com referências e checklist |
-| `assistente/INSTRUCOES.txt` | Gerado: instruções do Gem e do Projeto do ChatGPT |
+| `assistente/INSTRUCOES.txt` | Gerado: instruções do Projeto do ChatGPT |
+| `assistente/INSTRUCOES_GEMINI.txt` | Gerado: instruções da habilidade do Gemini (com as fichas) |
 
 Personagem novo: gere primeiro a **model sheet** (frente, perfil, costas, expressões), guarde na pasta Personagens do Drive e acrescente a ficha em `personagens.json`. Só depois peça sprites e cenas com ele.
 
@@ -65,7 +66,7 @@ Os GPTs personalizados do ChatGPT serão descontinuados em 11/12/2026; por isso 
 
 **A model sheet manda.** Os sprites antigos de Renato e Camila (camisa xadrez, cardigã) destoam das model sheets e estão sendo refeitos; não use esses sprites como referência de personagem, só de pose.
 
-**Gemini (gratuito, compartilhável):** Habilidades → Criar → Criar manualmente. Nome `arte-além-da-rua`; em Instruções, cole `assistente/INSTRUCOES.txt` **e, no fim, as fichas (`aparencia`) de `personagens.json`**; em Adicionar arquivos, envie **só as imagens** (o campo recusa PDF, TXT, MD e JSON, apesar do aviso). Para compartilhar: ⋯ → Compartilhar habilidade → Qualquer pessoa com o link (gera um .zip no Drive).
+**Gemini (gratuito, compartilhável):** Habilidades → Criar → Criar manualmente. Nome `arte-além-da-rua`; em Instruções, cole `assistente/INSTRUCOES_GEMINI.txt` (já traz as fichas); em Adicionar arquivos, envie **só as imagens** (o campo recusa PDF, TXT, MD e JSON, apesar do aviso). Para compartilhar: ⋯ → Compartilhar habilidade → Qualquer pessoa com o link (gera um .zip no Drive).
 
 **ChatGPT (Plus, uso pessoal):** barra lateral → Novo projeto “Arte Além da Rua”; nas instruções do projeto, cole o mesmo texto; em Arquivos, envie os mesmos arquivos. Toda conversa dentro do projeto já sai com estilo e personagens.
 

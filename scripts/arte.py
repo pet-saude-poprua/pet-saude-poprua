@@ -233,6 +233,15 @@ def cmd_assistente(args) -> int:
     saida = ARTE / "assistente" / "INSTRUCOES.txt"
     saida.write_text(texto, encoding="utf-8")
     print(f"✓ {saida.relative_to(RAIZ)} ({len(texto)} caracteres; manter abaixo de 8.000)")
+    # a habilidade do Gemini só aceita imagens como arquivo: as fichas vão no próprio texto
+    gemini = texto.rstrip("\n") + (
+        "\n\nARQUIVOS DE REFERÊNCIA: as imagens anexadas a esta habilidade (model sheets *_model_sheet.jpg, "
+        "senhora_referencia.webp, cenários aqua_*.jpg, objetos e o sprite medico_upa.webp como exemplo de sprite final)."
+        "\n\nFICHAS (o conteúdo de personagens.json)\n"
+        + "\n".join(f"- {chave}: {c['aparencia']}" for chave, c in personagens.items()) + "\n")
+    saida_g = ARTE / "assistente" / "INSTRUCOES_GEMINI.txt"
+    saida_g.write_text(gemini, encoding="utf-8")
+    print(f"✓ {saida_g.relative_to(RAIZ)} ({len(gemini)} caracteres; texto da habilidade do Gemini)")
     return 0
 
 
