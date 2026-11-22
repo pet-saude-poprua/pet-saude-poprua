@@ -8,7 +8,7 @@ Fontes (pasta arte/):
 
 Comandos:
   prompts  --historia renato             gera arte/prompts/renato.md (prompts prontos)
-  assistente                             gera arte/assistente/INSTRUCOES.txt (GPT e Gem)
+  assistente                             gera arte/assistente/INSTRUCOES.txt (Gem e Projeto do ChatGPT)
   issues   --historia renato [--simular] [--atualizar]
                                          cria uma issue por pedido no Project (idempotente)
   importar --issue 130                   baixa a última imagem comentada na issue,
@@ -147,7 +147,7 @@ def ficha(p: dict, estilo: dict, personagens: dict, historia: str, com_marca: bo
     if p.get("issue_mae"):
         linhas.append(f"**Parte de:** #{p['issue_mae']}")
     linhas += ["", f"**O que é:** {p['descricao']}", "", "### 1. Abra o assistente de arte",
-               "Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). "
+               "Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. "
                "Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.", "",
                "### 2. Anexe as referências"]
     for chave in p.get("personagens", []):
@@ -228,7 +228,7 @@ def cmd_assistente(args) -> int:
     texto = "\n".join(l) + "\n"
     saida = ARTE / "assistente" / "INSTRUCOES.txt"
     saida.write_text(texto, encoding="utf-8")
-    print(f"✓ {saida.relative_to(RAIZ)} ({len(texto)} caracteres; GPT aceita até 8.000)")
+    print(f"✓ {saida.relative_to(RAIZ)} ({len(texto)} caracteres; manter abaixo de 8.000)")
     return 0
 
 
@@ -463,7 +463,7 @@ def main() -> int:
     a.add_argument("--historia", required=True)
     a.set_defaults(func=cmd_prompts)
 
-    a = sub.add_parser("assistente", help="gera arte/assistente/INSTRUCOES.txt (GPT/Gem)")
+    a = sub.add_parser("assistente", help="gera arte/assistente/INSTRUCOES.txt (Gem/Projeto)")
     a.set_defaults(func=cmd_assistente)
 
     a = sub.add_parser("issues", help="cria/atualiza uma issue por pedido no Project")
