@@ -82,7 +82,7 @@
    }
   },
   "model_sheet": {
-   "descricao": "Folha de referência de um personagem novo (não entra no jogo): vistas de corpo inteiro, expressões, poses, paleta e detalhes. Vem antes de qualquer sprite ou cena com ele.",
+   "descricao": "Folha de referência de personagem novo (não entra no jogo); vem antes de sprites e cenas.",
    "estilo_api": "personagem",
    "bloco": "character model sheet / reference sheet on a clean off-white paper background, same layout and same art style as the attached model sheets: on the left a full-body turnaround of the same character (front, three-quarter, side profile, back), on the upper right a grid of 12 to 15 facial expression headshots (neutral, attentive, worried, tired, sad, hopeful, relieved, grateful, thoughtful, firm, slight smile, embarrassed), along the bottom a row of 6 full-body gesture poses that fit the character's role, a small color palette swatch strip and three close-up detail boxes (face, clothing detail, key accessory); clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, the character identical in every view, short section titles allowed but no other text, dignified and respectful portrayal, 3:2 landscape",
    "negativo": "different faces between views, inconsistent clothing, extra characters, background scenery, photorealistic, hyperrealistic, caricature, exaggerated dirt, extra fingers, deformed hands, watermark, low quality, jpeg artifacts",

@@ -5,7 +5,7 @@ Gerado por `scripts/arte.py prompts --historia renato` a partir de `arte/pedidos
 ## senhora_model_sheet (#137)
 
 **Cena:** Cena 1 — sala de espera (a senhora da primeira fileira)  
-**Tipo:** model_sheet — Folha de referência de um personagem novo (não entra no jogo): vistas de corpo inteiro, expressões, poses, paleta e detalhes. Vem antes de qualquer sprite ou cena com ele. Formato: 3:2 (paisagem).  
+**Tipo:** model_sheet — Folha de referência de personagem novo (não entra no jogo); vem antes de sprites e cenas. Formato: 3:2 (paisagem).  
 **Destino:** pasta Personagens do Drive (referência dos próximos pedidos; não entra no jogo)
 **Parte de:** #114
 
