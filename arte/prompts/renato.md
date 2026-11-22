@@ -2,6 +2,42 @@
 
 Gerado por `scripts/arte.py prompts --historia renato` a partir de `arte/pedidos/renato.json`. Não edite à mão: mude o JSON e gere de novo.
 
+## senhora_model_sheet (#137)
+
+**Cena:** Cena 1 — sala de espera (a senhora da primeira fileira)  
+**Tipo:** model_sheet — Folha de referência de personagem novo (não entra no jogo); vem antes de sprites e cenas. Formato: 3:2 (paisagem).  
+**Destino:** pasta Personagens do Drive (referência dos próximos pedidos; não entra no jogo)
+**Parte de:** #114
+
+**O que é:** Model sheet da senhora da primeira fileira, a paciente que se incomoda com a presença de Renato na sala de espera. Hoje ela só existe como sprite antigo. Precisa ser verossímil e humana (incômodo, não vilania).
+
+### 1. Abra o assistente de arte
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view (model sheet do Renato: só layout e traço)
+- https://drive.google.com/file/d/1jOE3WdKmWc9WL5nwVAeYgFMakFz5gSD6/view (model sheet da recepcionista: só layout e traço)
+- game/images/chars/senhora.webp (ideia atual da personagem; não precisa copiar)
+
+### 3. Cole o prompt
+```text
+Model sheet of a supporting character for a Brazilian public health educational visual novel: an older woman waiting in the emergency unit waiting room who feels uncomfortable sitting near a man in homelessness; she is an ordinary, believable person, not a villain; poses: sitting with her purse on her lap, arms crossed looking sideways, whispering to someone, standing with the purse, looking away embarrassed, softening her expression. Character: a Brazilian woman in her early 60s, fuller plus-size body, light-brown skin, gray-streaked hair in a low bun, simple floral yellow blouse and long brown skirt, flat brown shoes, a small brown purse; an ordinary, well-kept retiree. character model sheet / reference sheet on a clean off-white paper background, same layout and same art style as the attached model sheets: on the left a full-body turnaround of the same character (front, three-quarter, side profile, back), on the upper right a grid of 12 to 15 facial expression headshots (neutral, attentive, worried, tired, sad, hopeful, relieved, grateful, thoughtful, firm, slight smile, embarrassed), along the bottom a row of 6 full-body gesture poses that fit the character's role, a small color palette swatch strip and three close-up detail boxes (face, clothing detail, key accessory); clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, the character identical in every view, short section titles allowed but no other text, dignified and respectful portrayal, 3:2 landscape. Use the attached model sheets only as layout and style reference, not for the character's appearance. Avoid: different faces between views, inconsistent clothing, extra characters, background scenery, photorealistic, hyperrealistic, caricature, exaggerated dirt, extra fingers, deformed hands, watermark, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Mesmo layout e mesmo traço das model sheets atuais (vistas, expressões, poses, paleta, detalhes).
+- [ ] O personagem é o mesmo em todas as vistas e expressões (rosto, cabelo, roupa, cores).
+- [ ] Roupa, idade e acessórios batem com o roteiro; crachá só em quem trabalha na UPA ou na rede.
+- [ ] Retrato digno: sem caricatura nem sujeira exagerada.
+- [ ] Antes de valer: aprovação da autora da história e da Saúde (comentem na issue).
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
+
+### 6. Depois da aprovação
+A autora da história e a Saúde aprovam aqui na issue. Aprovada, a model sheet vai para a pasta Personagens do Drive e passa a ser a referência de todos os sprites e cenas desse personagem.
+
 ## aqua_classificacao (#123)
 
 **Cena:** Cena 2 — Classificação de risco  
@@ -12,7 +48,7 @@ Gerado por `scripts/arte.py prompts --historia renato` a partir de `arte/pedidos
 **O que é:** Sala de classificação de risco da UPA: pequena, porta fechada, mesa com computador, aparelho de pressão, oxímetro, termômetro, glicosímetro, cadeira do paciente. Hoje o jogo usa o consultório como provisório.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/bg/aqua_consultorio.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_consultorio.jpg)
@@ -44,7 +80,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Sala de observação com oito poltronas reclináveis e quatro macas, um posto de enfermagem num canto, suportes de soro, um cilindro de oxigênio. Cheia, mas sem pessoas desenhadas (os pacientes entram como sugestão de volume).
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/bg/aqua_box.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_box.jpg)
@@ -76,7 +112,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Sala do Serviço Social: pequena, uma mesa, duas cadeiras, o celular do serviço sobre a mesa, um mural com a lista de contatos da rede (números riscados e reescritos, sem texto legível).
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/bg/aqua_consultorio.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_consultorio.jpg)
@@ -108,7 +144,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Sprite de corpo inteiro da colega da enfermagem (Lívia), de pé, olhando para o lado, em conversa.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Lívia Souza, técnica de enfermagem (a colega da Cena 5): https://drive.google.com/file/d/12H-TEYWnKjrgXOhcxwhgS_JREBYudS7j/view
@@ -141,7 +177,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Pulseira hospitalar de identificação, amarela (classificação de risco).
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/obj/caderno_renato.webp](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/obj/caderno_renato.webp)
@@ -172,7 +208,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** A mesma pulseira, laranja. Gerar depois da amarela, pedindo “a mesma pulseira, só que laranja”.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - a pulseira amarela aprovada (imagem entregue no pedido obj_pulseira_amarela)
@@ -203,7 +239,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Folha de encaminhamento que a assistente social entrega a Renato, dobrada uma vez, com carimbo e assinatura ilegíveis.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/obj/obj_receita_medica.webp](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/obj/obj_receita_medica.webp)
@@ -234,7 +270,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Tela do prontuário eletrônico que aparece por cima da cena (substitui a atual aqua_esus.jpg). Campos e textos como blocos, sem letras.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/bg/aqua_esus.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_esus.jpg)
@@ -264,7 +300,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Renato sentado numa cadeira de madeira, cabeça baixa, lendo o caderno aberto nas mãos. Refaz o sprite antigo conforme a model sheet; manter a pose.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Renato: https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view
@@ -297,7 +333,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Renato em pé, inseguro: uma mão no queixo, a outra segurando o caderno contra o peito. Refaz o sprite antigo conforme a model sheet; manter a pose.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Renato: https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view
@@ -330,7 +366,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Renato sentado, mãos nos joelhos, caderno aberto no colo, olhando para quem fala, expressão mais aberta. Refaz o sprite antigo conforme a model sheet; manter a pose.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Renato: https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view
@@ -363,7 +399,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Renato de pé, virado de três quartos, olhando para trás por cima do ombro, mochila num ombro e caderno na mão. Refaz o sprite antigo conforme a model sheet; manter a pose.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Renato: https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view
@@ -396,7 +432,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Camila em pé, segurando pastas, expressão neutra e atenta. Refaz o sprite antigo conforme a model sheet.
 
 ### 1. Abra o assistente de arte
-Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Camila Ferreira, assistente social da UPA: https://drive.google.com/file/d/1HALke0Qm9M-Y8eA84WGSH89Zrqjd23jR/view

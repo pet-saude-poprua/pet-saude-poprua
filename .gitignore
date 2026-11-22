@@ -28,3 +28,4 @@ __pycache__/
 # Segredos (chaves de API — nunca commitar)
 .env
 .env.*
+arte/assistente/arte-alem-da-rua.zip

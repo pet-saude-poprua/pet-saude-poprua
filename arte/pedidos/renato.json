@@ -7,6 +7,25 @@
  "projeto_historia": "Renato",
  "pedidos": [
   {
+   "id": "senhora_model_sheet",
+   "tipo": "model_sheet",
+   "cena": "Cena 1 — sala de espera (a senhora da primeira fileira)",
+   "uso": "",
+   "descricao": "Model sheet da senhora da primeira fileira, a paciente que se incomoda com a presença de Renato na sala de espera. Hoje ela só existe como sprite antigo. Precisa ser verossímil e humana (incômodo, não vilania).",
+   "conteudo": "Model sheet of a supporting character for a Brazilian public health educational visual novel: an older woman waiting in the emergency unit waiting room who feels uncomfortable sitting near a man in homelessness; she is an ordinary, believable person, not a villain; poses: sitting with her purse on her lap, arms crossed looking sideways, whispering to someone, standing with the purse, looking away embarrassed, softening her expression",
+   "personagens": [
+    "senhora"
+   ],
+   "referencias": [
+    "https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view (model sheet do Renato: só layout e traço)",
+    "https://drive.google.com/file/d/1jOE3WdKmWc9WL5nwVAeYgFMakFz5gSD6/view (model sheet da recepcionista: só layout e traço)",
+    "game/images/chars/senhora.webp (ideia atual da personagem; não precisa copiar)"
+   ],
+   "issue_mae": 114,
+   "prioridade": "media",
+   "issue": 137
+  },
+  {
    "id": "aqua_classificacao",
    "tipo": "cenario",
    "cena": "Cena 2 — Classificação de risco",

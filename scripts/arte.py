@@ -9,6 +9,7 @@ Fontes (pasta arte/):
 Comandos:
   prompts  --historia renato             gera arte/prompts/renato.md (prompts prontos)
   assistente                             gera arte/assistente/INSTRUCOES.txt (Gem e Projeto do ChatGPT)
+  habilidade                             monta o .zip da habilidade do Gemini (SKILL.md + imagens)
   issues   --historia renato [--simular] [--atualizar]
                                          cria uma issue por pedido no Project (idempotente)
   importar --issue 130                   baixa a última imagem comentada na issue,
@@ -38,6 +39,7 @@ ORG = "pet-saude-poprua"
 PROJETO = 1
 MARCA = "<!-- arte:{historia}/{id} -->"
 RE_MARCA = re.compile(r"<!-- arte:([\w-]+)/([\w-]+) -->")
+HABILIDADE_LINK = "https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view"
 PRIORIDADE = {"alta": "prioridade:alta", "media": "prioridade:média", "baixa": "prioridade:baixa"}
 
 CHECKLIST = {
@@ -66,6 +68,13 @@ CHECKLIST = {
         "Quadrado, objeto centralizado.",
         "Fundo transparente (PNG) ou magenta puro (#FF00FF), sem sombra.",
         "Sem mãos nem pessoas.",
+    ],
+    "model_sheet": [
+        "Mesmo layout e mesmo traço das model sheets atuais (vistas, expressões, poses, paleta, detalhes).",
+        "O personagem é o mesmo em todas as vistas e expressões (rosto, cabelo, roupa, cores).",
+        "Roupa, idade e acessórios batem com o roteiro; crachá só em quem trabalha na UPA ou na rede.",
+        "Retrato digno: sem caricatura nem sujeira exagerada.",
+        "Antes de valer: aprovação da autora da história e da Saúde (comentem na issue).",
     ],
     "overlay": ["Formato paisagem 16:9.", "Visual limpo de interface/documento (não é aquarela)."],
     "ui": ["Fundo transparente (PNG) ou magenta puro (#FF00FF).", "Uma peça só, centralizada."],
@@ -112,7 +121,15 @@ def achar_pedido(historia: str, ident: str) -> tuple[dict, dict]:
 
 
 def montar_prompt(p: dict, estilo: dict, personagens: dict) -> str:
+    tipo = estilo["tipos"][p["tipo"]]
     partes = [p["conteudo"].strip().rstrip(".") + "."]
+    if p["tipo"] == "model_sheet":
+        for chave in p.get("personagens", []):
+            partes.append(f"Character: {personagens[chave]['aparencia']}.")
+        partes.append(tipo["bloco"] + ".")
+        partes.append("Use the attached model sheets only as layout and style reference, not for the character's "
+                      "appearance. Avoid: " + tipo["negativo"] + ".")
+        return " ".join(partes)
     for chave in p.get("personagens", []):
         partes.append(
             f"Character: {personagens[chave]['aparencia']}. Keep this character identical to the "
@@ -131,6 +148,8 @@ def link(caminho: str) -> str:
 
 
 def destino_no_jogo(p: dict, estilo: dict) -> str:
+    if not estilo["tipos"][p["tipo"]].get("jogo"):
+        return ""
     pasta = estilo["tipos"][p["tipo"]]["jogo"]["pasta"]
     return f"game/images/{pasta}/{p['id']}.webp".replace("images/../", "")
 
@@ -143,15 +162,16 @@ def ficha(p: dict, estilo: dict, personagens: dict, historia: str, com_marca: bo
     linhas += [
         f"**Cena:** {p['cena']}  ",
         f"**Tipo:** {p['tipo']} — {tipo['descricao']} Formato: {tipo['proporcao']}.  ",
-        f"**No jogo:** `{p['uso']}` → `{destino_no_jogo(p, estilo)}`",
+        f"**No jogo:** `{p['uso']}` → `{destino_no_jogo(p, estilo)}`" if destino_no_jogo(p, estilo)
+        else "**Destino:** pasta Personagens do Drive (referência dos próximos pedidos; não entra no jogo)",
     ]
     if p.get("issue_mae"):
         linhas.append(f"**Parte de:** #{p['issue_mae']}")
     linhas += ["", f"**O que é:** {p['descricao']}", "", "### 1. Abra o assistente de arte",
-               "Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. "
+               f"Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip]({HABILIDADE_LINK}) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. "
                "Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.", "",
                "### 2. Anexe as referências"]
-    for chave in p.get("personagens", []):
+    for chave in p.get("personagens", []) if p["tipo"] != "model_sheet" else []:
         c = personagens[chave]
         ms = c.get("model_sheet") or "(sem model sheet: use o sprite do jogo)"
         linhas.append(f"- Model sheet de {c['nome']}: {ms}")
@@ -159,12 +179,17 @@ def ficha(p: dict, estilo: dict, personagens: dict, historia: str, com_marca: bo
         linhas.append(f"- {link(ref)}")
     linhas += ["", "### 3. Cole o prompt", "```text", montar_prompt(p, estilo, personagens), "```", "",
                "### 4. Confira antes de entregar"]
-    for item in CHECKLIST["comum"] + CHECKLIST.get(p["tipo"], []):
+    comum = CHECKLIST["comum"][:1] if p["tipo"] == "model_sheet" else CHECKLIST["comum"]
+    for item in comum + CHECKLIST.get(p["tipo"], []):
         linhas.append(f"- [ ] {item}")
     linhas += ["", "### 5. Entregue",
                "Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem "
                "comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última "
                "imagem. Depois mova o card para **Em revisão**."]
+    if p["tipo"] == "model_sheet":
+        linhas += ["", "### 6. Depois da aprovação",
+                   "A autora da história e a Saúde aprovam aqui na issue. Aprovada, a model sheet vai para a "
+                   "pasta Personagens do Drive e passa a ser a referência de todos os sprites e cenas desse personagem."]
     return "\n".join(linhas)
 
 
@@ -211,6 +236,9 @@ def cmd_assistente(args) -> int:
         "4. Gere no formato do tipo. Sprites e objetos com fundo transparente (PNG); se não conseguir, fundo magenta puro (#FF00FF), liso e sem sombra. Nunca fundo branco.",
         "5. Depois de gerar, confira o checklist e aponte o que refazer. Nos ajustes, não mude o que já estava aprovado.",
         "6. Lembre: entregar comentando na issue do GitHub com o PNG original anexado.",
+        "7. Personagem sem model sheet (ou novo): não gere sprite nem cena com ele. Gere primeiro a model sheet "
+        "(tipo model_sheet), usando as sheets anexadas só como referência de layout e traço, nunca de aparência; "
+        "nela, títulos curtos de seção são permitidos. Avise que ela só vale depois da aprovação da autora e da Saúde.",
         "",
         "REGRAS DE OURO",
     ]
@@ -242,6 +270,50 @@ def cmd_assistente(args) -> int:
     saida_g = ARTE / "assistente" / "INSTRUCOES_GEMINI.txt"
     saida_g.write_text(gemini, encoding="utf-8")
     print(f"✓ {saida_g.relative_to(RAIZ)} ({len(gemini)} caracteres; texto da habilidade do Gemini)")
+    return 0
+
+
+HABILIDADE_NOME = "arte-alem-da-rua"
+HABILIDADE_DESCRICAO = (
+    "Use para gerar imagens do jogo educacional Além da Rua (PET-Saúde Digital, UFPB): cenários, sprites de "
+    "personagens, objetos, telas e model sheets de personagens novos, sempre no estilo do jogo e com os personagens "
+    "iguais às model sheets. Use quando a pessoa colar um prompt de uma issue de arte do GitHub ou pedir uma "
+    "imagem para uma cena do jogo.")
+HABILIDADE_ARQUIVOS = {
+    "senhora_referencia.webp": "game/images/chars/senhora.webp",
+    "medico_upa.webp": "game/images/chars/medico_upa.webp",
+    "aqua_recepcao.jpg": "game/images/bg/aqua_recepcao.jpg",
+    "aqua_consultorio.jpg": "game/images/bg/aqua_consultorio.jpg",
+    "aqua_espera.jpg": "game/images/bg/aqua_espera.jpg",
+    "aqua_corredor.jpg": "game/images/bg/aqua_corredor.jpg",
+    "aqua_fachada.jpg": "game/images/bg/aqua_fachada.jpg",
+    "aqua_box.jpg": "game/images/bg/aqua_box.jpg",
+    "aqua_esus.jpg": "game/images/bg/aqua_esus.jpg",
+    "caderno_renato.webp": "game/images/obj/caderno_renato.webp",
+    "obj_receita_medica.webp": "game/images/obj/obj_receita_medica.webp",
+}
+
+
+def cmd_habilidade(args) -> int:
+    """Monta o .zip da habilidade do Gemini (SKILL.md + imagens de referência)."""
+    import zipfile
+
+    cmd_assistente(args)
+    texto = (ARTE / "assistente" / "INSTRUCOES_GEMINI.txt").read_text(encoding="utf-8")
+    skill = (f"---\nname: {HABILIDADE_NOME}\ndescription: {json.dumps(HABILIDADE_DESCRICAO, ensure_ascii=False)}\n"
+             f"---\n{texto}")
+    arquivos = {f.name: f for f in sorted((ARTE / "referencias").glob("*_model_sheet.*"))}
+    arquivos.update({nome: RAIZ / origem for nome, origem in HABILIDADE_ARQUIVOS.items()})
+    faltando = [str(c) for c in arquivos.values() if not c.exists()]
+    if faltando:
+        sys.exit("✗ faltam arquivos: " + ", ".join(faltando))
+    saida = ARTE / "assistente" / "arte-alem-da-rua.zip"
+    with zipfile.ZipFile(saida, "w", zipfile.ZIP_DEFLATED) as z:
+        z.writestr("SKILL.md", skill)
+        for nome, caminho in arquivos.items():
+            z.write(caminho, nome)
+    print(f"✓ {saida.relative_to(RAIZ)} ({len(arquivos)} imagens, {saida.stat().st_size // 1024} KB). "
+          "No Gemini: Habilidades → ⋯ → Substituir habilidade (ou Criar → Enviar, se for nova).")
     return 0
 
 
@@ -478,6 +550,10 @@ def cmd_importar(args) -> int:
         historia, ident = args.pedido.split("/", 1)
         origem = Path(args.arquivo)
     estilo, p = achar_pedido(historia, ident)
+    if not destino_no_jogo(p, estilo):
+        sys.exit(f"✗ {ident} é uma model sheet: não entra no jogo. Depois de aprovada, guarde na pasta "
+                 "Personagens do Drive, preencha 'model_sheet' em arte/personagens.json e acrescente a "
+                 "imagem à habilidade do Gemini (ver arte/README.md).")
     img, avisos = preparar(origem, p, estilo, args.forcar)
     destino = RAIZ / destino_no_jogo(p, estilo)
     if args.destino:
@@ -509,6 +585,9 @@ def main() -> int:
 
     a = sub.add_parser("assistente", help="gera arte/assistente/INSTRUCOES.txt (Gem/Projeto)")
     a.set_defaults(func=cmd_assistente)
+
+    a = sub.add_parser("habilidade", help="monta arte/assistente/arte-alem-da-rua.zip (habilidade do Gemini)")
+    a.set_defaults(func=cmd_habilidade)
 
     a = sub.add_parser("issues", help="cria/atualiza uma issue por pedido no Project")
     a.add_argument("--historia", required=True)

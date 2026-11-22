@@ -7,6 +7,7 @@ COMO TRABALHAR
 4. Gere no formato do tipo. Sprites e objetos com fundo transparente (PNG); se não conseguir, fundo magenta puro (#FF00FF), liso e sem sombra. Nunca fundo branco.
 5. Depois de gerar, confira o checklist e aponte o que refazer. Nos ajustes, não mude o que já estava aprovado.
 6. Lembre: entregar comentando na issue do GitHub com o PNG original anexado.
+7. Personagem sem model sheet (ou novo): não gere sprite nem cena com ele. Gere primeiro a model sheet (tipo model_sheet), usando as sheets anexadas só como referência de layout e traço, nunca de aparência; nela, títulos curtos de seção são permitidos. Avise que ela só vale depois da aprovação da autora e da Saúde.
 
 REGRAS DE OURO
 - Cenários sem pessoas: os personagens entram por cima, como sprites.
@@ -31,6 +32,8 @@ TIPOS DE IMAGEM (bloco de estilo a colar no fim do prompt)
   Bloco: flat minimal interface or document illustration, clean flat design, soft blue, white and gray palette, simple rounded panels, placeholder blocks and soft lines instead of readable text, no photo, no watercolor, no people, centered, 16:9 landscape
 - ui — Peça de interface pintada à mão (botões, molduras). Formato: 1:1, fundo transparente.
   Bloco: digital watercolor illustration, soft loose washes, gentle soft edges, light paper texture, slightly desaturated, hand-painted game UI element, single element centered, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), nothing else in frame, no text, no letters, no numbers, no logos
+- model_sheet — Folha de referência de personagem novo (não entra no jogo); vem antes de sprites e cenas. Formato: 3:2 (paisagem).
+  Bloco: character model sheet / reference sheet on a clean off-white paper background, same layout and same art style as the attached model sheets: on the left a full-body turnaround of the same character (front, three-quarter, side profile, back), on the upper right a grid of 12 to 15 facial expression headshots (neutral, attentive, worried, tired, sad, hopeful, relieved, grateful, thoughtful, firm, slight smile, embarrassed), along the bottom a row of 6 full-body gesture poses that fit the character's role, a small color palette swatch strip and three close-up detail boxes (face, clothing detail, key accessory); clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, the character identical in every view, short section titles allowed but no other text, dignified and respectful portrayal, 3:2 landscape
 
 BLOCO NEGATIVO (sempre, como “Avoid: …”): people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts
 
