@@ -51,7 +51,12 @@ Para gerar direto pela API da OpenAI (pago), use `scripts/gerar_imagens.py`, que
 | `assistente/INSTRUCOES.txt` | Gerado: instruções do Projeto do ChatGPT |
 | `assistente/INSTRUCOES_GEMINI.txt` | Gerado: instruções da habilidade do Gemini (com as fichas) |
 
-Personagem novo: gere primeiro a **model sheet** (frente, perfil, costas, expressões), guarde na pasta Personagens do Drive e acrescente a ficha em `personagens.json`. Só depois peça sprites e cenas com ele.
+**Personagem novo (nesta história ou nas próximas):** a model sheet vem antes de qualquer sprite ou cena.
+1. Acrescente a ficha em `personagens.json` (aparência em inglês, sem pose fixa; `model_sheet` vazio) e um pedido do tipo `model_sheet` em `pedidos/<historia>.json`; rode `arte.py issues`.
+2. Alguém gera a sheet pela issue (mesmo layout e traço das sheets atuais) e entrega na issue.
+3. A autora da história e a Saúde aprovam na issue.
+4. A sheet aprovada vai para a pasta Personagens do Drive; preencha `model_sheet` na ficha e acrescente a imagem à habilidade do Gemini (⋯ → Editar manualmente → Adicionar arquivos; depois baixe o .zip em ⋯ → Baixar e suba como nova versão do arquivo compartilhado no Drive, em Gerenciar versões, para manter o link).
+5. Só então peça sprites e cenas com o personagem.
 
 ## Criar o assistente (uma vez)
 

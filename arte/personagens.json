@@ -72,14 +72,15 @@
    "nome": "Senhora da primeira fileira",
    "historia": "renato",
    "papel": "Paciente na sala de espera (ramo em que Renato é exposto na recepção).",
-   "aparencia": "a Brazilian woman in her early 60s, fuller plus-size body, light-brown skin, gray-streaked hair in a low bun, simple floral yellow blouse and long brown skirt, flat brown shoes, small purse, arms crossed, disapproving expression",
+   "aparencia": "a Brazilian woman in her early 60s, fuller plus-size body, light-brown skin, gray-streaked hair in a low bun, simple floral yellow blouse and long brown skirt, flat brown shoes, a small brown purse; an ordinary, well-kept retiree",
    "expressoes_no_jogo": [
     "desconfiada"
    ],
    "sprites_no_jogo": [
     "game/images/chars/senhora.webp"
    ],
-   "model_sheet": ""
+   "model_sheet": "",
+   "observacao": "Sem model sheet ainda: pedido senhora_model_sheet. Depois de aprovada, preencher model_sheet e refazer o sprite."
   },
   "marcos": {
    "nome": "Marcos, agente social do Consultório na Rua",

@@ -2,6 +2,42 @@
 
 Gerado por `scripts/arte.py prompts --historia renato` a partir de `arte/pedidos/renato.json`. Não edite à mão: mude o JSON e gere de novo.
 
+## senhora_model_sheet (#137)
+
+**Cena:** Cena 1 — sala de espera (a senhora da primeira fileira)  
+**Tipo:** model_sheet — Folha de referência de um personagem novo (não entra no jogo): vistas de corpo inteiro, expressões, poses, paleta e detalhes. Vem antes de qualquer sprite ou cena com ele. Formato: 3:2 (paisagem).  
+**Destino:** pasta Personagens do Drive (referência dos próximos pedidos; não entra no jogo)
+**Parte de:** #114
+
+**O que é:** Model sheet da senhora da primeira fileira, a paciente que se incomoda com a presença de Renato na sala de espera. Hoje ela só existe como sprite antigo. Precisa ser verossímil e humana (incômodo, não vilania).
+
+### 1. Abra o assistente de arte
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+
+### 2. Anexe as referências
+- https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view (model sheet do Renato: só layout e traço)
+- https://drive.google.com/file/d/1jOE3WdKmWc9WL5nwVAeYgFMakFz5gSD6/view (model sheet da recepcionista: só layout e traço)
+- game/images/chars/senhora.webp (ideia atual da personagem; não precisa copiar)
+
+### 3. Cole o prompt
+```text
+Model sheet of a supporting character for a Brazilian public health educational visual novel: an older woman waiting in the emergency unit waiting room who feels uncomfortable sitting near a man in homelessness; she is an ordinary, believable person, not a villain; poses: sitting with her purse on her lap, arms crossed looking sideways, whispering to someone, standing with the purse, looking away embarrassed, softening her expression. Character: a Brazilian woman in her early 60s, fuller plus-size body, light-brown skin, gray-streaked hair in a low bun, simple floral yellow blouse and long brown skirt, flat brown shoes, a small brown purse; an ordinary, well-kept retiree. character model sheet / reference sheet on a clean off-white paper background, same layout and same art style as the attached model sheets: on the left a full-body turnaround of the same character (front, three-quarter, side profile, back), on the upper right a grid of 12 to 15 facial expression headshots (neutral, attentive, worried, tired, sad, hopeful, relieved, grateful, thoughtful, firm, slight smile, embarrassed), along the bottom a row of 6 full-body gesture poses that fit the character's role, a small color palette swatch strip and three close-up detail boxes (face, clothing detail, key accessory); clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, the character identical in every view, short section titles allowed but no other text, dignified and respectful portrayal, 3:2 landscape. Use the attached model sheets only as layout and style reference, not for the character's appearance. Avoid: different faces between views, inconsistent clothing, extra characters, background scenery, photorealistic, hyperrealistic, caricature, exaggerated dirt, extra fingers, deformed hands, watermark, low quality, jpeg artifacts.
+```
+
+### 4. Confira antes de entregar
+- [ ] Parece da mesma família das referências (traço, paleta, luz).
+- [ ] Mesmo layout e mesmo traço das model sheets atuais (vistas, expressões, poses, paleta, detalhes).
+- [ ] O personagem é o mesmo em todas as vistas e expressões (rosto, cabelo, roupa, cores).
+- [ ] Roupa, idade e acessórios batem com o roteiro; crachá só em quem trabalha na UPA ou na rede.
+- [ ] Retrato digno: sem caricatura nem sujeira exagerada.
+- [ ] Antes de valer: aprovação da autora da história e da Saúde (comentem na issue).
+
+### 5. Entregue
+Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última imagem. Depois mova o card para **Em revisão**.
+
+### 6. Depois da aprovação
+A autora da história e a Saúde aprovam aqui na issue. Aprovada, a model sheet vai para a pasta Personagens do Drive e passa a ser a referência de todos os sprites e cenas desse personagem.
+
 ## aqua_classificacao (#123)
 
 **Cena:** Cena 2 — Classificação de risco  

@@ -67,6 +67,13 @@ CHECKLIST = {
         "Fundo transparente (PNG) ou magenta puro (#FF00FF), sem sombra.",
         "Sem mãos nem pessoas.",
     ],
+    "model_sheet": [
+        "Mesmo layout e mesmo traço das model sheets atuais (vistas, expressões, poses, paleta, detalhes).",
+        "O personagem é o mesmo em todas as vistas e expressões (rosto, cabelo, roupa, cores).",
+        "Roupa, idade e acessórios batem com o roteiro; crachá só em quem trabalha na UPA ou na rede.",
+        "Retrato digno: sem caricatura nem sujeira exagerada.",
+        "Antes de valer: aprovação da autora da história e da Saúde (comentem na issue).",
+    ],
     "overlay": ["Formato paisagem 16:9.", "Visual limpo de interface/documento (não é aquarela)."],
     "ui": ["Fundo transparente (PNG) ou magenta puro (#FF00FF).", "Uma peça só, centralizada."],
 }
@@ -112,7 +119,15 @@ def achar_pedido(historia: str, ident: str) -> tuple[dict, dict]:
 
 
 def montar_prompt(p: dict, estilo: dict, personagens: dict) -> str:
+    tipo = estilo["tipos"][p["tipo"]]
     partes = [p["conteudo"].strip().rstrip(".") + "."]
+    if p["tipo"] == "model_sheet":
+        for chave in p.get("personagens", []):
+            partes.append(f"Character: {personagens[chave]['aparencia']}.")
+        partes.append(tipo["bloco"] + ".")
+        partes.append("Use the attached model sheets only as layout and style reference, not for the character's "
+                      "appearance. Avoid: " + tipo["negativo"] + ".")
+        return " ".join(partes)
     for chave in p.get("personagens", []):
         partes.append(
             f"Character: {personagens[chave]['aparencia']}. Keep this character identical to the "
@@ -131,6 +146,8 @@ def link(caminho: str) -> str:
 
 
 def destino_no_jogo(p: dict, estilo: dict) -> str:
+    if not estilo["tipos"][p["tipo"]].get("jogo"):
+        return ""
     pasta = estilo["tipos"][p["tipo"]]["jogo"]["pasta"]
     return f"game/images/{pasta}/{p['id']}.webp".replace("images/../", "")
 
@@ -143,7 +160,8 @@ def ficha(p: dict, estilo: dict, personagens: dict, historia: str, com_marca: bo
     linhas += [
         f"**Cena:** {p['cena']}  ",
         f"**Tipo:** {p['tipo']} — {tipo['descricao']} Formato: {tipo['proporcao']}.  ",
-        f"**No jogo:** `{p['uso']}` → `{destino_no_jogo(p, estilo)}`",
+        f"**No jogo:** `{p['uso']}` → `{destino_no_jogo(p, estilo)}`" if destino_no_jogo(p, estilo)
+        else "**Destino:** pasta Personagens do Drive (referência dos próximos pedidos; não entra no jogo)",
     ]
     if p.get("issue_mae"):
         linhas.append(f"**Parte de:** #{p['issue_mae']}")
@@ -151,7 +169,7 @@ def ficha(p: dict, estilo: dict, personagens: dict, historia: str, com_marca: bo
                "Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. "
                "Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.", "",
                "### 2. Anexe as referências"]
-    for chave in p.get("personagens", []):
+    for chave in p.get("personagens", []) if p["tipo"] != "model_sheet" else []:
         c = personagens[chave]
         ms = c.get("model_sheet") or "(sem model sheet: use o sprite do jogo)"
         linhas.append(f"- Model sheet de {c['nome']}: {ms}")
@@ -159,12 +177,17 @@ def ficha(p: dict, estilo: dict, personagens: dict, historia: str, com_marca: bo
         linhas.append(f"- {link(ref)}")
     linhas += ["", "### 3. Cole o prompt", "```text", montar_prompt(p, estilo, personagens), "```", "",
                "### 4. Confira antes de entregar"]
-    for item in CHECKLIST["comum"] + CHECKLIST.get(p["tipo"], []):
+    comum = CHECKLIST["comum"][:1] if p["tipo"] == "model_sheet" else CHECKLIST["comum"]
+    for item in comum + CHECKLIST.get(p["tipo"], []):
         linhas.append(f"- [ ] {item}")
     linhas += ["", "### 5. Entregue",
                "Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem "
                "comprimir) e diga a ferramenta usada. Se refizer, comente de novo: vale a última "
                "imagem. Depois mova o card para **Em revisão**."]
+    if p["tipo"] == "model_sheet":
+        linhas += ["", "### 6. Depois da aprovação",
+                   "A autora da história e a Saúde aprovam aqui na issue. Aprovada, a model sheet vai para a "
+                   "pasta Personagens do Drive e passa a ser a referência de todos os sprites e cenas desse personagem."]
     return "\n".join(linhas)
 
 
@@ -478,6 +501,10 @@ def cmd_importar(args) -> int:
         historia, ident = args.pedido.split("/", 1)
         origem = Path(args.arquivo)
     estilo, p = achar_pedido(historia, ident)
+    if not destino_no_jogo(p, estilo):
+        sys.exit(f"✗ {ident} é uma model sheet: não entra no jogo. Depois de aprovada, guarde na pasta "
+                 "Personagens do Drive, preencha 'model_sheet' em arte/personagens.json e acrescente a "
+                 "imagem à habilidade do Gemini (ver arte/README.md).")
     img, avisos = preparar(origem, p, estilo, args.forcar)
     destino = RAIZ / destino_no_jogo(p, estilo)
     if args.destino:
