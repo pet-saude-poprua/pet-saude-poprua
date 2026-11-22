@@ -12,7 +12,7 @@ Gerado por `scripts/arte.py prompts --historia renato` a partir de `arte/pedidos
 **O que é:** Sala de classificação de risco da UPA: pequena, porta fechada, mesa com computador, aparelho de pressão, oxímetro, termômetro, glicosímetro, cadeira do paciente. Hoje o jogo usa o consultório como provisório.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/bg/aqua_consultorio.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_consultorio.jpg)
@@ -44,7 +44,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Sala de observação com oito poltronas reclináveis e quatro macas, um posto de enfermagem num canto, suportes de soro, um cilindro de oxigênio. Cheia, mas sem pessoas desenhadas (os pacientes entram como sugestão de volume).
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/bg/aqua_box.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_box.jpg)
@@ -76,7 +76,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Sala do Serviço Social: pequena, uma mesa, duas cadeiras, o celular do serviço sobre a mesa, um mural com a lista de contatos da rede (números riscados e reescritos, sem texto legível).
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/bg/aqua_consultorio.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_consultorio.jpg)
@@ -108,7 +108,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Sprite de corpo inteiro da colega da enfermagem (Lívia), de pé, olhando para o lado, em conversa.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Lívia Souza, técnica de enfermagem (a colega da Cena 5): https://drive.google.com/file/d/12H-TEYWnKjrgXOhcxwhgS_JREBYudS7j/view
@@ -141,7 +141,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Pulseira hospitalar de identificação, amarela (classificação de risco).
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/obj/caderno_renato.webp](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/obj/caderno_renato.webp)
@@ -172,7 +172,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** A mesma pulseira, laranja. Gerar depois da amarela, pedindo “a mesma pulseira, só que laranja”.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - a pulseira amarela aprovada (imagem entregue no pedido obj_pulseira_amarela)
@@ -203,7 +203,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Folha de encaminhamento que a assistente social entrega a Renato, dobrada uma vez, com carimbo e assinatura ilegíveis.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/obj/obj_receita_medica.webp](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/obj/obj_receita_medica.webp)
@@ -234,7 +234,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Tela do prontuário eletrônico que aparece por cima da cena (substitui a atual aqua_esus.jpg). Campos e textos como blocos, sem letras.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - [game/images/bg/aqua_esus.jpg](https://github.com/pet-saude-poprua/pet-saude-poprua/blob/master/game/images/bg/aqua_esus.jpg)
@@ -264,7 +264,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Renato sentado numa cadeira de madeira, cabeça baixa, lendo o caderno aberto nas mãos. Refaz o sprite antigo conforme a model sheet; manter a pose.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Renato: https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view
@@ -297,7 +297,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Renato em pé, inseguro: uma mão no queixo, a outra segurando o caderno contra o peito. Refaz o sprite antigo conforme a model sheet; manter a pose.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Renato: https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view
@@ -330,7 +330,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Renato sentado, mãos nos joelhos, caderno aberto no colo, olhando para quem fala, expressão mais aberta. Refaz o sprite antigo conforme a model sheet; manter a pose.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Renato: https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view
@@ -363,7 +363,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Renato de pé, virado de três quartos, olhando para trás por cima do ombro, mochila num ombro e caderno na mão. Refaz o sprite antigo conforme a model sheet; manter a pose.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Renato: https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view
@@ -396,7 +396,7 @@ Comente **nesta issue** com a imagem anexada (o PNG original, sem recortar nem c
 **O que é:** Camila em pé, segurando pastas, expressão neutra e atenta. Refaz o sprite antigo conforme a model sheet.
 
 ### 1. Abra o assistente de arte
-Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
+Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.
 
 ### 2. Anexe as referências
 - Model sheet de Camila Ferreira, assistente social da UPA: https://drive.google.com/file/d/1HALke0Qm9M-Y8eA84WGSH89Zrqjd23jR/view

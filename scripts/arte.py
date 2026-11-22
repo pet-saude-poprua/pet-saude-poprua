@@ -147,7 +147,7 @@ def ficha(p: dict, estilo: dict, personagens: dict, historia: str, com_marca: bo
     if p.get("issue_mae"):
         linhas.append(f"**Parte de:** #{p['issue_mae']}")
     linhas += ["", f"**O que é:** {p['descricao']}", "", "### 1. Abra o assistente de arte",
-               "Use o Gem “Arte Além da Rua” (link em `arte/README.md`) ou seu Projeto no ChatGPT. "
+               "Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. "
                "Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.", "",
                "### 2. Anexe as referências"]
     for chave in p.get("personagens", []):
