@@ -56,7 +56,12 @@ Personagem novo: gere primeiro a **model sheet** (frente, perfil, costas, expres
 
 Os GPTs personalizados do ChatGPT serão descontinuados em 11/12/2026; por isso o assistente compartilhado é um Gem.
 
-**Arquivos de conhecimento** (os mesmos no Gem e no Projeto): as model sheets da pasta Personagens do Drive, renomeadas com o nome do personagem (`renato_model_sheet.jpg`, `camila_assistente_social_model_sheet.jpg`, `livia_tecnica_enfermagem_model_sheet.jpg`, `medico_upa_model_sheet.jpg`, `recepcionista_upa_model_sheet.jpg`), `game/images/bg/aqua_recepcao.jpg`, `game/images/bg/aqua_consultorio.jpg`, `game/images/chars/medico_upa.webp` (único sprite já no visual das model sheets), `arte/estilo.json` e `arte/personagens.json`.
+**Arquivos de conhecimento** (os mesmos no Gem e no Projeto; 18 arquivos, o limite é 20):
+- model sheets da pasta Personagens do Drive, com o nome da ficha: `renato_model_sheet.jpg`, `assistente_social_model_sheet.jpg`, `colega_enfermagem_model_sheet.jpg`, `medico_upa_model_sheet.jpg`, `recepcionista_model_sheet.jpg`, `marcos_model_sheet.jpg`;
+- `senhora_referencia.webp` (= `game/images/chars/senhora.webp`, ela não tem model sheet) e `game/images/chars/medico_upa.webp`;
+- cenários de `game/images/bg/`: `aqua_recepcao`, `aqua_consultorio`, `aqua_espera`, `aqua_corredor`, `aqua_fachada`, `aqua_box`, `aqua_esus` (overlay);
+- objetos de `game/images/obj/`: `caderno_renato.webp`, `obj_receita_medica.webp`;
+- `arte/estilo.json` e `arte/personagens.json`.
 
 **A model sheet manda.** Os sprites antigos de Renato e Camila (camisa xadrez, cardigã) destoam das model sheets e estão sendo refeitos; não use esses sprites como referência de personagem, só de pose.
 

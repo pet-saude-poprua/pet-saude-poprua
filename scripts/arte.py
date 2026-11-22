@@ -217,9 +217,12 @@ def cmd_assistente(args) -> int:
     l += ["", "TIPOS DE IMAGEM (bloco de estilo a colar no fim do prompt)"]
     for nome, t in estilo["tipos"].items():
         l += [f"- {nome} — {t['descricao']} Formato: {t['proporcao']}.", f"  Bloco: {t['bloco']}"]
-    l += ["", f"BLOCO NEGATIVO (sempre, como “Avoid: …”): {estilo['negativo']}", "", "PERSONAGENS (usar a ficha igual)"]
-    for c in personagens.values():
-        l.append(f"- {c['nome'].split(',')[0].split(' (')[0]}: {c['aparencia']}")
+    l += ["", f"BLOCO NEGATIVO (sempre, como “Avoid: …”): {estilo['negativo']}", "",
+          "PERSONAGENS: a ficha (campo “aparencia”, em inglês) está em personagens.json; copie-a igual no prompt "
+          "e use a model sheet indicada como referência."]
+    for chave, c in personagens.items():
+        ms = f"{chave}_model_sheet.jpg" if c.get("model_sheet") else "senhora_referencia.webp (sprite do jogo)" if chave == "senhora" else "sem model sheet"
+        l.append(f"- {c['nome'].split(',')[0].split(' (')[0]}: ficha “{chave}”; {ms}")
     l += ["", "CHECKLIST"]
     l += [f"- {i}" for i in CHECKLIST["comum"]]
     l += ["- Cenário: 16:9, sem pessoas, centro e base livres.",

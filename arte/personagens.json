@@ -80,6 +80,16 @@
     "game/images/chars/senhora.webp"
    ],
    "model_sheet": ""
+  },
+  "marcos": {
+   "nome": "Marcos, agente social do Consultório na Rua",
+   "historia": "renato",
+   "papel": "Agente social do Consultório na Rua, 37 anos. Calmo, observador, respeitoso; conhece as pessoas do território pelo nome. Aparece na mensagem da Cena 7 e no epílogo.",
+   "aparencia": "Marcos, a Brazilian man aged 37, medium-brown skin, short curly black hair, short full black beard, calm friendly expression; wears a navy-blue utility vest with pockets over a navy polo shirt, beige cargo trousers, dark gray sneakers, a black wristwatch, an ID badge on a clip; often carries a dark backpack and a clipboard",
+   "expressoes_no_jogo": [],
+   "sprites_no_jogo": [],
+   "observacao": "O colete tem o nome da equipe escrito nas costas e no peito; nas imagens do jogo, sem texto legível.",
+   "model_sheet": "https://drive.google.com/file/d/1JOdJVxZ9wh4nlt4c8p4kRtwhsudJYqh5/view"
   }
  }
 }

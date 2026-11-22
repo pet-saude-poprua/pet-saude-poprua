@@ -34,13 +34,14 @@ TIPOS DE IMAGEM (bloco de estilo a colar no fim do prompt)
 
 BLOCO NEGATIVO (sempre, como “Avoid: …”): people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts
 
-PERSONAGENS (usar a ficha igual)
-- Renato: Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text)
-- Médico da UPA: a Brazilian male doctor in his mid-30s, tall athletic build, dark brown skin, very short black hair with tight curls and faded sides, short full black beard, calm attentive expression; wears a long white lab coat over navy-blue scrubs, a black stethoscope around the neck, an ID badge clipped to the coat, black sneakers
-- Camila Ferreira: Camila, a Brazilian woman aged 38, light-tan skin, shoulder-length curly dark-brown hair worn loose, round dark-rimmed glasses, attentive kind expression; wears an olive-green button-up overshirt with sleeves rolled to the forearm over a beige blouse, beige-khaki straight trousers with a brown belt, brown loafers, a wristwatch, an ID badge on a navy lanyard; often holds a kraft-brown spiral notebook or beige paper folders
-- Lívia Souza: Livia, a Brazilian woman aged 41, warm tan skin, curly dark-brown hair gathered in a loose high bun with a few curls falling around the face, welcoming face; wears dark teal-green nursing scrubs (V-neck top with a chest pocket and matching trousers), white sneakers, a black wristwatch, an ID badge on a retractable clip; sometimes holds a clipboard
-- Recepcionista da UPA: the UPA receptionist, a Brazilian woman in her early 30s, warm brown skin, curly dark hair gathered in a high loose bun with curls falling around the face, attentive welcoming and firm expression; wears a navy-blue zip work jacket with a small green clinic logo on the chest (no readable text), a light-blue collared shirt, navy trousers, black work shoes, an ID badge on a blue lanyard
-- Senhora da primeira fileira: a Brazilian woman in her early 60s, fuller plus-size body, light-brown skin, gray-streaked hair in a low bun, simple floral yellow blouse and long brown skirt, flat brown shoes, small purse, arms crossed, disapproving expression
+PERSONAGENS: a ficha (campo “aparencia”, em inglês) está em personagens.json; copie-a igual no prompt e use a model sheet indicada como referência.
+- Renato: ficha “renato”; renato_model_sheet.jpg
+- Médico da UPA: ficha “medico_upa”; medico_upa_model_sheet.jpg
+- Camila Ferreira: ficha “assistente_social”; assistente_social_model_sheet.jpg
+- Lívia Souza: ficha “colega_enfermagem”; colega_enfermagem_model_sheet.jpg
+- Recepcionista da UPA: ficha “recepcionista”; recepcionista_model_sheet.jpg
+- Senhora da primeira fileira: ficha “senhora”; senhora_referencia.webp (sprite do jogo)
+- Marcos: ficha “marcos”; marcos_model_sheet.jpg
 
 CHECKLIST
 - Parece da mesma família das referências (traço, paleta, luz).
