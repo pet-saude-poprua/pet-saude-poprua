@@ -58,17 +58,17 @@ CHECKLIST = {
     ],
     "sprite": [
         "Corpo inteiro, retrato (vertical).",
-        "Fundo transparente (PNG). Se a ferramenta não deixar, peça de novo “transparent background, PNG”.",
-        "Igual à model sheet (rosto, cabelo, roupa, cores, crachá).",
+        "Fundo transparente (PNG) ou, se a ferramenta não conseguir, magenta puro (#FF00FF) liso e sem sombra. Branco não serve.",
+        "Igual à model sheet (rosto, cabelo, roupa, cores e acessórios; crachá só em quem trabalha na UPA ou na rede).",
         "Mãos e rosto sem deformação.",
     ],
     "objeto": [
         "Quadrado, objeto centralizado.",
-        "Fundo transparente (PNG).",
+        "Fundo transparente (PNG) ou magenta puro (#FF00FF), sem sombra.",
         "Sem mãos nem pessoas.",
     ],
     "overlay": ["Formato paisagem 16:9.", "Visual limpo de interface/documento (não é aquarela)."],
-    "ui": ["Fundo transparente (PNG).", "Uma peça só, centralizada."],
+    "ui": ["Fundo transparente (PNG) ou magenta puro (#FF00FF).", "Uma peça só, centralizada."],
 }
 
 
@@ -116,7 +116,8 @@ def montar_prompt(p: dict, estilo: dict, personagens: dict) -> str:
     for chave in p.get("personagens", []):
         partes.append(
             f"Character: {personagens[chave]['aparencia']}. Keep this character identical to the "
-            "attached model sheet (face, hair, body, clothes, colors, badge)."
+            "attached model sheet (face, hair, body, clothes, colors"
+            + (", badge)." if "badge" in personagens[chave]["aparencia"] else ") and do not add an ID badge or lanyard.")
         )
     partes.append(estilo["tipos"][p["tipo"]]["bloco"] + ".")
     partes.append("Use the attached images as style reference. Avoid: " + estilo["negativo"] + ".")
@@ -207,7 +208,7 @@ def cmd_assistente(args) -> int:
         "prompt assim: conteúdo da cena + ficha de cada personagem (abaixo, sem alterar) + bloco do tipo + bloco negativo.",
         "3. Use as model sheets do seu conhecimento (arquivo com o nome do personagem) e as imagens anexadas. "
         "A model sheet manda: se um sprite antigo do jogo divergir dela, siga a model sheet.",
-        "4. Gere no formato do tipo. Sprites e objetos com fundo transparente (PNG).",
+        "4. Gere no formato do tipo. Sprites e objetos com fundo transparente (PNG); se não conseguir, fundo magenta puro (#FF00FF), liso e sem sombra. Nunca fundo branco.",
         "5. Depois de gerar, confira o checklist e aponte o que refazer. Nos ajustes, não mude o que já estava aprovado.",
         "6. Lembre: entregar comentando na issue do GitHub com o PNG original anexado.",
         "",
@@ -226,8 +227,8 @@ def cmd_assistente(args) -> int:
     l += ["", "CHECKLIST"]
     l += [f"- {i}" for i in CHECKLIST["comum"]]
     l += ["- Cenário: 16:9, sem pessoas, centro e base livres.",
-          "- Sprite: corpo inteiro, vertical, fundo transparente, igual à model sheet.",
-          "- Objeto: quadrado, centralizado, fundo transparente, sem mãos."]
+          "- Sprite: corpo inteiro, vertical, fundo transparente ou magenta, sem sombra, igual à model sheet.",
+          "- Objeto: quadrado, centralizado, fundo transparente ou magenta, sem mãos."]
     texto = "\n".join(l) + "\n"
     saida = ARTE / "assistente" / "INSTRUCOES.txt"
     saida.write_text(texto, encoding="utf-8")
@@ -369,6 +370,31 @@ def pedido_da_issue(numero: int) -> tuple[str, str]:
     return m.group(1), m.group(2)
 
 
+def remover_fundo_magenta(img):
+    """Tira o fundo magenta puro (#FF00FF) pedido quando a ferramenta não gera
+    transparência. Magenta não aparece em nenhum personagem, então dá para
+    remover tudo, inclusive vãos fechados (entre pernas de cadeira, braço e corpo)."""
+    from PIL import Image, ImageChops, ImageFilter
+
+    rgb = img.convert("RGB")
+    l, a = rgb.size
+    cantos = [rgb.getpixel(c) for c in ((0, 0), (l - 1, 0), (0, a - 1), (l - 1, a - 1))]
+    if sum(1 for r, g, b in cantos if r > 180 and b > 180 and g < 90) < 3:
+        return None
+    r, g, b = rgb.split()
+    # "magentice": quanto vermelho e azul superam o verde
+    m = ImageChops.subtract(ImageChops.darker(r, b), g)
+    alfa = m.point(lambda v: 0 if v > 110 else (255 if v < 40 else int(255 * (110 - v) / 70)))
+    alfa = alfa.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(0.6))
+    # tira o reflexo rosado da borda: puxa vermelho/azul para o nível do verde onde há magenta
+    sem_rosa = Image.merge("RGB", [ImageChops.darker(r, ImageChops.add(g, m.point(lambda v: 255 if v < 40 else 0))),
+                                   g,
+                                   ImageChops.darker(b, ImageChops.add(g, m.point(lambda v: 255 if v < 40 else 0)))])
+    saida = sem_rosa.convert("RGBA")
+    saida.putalpha(alfa)
+    return saida
+
+
 def preparar(origem: Path, p: dict, estilo: dict, forcar: bool):
     from PIL import Image
 
@@ -379,9 +405,15 @@ def preparar(origem: Path, p: dict, estilo: dict, forcar: bool):
         img = img.convert("RGBA")
         minimo, _ = img.getchannel("A").getextrema()
         if minimo > 0:
-            msg = "a imagem não tem fundo transparente"
+            sem_fundo = remover_fundo_magenta(img)
+            if sem_fundo is not None:
+                img, minimo = sem_fundo, 0
+                avisos.append("fundo magenta removido automaticamente; confira as bordas")
+        if minimo > 0:
+            msg = ("a imagem não tem fundo transparente nem fundo magenta (#FF00FF). "
+                   "Peça de novo: “mesma imagem, sobre fundo magenta puro #FF00FF, liso, sem sombra”")
             if not forcar:
-                sys.exit(f"✗ {msg}. Peça uma nova versão com fundo transparente (ou use --forcar).")
+                sys.exit(f"✗ {msg} (ou use --forcar).")
             avisos.append(msg)
         caixa = img.getbbox()
         if caixa:

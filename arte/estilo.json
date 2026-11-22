@@ -27,7 +27,7 @@
   "sprite": {
    "descricao": "Personagem recortado, corpo inteiro, para aparecer por cima do cenário.",
    "estilo_api": "personagem",
-   "bloco": "clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait",
+   "bloco": "clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), no environment, no floor, no cast shadow, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait",
    "proporcao": "2:3 (retrato), fundo transparente",
    "jogo": {
     "pasta": "chars",
@@ -38,7 +38,7 @@
   "objeto": {
    "descricao": "Objeto em destaque (caderno, receita, pulseira...).",
    "estilo_api": "objeto",
-   "bloco": "digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square",
+   "bloco": "digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square",
    "proporcao": "1:1 (quadrado), fundo transparente",
    "jogo": {
     "pasta": "obj",
@@ -73,7 +73,7 @@
   "ui": {
    "descricao": "Peça de interface pintada à mão (botões, molduras).",
    "estilo_api": "ui",
-   "bloco": "digital watercolor illustration, soft loose washes, gentle soft edges, light paper texture, slightly desaturated, hand-painted game UI element, single element centered, transparent background, nothing else in frame, no text, no letters, no numbers, no logos",
+   "bloco": "digital watercolor illustration, soft loose washes, gentle soft edges, light paper texture, slightly desaturated, hand-painted game UI element, single element centered, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), nothing else in frame, no text, no letters, no numbers, no logos",
    "proporcao": "1:1, fundo transparente",
    "jogo": {
     "pasta": "../gui/aquarela",

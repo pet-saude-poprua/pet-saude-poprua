@@ -14,7 +14,7 @@ Como gerar as imagens do jogo com o mesmo estilo e os mesmos personagens, entreg
 4. **Confira o checklist** da issue. Se algo sair errado, peça só o ajuste (“mantenha tudo, mude só X”).
 5. **Entregue:** comente na issue com a imagem anexada (o PNG original) e diga a ferramenta. Mova o card para **Em revisão**.
 
-Regras que mais derrubam uma imagem: texto legível, pessoas no fundo do cenário, personagem diferente da model sheet, sprite/objeto sem fundo transparente, formato errado (cenário é 16:9 paisagem; sprite é vertical).
+Regras que mais derrubam uma imagem: texto legível, pessoas no fundo do cenário, personagem diferente da model sheet, sprite/objeto com fundo branco (tem de ser transparente ou magenta puro #FF00FF, sem sombra), formato errado (cenário é 16:9 paisagem; sprite é vertical).
 
 Precisa de uma imagem que não tem issue? Abra uma com o formulário **“🎨 Pedido de arte”**.
 
@@ -36,7 +36,7 @@ python3 scripts/arte.py importar --arquivo entrega.png --pedido renato/aqua_clas
 python3 scripts/arte.py assistente
 ```
 
-O `importar` mostra a linha `image …` a usar e a definição atual que ela substitui. O encaixe na cena e o fechamento da issue ficam com você.
+O `importar` tira sozinho o fundo magenta (#FF00FF) de sprites e objetos e mostra a linha `image …` a usar e a definição atual que ela substitui. O encaixe na cena e o fechamento da issue ficam com você.
 
 Para gerar direto pela API da OpenAI (pago), use `scripts/gerar_imagens.py`, que lê os mesmos blocos de `estilo.json`.
 

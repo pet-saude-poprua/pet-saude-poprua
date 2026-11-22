@@ -116,7 +116,7 @@ Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive
 
 ### 3. Cole o prompt
 ```text
-Full body standing pose, body turned three-quarters to the viewer's left as if talking to a colleague, one hand resting on a clipboard held against the chest, neutral curious expression with a slight raised eyebrow. Character: Livia, a Brazilian woman aged 41, warm tan skin, curly dark-brown hair gathered in a loose high bun with a few curls falling around the face, welcoming face; wears dark teal-green nursing scrubs (V-neck top with a chest pocket and matching trousers), white sneakers, a black wristwatch, an ID badge on a retractable clip; sometimes holds a clipboard. Keep this character identical to the attached model sheet (face, hair, body, clothes, colors, badge). clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+Full body standing pose, body turned three-quarters to the viewer's left as if talking to a colleague, one hand resting on a clipboard held against the chest, neutral curious expression with a slight raised eyebrow. Character: Livia, a Brazilian woman aged 41, warm tan skin, curly dark-brown hair gathered in a loose high bun with a few curls falling around the face, welcoming face; wears dark teal-green nursing scrubs (V-neck top with a chest pocket and matching trousers), white sneakers, a black wristwatch, an ID badge on a retractable clip; sometimes holds a clipboard. Keep this character identical to the attached model sheet (face, hair, body, clothes, colors, badge). clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), no environment, no floor, no cast shadow, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
 ```
 
 ### 4. Confira antes de entregar
@@ -124,8 +124,8 @@ Full body standing pose, body turned three-quarters to the viewer's left as if t
 - [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
 - [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
 - [ ] Corpo inteiro, retrato (vertical).
-- [ ] Fundo transparente (PNG). Se a ferramenta não deixar, peça de novo “transparent background, PNG”.
-- [ ] Igual à model sheet (rosto, cabelo, roupa, cores, crachá).
+- [ ] Fundo transparente (PNG) ou, se a ferramenta não conseguir, magenta puro (#FF00FF) liso e sem sombra. Branco não serve.
+- [ ] Igual à model sheet (rosto, cabelo, roupa, cores e acessórios; crachá só em quem trabalha na UPA ou na rede).
 - [ ] Mãos e rosto sem deformação.
 
 ### 5. Entregue
@@ -148,7 +148,7 @@ Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive
 
 ### 3. Cole o prompt
 ```text
-A plastic hospital identification wristband in yellow, the kind used for emergency triage, closed in a loop and lying at a slight angle, a small white label area with illegible soft gray lines. digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+A plastic hospital identification wristband in yellow, the kind used for emergency triage, closed in a loop and lying at a slight angle, a small white label area with illegible soft gray lines. digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
 ```
 
 ### 4. Confira antes de entregar
@@ -156,7 +156,7 @@ A plastic hospital identification wristband in yellow, the kind used for emergen
 - [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
 - [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
 - [ ] Quadrado, objeto centralizado.
-- [ ] Fundo transparente (PNG).
+- [ ] Fundo transparente (PNG) ou magenta puro (#FF00FF), sem sombra.
 - [ ] Sem mãos nem pessoas.
 
 ### 5. Entregue
@@ -179,7 +179,7 @@ Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive
 
 ### 3. Cole o prompt
 ```text
-The same plastic hospital identification wristband as the reference, now in orange, same angle and lighting. digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+The same plastic hospital identification wristband as the reference, now in orange, same angle and lighting. digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
 ```
 
 ### 4. Confira antes de entregar
@@ -187,7 +187,7 @@ The same plastic hospital identification wristband as the reference, now in oran
 - [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
 - [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
 - [ ] Quadrado, objeto centralizado.
-- [ ] Fundo transparente (PNG).
+- [ ] Fundo transparente (PNG) ou magenta puro (#FF00FF), sem sombra.
 - [ ] Sem mãos nem pessoas.
 
 ### 5. Entregue
@@ -210,7 +210,7 @@ Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive
 
 ### 3. Cole o prompt
 ```text
-A single sheet of white paper referral form folded once, with a soft blue institutional header shape, handwritten illegible blue-ink lines, a faint round stamp and a signature scribble, a corner slightly bent. digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background, subtle soft shadow beneath, mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+A single sheet of white paper referral form folded once, with a soft blue institutional header shape, handwritten illegible blue-ink lines, a faint round stamp and a signature scribble, a corner slightly bent. digital watercolor illustration, single object study, soft loose washes, muted faded pastel palette, simplified but clearly readable shapes, gentle soft edges, light paper texture, slightly desaturated, calm mood, centered close-up prop, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), mobile game item art, clean and uncluttered, no people, no hands, no readable text, no letters, no numbers, 1:1 square. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
 ```
 
 ### 4. Confira antes de entregar
@@ -218,7 +218,7 @@ A single sheet of white paper referral form folded once, with a soft blue instit
 - [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
 - [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
 - [ ] Quadrado, objeto centralizado.
-- [ ] Fundo transparente (PNG).
+- [ ] Fundo transparente (PNG) ou magenta puro (#FF00FF), sem sombra.
 - [ ] Sem mãos nem pessoas.
 
 ### 5. Entregue
@@ -272,7 +272,7 @@ Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive
 
 ### 3. Cole o prompt
 ```text
-Full body, seated on a simple wooden chair, slightly hunched forward, head lowered, reading the open notebook held in both hands, quiet tired expression; include the wooden chair. Character: Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text). Keep this character identical to the attached model sheet (face, hair, body, clothes, colors, badge). clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+Full body, seated on a simple wooden chair, slightly hunched forward, head lowered, reading the open notebook held in both hands, quiet tired expression; include the wooden chair. Character: Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text). Keep this character identical to the attached model sheet (face, hair, body, clothes, colors) and do not add an ID badge or lanyard. clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), no environment, no floor, no cast shadow, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
 ```
 
 ### 4. Confira antes de entregar
@@ -280,8 +280,8 @@ Full body, seated on a simple wooden chair, slightly hunched forward, head lower
 - [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
 - [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
 - [ ] Corpo inteiro, retrato (vertical).
-- [ ] Fundo transparente (PNG). Se a ferramenta não deixar, peça de novo “transparent background, PNG”.
-- [ ] Igual à model sheet (rosto, cabelo, roupa, cores, crachá).
+- [ ] Fundo transparente (PNG) ou, se a ferramenta não conseguir, magenta puro (#FF00FF) liso e sem sombra. Branco não serve.
+- [ ] Igual à model sheet (rosto, cabelo, roupa, cores e acessórios; crachá só em quem trabalha na UPA ou na rede).
 - [ ] Mãos e rosto sem deformação.
 
 ### 5. Entregue
@@ -305,7 +305,7 @@ Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive
 
 ### 3. Cole o prompt
 ```text
-Full body standing, weight on one leg, one hand raised to his chin, the other holding the notebook against his chest, hesitant worried expression, looking slightly to the side. Character: Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text). Keep this character identical to the attached model sheet (face, hair, body, clothes, colors, badge). clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+Full body standing, weight on one leg, one hand raised to his chin, the other holding the notebook against his chest, hesitant worried expression, looking slightly to the side. Character: Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text). Keep this character identical to the attached model sheet (face, hair, body, clothes, colors) and do not add an ID badge or lanyard. clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), no environment, no floor, no cast shadow, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
 ```
 
 ### 4. Confira antes de entregar
@@ -313,8 +313,8 @@ Full body standing, weight on one leg, one hand raised to his chin, the other ho
 - [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
 - [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
 - [ ] Corpo inteiro, retrato (vertical).
-- [ ] Fundo transparente (PNG). Se a ferramenta não deixar, peça de novo “transparent background, PNG”.
-- [ ] Igual à model sheet (rosto, cabelo, roupa, cores, crachá).
+- [ ] Fundo transparente (PNG) ou, se a ferramenta não conseguir, magenta puro (#FF00FF) liso e sem sombra. Branco não serve.
+- [ ] Igual à model sheet (rosto, cabelo, roupa, cores e acessórios; crachá só em quem trabalha na UPA ou na rede).
 - [ ] Mãos e rosto sem deformação.
 
 ### 5. Entregue
@@ -338,7 +338,7 @@ Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive
 
 ### 3. Cole o prompt
 ```text
-Full body, seated on a simple wooden chair, hands resting on his knees, the notebook open on his lap, looking at the viewer with a gentle, more open and trusting expression, faint hopeful smile; include the wooden chair. Character: Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text). Keep this character identical to the attached model sheet (face, hair, body, clothes, colors, badge). clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+Full body, seated on a simple wooden chair, hands resting on his knees, the notebook open on his lap, looking at the viewer with a gentle, more open and trusting expression, faint hopeful smile; include the wooden chair. Character: Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text). Keep this character identical to the attached model sheet (face, hair, body, clothes, colors) and do not add an ID badge or lanyard. clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), no environment, no floor, no cast shadow, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
 ```
 
 ### 4. Confira antes de entregar
@@ -346,8 +346,8 @@ Full body, seated on a simple wooden chair, hands resting on his knees, the note
 - [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
 - [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
 - [ ] Corpo inteiro, retrato (vertical).
-- [ ] Fundo transparente (PNG). Se a ferramenta não deixar, peça de novo “transparent background, PNG”.
-- [ ] Igual à model sheet (rosto, cabelo, roupa, cores, crachá).
+- [ ] Fundo transparente (PNG) ou, se a ferramenta não conseguir, magenta puro (#FF00FF) liso e sem sombra. Branco não serve.
+- [ ] Igual à model sheet (rosto, cabelo, roupa, cores e acessórios; crachá só em quem trabalha na UPA ou na rede).
 - [ ] Mãos e rosto sem deformação.
 
 ### 5. Entregue
@@ -371,7 +371,7 @@ Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive
 
 ### 3. Cole o prompt
 ```text
-Full body standing, body turned three-quarters away toward the exit, looking back over his shoulder at the viewer with a soft grateful half-smile, a worn olive canvas backpack on one shoulder, the notebook held in one hand. Character: Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text). Keep this character identical to the attached model sheet (face, hair, body, clothes, colors, badge). clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+Full body standing, body turned three-quarters away toward the exit, looking back over his shoulder at the viewer with a soft grateful half-smile, a worn olive canvas backpack on one shoulder, the notebook held in one hand. Character: Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text). Keep this character identical to the attached model sheet (face, hair, body, clothes, colors) and do not add an ID badge or lanyard. clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), no environment, no floor, no cast shadow, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
 ```
 
 ### 4. Confira antes de entregar
@@ -379,8 +379,8 @@ Full body standing, body turned three-quarters away toward the exit, looking bac
 - [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
 - [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
 - [ ] Corpo inteiro, retrato (vertical).
-- [ ] Fundo transparente (PNG). Se a ferramenta não deixar, peça de novo “transparent background, PNG”.
-- [ ] Igual à model sheet (rosto, cabelo, roupa, cores, crachá).
+- [ ] Fundo transparente (PNG) ou, se a ferramenta não conseguir, magenta puro (#FF00FF) liso e sem sombra. Branco não serve.
+- [ ] Igual à model sheet (rosto, cabelo, roupa, cores e acessórios; crachá só em quem trabalha na UPA ou na rede).
 - [ ] Mãos e rosto sem deformação.
 
 ### 5. Entregue
@@ -404,7 +404,7 @@ Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive
 
 ### 3. Cole o prompt
 ```text
-Full body standing, facing three-quarters toward the viewer, holding beige paper folders and a kraft notebook against her side with one arm, neutral attentive expression, relaxed posture. Character: Camila, a Brazilian woman aged 38, light-tan skin, shoulder-length curly dark-brown hair worn loose, round dark-rimmed glasses, attentive kind expression; wears an olive-green button-up overshirt with sleeves rolled to the forearm over a beige blouse, beige-khaki straight trousers with a brown belt, brown loafers, a wristwatch, an ID badge on a navy lanyard; often holds a kraft-brown spiral notebook or beige paper folders. Keep this character identical to the attached model sheet (face, hair, body, clothes, colors, badge). clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, plain empty transparent background, no environment, no floor, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
+Full body standing, facing three-quarters toward the viewer, holding beige paper folders and a kraft notebook against her side with one arm, neutral attentive expression, relaxed posture. Character: Camila, a Brazilian woman aged 38, light-tan skin, shoulder-length curly dark-brown hair worn loose, round dark-rimmed glasses, attentive kind expression; wears an olive-green button-up overshirt with sleeves rolled to the forearm over a beige blouse, beige-khaki straight trousers with a brown belt, brown loafers, a wristwatch, an ID badge on a navy lanyard; often holds a kraft-brown spiral notebook or beige paper folders. Keep this character identical to the attached model sheet (face, hair, body, clothes, colors, badge). clean semi-realistic comic illustration style, soft cel shading, natural proportions, warm approachable rendering, full body standing character for a visual novel sprite, facing slightly toward viewer, isolated character cutout, transparent background (if transparency is not possible: flat solid pure magenta #FF00FF background, no gradient, no shadow), no environment, no floor, no cast shadow, no wall, no text, no watermark, consistent with a Brazilian public health (SUS) educational game cast, 2:3 portrait. Use the attached images as style reference. Avoid: people in the background, crowd, text, letters, numbers, logos, readable signage, watermark, UI icons, photorealistic, hyperrealistic, heavy detail, cluttered composition, oversaturated, high contrast, harsh dramatic lighting, lens flare, distorted perspective, warped lines, extra fingers, deformed hands, caricature, low quality, jpeg artifacts.
 ```
 
 ### 4. Confira antes de entregar
@@ -412,8 +412,8 @@ Full body standing, facing three-quarters toward the viewer, holding beige paper
 - [ ] Nenhum texto legível (placas, telas e papéis com manchas no lugar de letras).
 - [ ] Nada que contrarie o roteiro (lugar, objetos, horário).
 - [ ] Corpo inteiro, retrato (vertical).
-- [ ] Fundo transparente (PNG). Se a ferramenta não deixar, peça de novo “transparent background, PNG”.
-- [ ] Igual à model sheet (rosto, cabelo, roupa, cores, crachá).
+- [ ] Fundo transparente (PNG) ou, se a ferramenta não conseguir, magenta puro (#FF00FF) liso e sem sombra. Branco não serve.
+- [ ] Igual à model sheet (rosto, cabelo, roupa, cores e acessórios; crachá só em quem trabalha na UPA ou na rede).
 - [ ] Mãos e rosto sem deformação.
 
 ### 5. Entregue
