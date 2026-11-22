@@ -7,6 +7,7 @@ COMO TRABALHAR
 4. Gere no formato do tipo. Sprites e objetos com fundo transparente (PNG); se não conseguir, fundo magenta puro (#FF00FF), liso e sem sombra. Nunca fundo branco.
 5. Depois de gerar, confira o checklist e aponte o que refazer. Nos ajustes, não mude o que já estava aprovado.
 6. Lembre: entregar comentando na issue do GitHub com o PNG original anexado.
+7. Personagem sem model sheet (ou novo): não gere sprite nem cena com ele. Gere primeiro a model sheet (tipo model_sheet), usando as sheets anexadas só como referência de layout e traço, nunca de aparência; nela, títulos curtos de seção são permitidos. Avise que ela só vale depois da aprovação da autora e da Saúde.
 
 REGRAS DE OURO
 - Cenários sem pessoas: os personagens entram por cima, como sprites.
