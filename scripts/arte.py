@@ -9,6 +9,7 @@ Fontes (pasta arte/):
 Comandos:
   prompts  --historia renato             gera arte/prompts/renato.md (prompts prontos)
   assistente                             gera arte/assistente/INSTRUCOES.txt (Gem e Projeto do ChatGPT)
+  habilidade                             monta o .zip da habilidade do Gemini (SKILL.md + imagens)
   issues   --historia renato [--simular] [--atualizar]
                                          cria uma issue por pedido no Project (idempotente)
   importar --issue 130                   baixa a última imagem comentada na issue,
@@ -38,6 +39,7 @@ ORG = "pet-saude-poprua"
 PROJETO = 1
 MARCA = "<!-- arte:{historia}/{id} -->"
 RE_MARCA = re.compile(r"<!-- arte:([\w-]+)/([\w-]+) -->")
+HABILIDADE_LINK = "https://drive.google.com/file/d/1r6c075KdQesls-z04F6hRNIn2gkR1AnD/view"
 PRIORIDADE = {"alta": "prioridade:alta", "media": "prioridade:média", "baixa": "prioridade:baixa"}
 
 CHECKLIST = {
@@ -166,7 +168,7 @@ def ficha(p: dict, estilo: dict, personagens: dict, historia: str, com_marca: bo
     if p.get("issue_mae"):
         linhas.append(f"**Parte de:** #{p['issue_mae']}")
     linhas += ["", f"**O que é:** {p['descricao']}", "", "### 1. Abra o assistente de arte",
-               "Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. "
+               f"Use a habilidade “arte-alem-da-rua” do Gemini ([baixe o .zip]({HABILIDADE_LINK}) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. "
                "Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.", "",
                "### 2. Anexe as referências"]
     for chave in p.get("personagens", []) if p["tipo"] != "model_sheet" else []:
@@ -268,6 +270,50 @@ def cmd_assistente(args) -> int:
     saida_g = ARTE / "assistente" / "INSTRUCOES_GEMINI.txt"
     saida_g.write_text(gemini, encoding="utf-8")
     print(f"✓ {saida_g.relative_to(RAIZ)} ({len(gemini)} caracteres; texto da habilidade do Gemini)")
+    return 0
+
+
+HABILIDADE_NOME = "arte-alem-da-rua"
+HABILIDADE_DESCRICAO = (
+    "Use para gerar imagens do jogo educacional Além da Rua (PET-Saúde Digital, UFPB): cenários, sprites de "
+    "personagens, objetos, telas e model sheets de personagens novos, sempre no estilo do jogo e com os personagens "
+    "iguais às model sheets. Use quando a pessoa colar um prompt de uma issue de arte do GitHub ou pedir uma "
+    "imagem para uma cena do jogo.")
+HABILIDADE_ARQUIVOS = {
+    "senhora_referencia.webp": "game/images/chars/senhora.webp",
+    "medico_upa.webp": "game/images/chars/medico_upa.webp",
+    "aqua_recepcao.jpg": "game/images/bg/aqua_recepcao.jpg",
+    "aqua_consultorio.jpg": "game/images/bg/aqua_consultorio.jpg",
+    "aqua_espera.jpg": "game/images/bg/aqua_espera.jpg",
+    "aqua_corredor.jpg": "game/images/bg/aqua_corredor.jpg",
+    "aqua_fachada.jpg": "game/images/bg/aqua_fachada.jpg",
+    "aqua_box.jpg": "game/images/bg/aqua_box.jpg",
+    "aqua_esus.jpg": "game/images/bg/aqua_esus.jpg",
+    "caderno_renato.webp": "game/images/obj/caderno_renato.webp",
+    "obj_receita_medica.webp": "game/images/obj/obj_receita_medica.webp",
+}
+
+
+def cmd_habilidade(args) -> int:
+    """Monta o .zip da habilidade do Gemini (SKILL.md + imagens de referência)."""
+    import zipfile
+
+    cmd_assistente(args)
+    texto = (ARTE / "assistente" / "INSTRUCOES_GEMINI.txt").read_text(encoding="utf-8")
+    skill = (f"---\nname: {HABILIDADE_NOME}\ndescription: {json.dumps(HABILIDADE_DESCRICAO, ensure_ascii=False)}\n"
+             f"---\n{texto}")
+    arquivos = {f.name: f for f in sorted((ARTE / "referencias").glob("*_model_sheet.*"))}
+    arquivos.update({nome: RAIZ / origem for nome, origem in HABILIDADE_ARQUIVOS.items()})
+    faltando = [str(c) for c in arquivos.values() if not c.exists()]
+    if faltando:
+        sys.exit("✗ faltam arquivos: " + ", ".join(faltando))
+    saida = ARTE / "assistente" / "arte-alem-da-rua.zip"
+    with zipfile.ZipFile(saida, "w", zipfile.ZIP_DEFLATED) as z:
+        z.writestr("SKILL.md", skill)
+        for nome, caminho in arquivos.items():
+            z.write(caminho, nome)
+    print(f"✓ {saida.relative_to(RAIZ)} ({len(arquivos)} imagens, {saida.stat().st_size // 1024} KB). "
+          "No Gemini: Habilidades → ⋯ → Substituir habilidade (ou Criar → Enviar, se for nova).")
     return 0
 
 
@@ -539,6 +585,9 @@ def main() -> int:
 
     a = sub.add_parser("assistente", help="gera arte/assistente/INSTRUCOES.txt (Gem/Projeto)")
     a.set_defaults(func=cmd_assistente)
+
+    a = sub.add_parser("habilidade", help="monta arte/assistente/arte-alem-da-rua.zip (habilidade do Gemini)")
+    a.set_defaults(func=cmd_habilidade)
 
     a = sub.add_parser("issues", help="cria/atualiza uma issue por pedido no Project")
     a.add_argument("--historia", required=True)
