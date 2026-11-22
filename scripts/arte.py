@@ -8,7 +8,7 @@ Fontes (pasta arte/):
 
 Comandos:
   prompts  --historia renato             gera arte/prompts/renato.md (prompts prontos)
-  assistente                             gera arte/assistente/INSTRUCOES.txt (GPT e Gem)
+  assistente                             gera arte/assistente/INSTRUCOES.txt (Gem e Projeto do ChatGPT)
   issues   --historia renato [--simular] [--atualizar]
                                          cria uma issue por pedido no Project (idempotente)
   importar --issue 130                   baixa a última imagem comentada na issue,
@@ -58,17 +58,17 @@ CHECKLIST = {
     ],
     "sprite": [
         "Corpo inteiro, retrato (vertical).",
-        "Fundo transparente (PNG). Se a ferramenta não deixar, peça de novo “transparent background, PNG”.",
-        "Igual à model sheet (rosto, cabelo, roupa, cores, crachá).",
+        "Fundo transparente (PNG) ou, se a ferramenta não conseguir, magenta puro (#FF00FF) liso e sem sombra. Branco não serve.",
+        "Igual à model sheet (rosto, cabelo, roupa, cores e acessórios; crachá só em quem trabalha na UPA ou na rede).",
         "Mãos e rosto sem deformação.",
     ],
     "objeto": [
         "Quadrado, objeto centralizado.",
-        "Fundo transparente (PNG).",
+        "Fundo transparente (PNG) ou magenta puro (#FF00FF), sem sombra.",
         "Sem mãos nem pessoas.",
     ],
     "overlay": ["Formato paisagem 16:9.", "Visual limpo de interface/documento (não é aquarela)."],
-    "ui": ["Fundo transparente (PNG).", "Uma peça só, centralizada."],
+    "ui": ["Fundo transparente (PNG) ou magenta puro (#FF00FF).", "Uma peça só, centralizada."],
 }
 
 
@@ -116,7 +116,8 @@ def montar_prompt(p: dict, estilo: dict, personagens: dict) -> str:
     for chave in p.get("personagens", []):
         partes.append(
             f"Character: {personagens[chave]['aparencia']}. Keep this character identical to the "
-            "attached model sheet (face, hair, body, clothes, colors, badge)."
+            "attached model sheet (face, hair, body, clothes, colors"
+            + (", badge)." if "badge" in personagens[chave]["aparencia"] else ") and do not add an ID badge or lanyard.")
         )
     partes.append(estilo["tipos"][p["tipo"]]["bloco"] + ".")
     partes.append("Use the attached images as style reference. Avoid: " + estilo["negativo"] + ".")
@@ -147,7 +148,7 @@ def ficha(p: dict, estilo: dict, personagens: dict, historia: str, com_marca: bo
     if p.get("issue_mae"):
         linhas.append(f"**Parte de:** #{p['issue_mae']}")
     linhas += ["", f"**O que é:** {p['descricao']}", "", "### 1. Abra o assistente de arte",
-               "Use o GPT ou o Gem “Arte Além da Rua” (links em `arte/README.md`). "
+               "Use a habilidade “arte-além-da-rua” do Gemini ([baixe o .zip](https://drive.google.com/file/d/1eXfApWATHhxq_Wdrh70uaW6yT18NeaY_/view) e envie em Habilidades → Criar → Enviar) ou seu Projeto no ChatGPT. "
                "Sem o assistente, cole o prompt abaixo direto no ChatGPT ou no Gemini.", "",
                "### 2. Anexe as referências"]
     for chave in p.get("personagens", []):
@@ -205,12 +206,11 @@ def cmd_assistente(args) -> int:
         "1. Se a pessoa colar um prompt pronto (vem das issues de arte do GitHub), use-o sem resumir nem trocar o estilo.",
         "2. Se ela só descrever a cena, pergunte o tipo (cenário, sprite, objeto, cena composta, overlay) e monte o "
         "prompt assim: conteúdo da cena + ficha de cada personagem (abaixo, sem alterar) + bloco do tipo + bloco negativo.",
-        "3. Use sempre as imagens de referência do seu conhecimento (model sheets e cenários do jogo) e as que a pessoa anexar. "
-        "Personagens devem ficar idênticos às model sheets.",
-        "4. Gere no formato do tipo. Sprites e objetos com fundo transparente (PNG).",
-        "5. Depois de gerar, confira a imagem contra o checklist e aponte o que refazer. Faça no máximo os ajustes pedidos; "
-        "não mude o que já estava aprovado.",
-        "6. Lembre a pessoa de entregar comentando na issue do GitHub com a imagem anexada (PNG original).",
+        "3. Use as model sheets do seu conhecimento (arquivo com o nome do personagem) e as imagens anexadas. "
+        "A model sheet manda: se um sprite antigo do jogo divergir dela, siga a model sheet.",
+        "4. Gere no formato do tipo. Sprites e objetos com fundo transparente (PNG); se não conseguir, fundo magenta puro (#FF00FF), liso e sem sombra. Nunca fundo branco.",
+        "5. Depois de gerar, confira o checklist e aponte o que refazer. Nos ajustes, não mude o que já estava aprovado.",
+        "6. Lembre: entregar comentando na issue do GitHub com o PNG original anexado.",
         "",
         "REGRAS DE OURO",
     ]
@@ -218,18 +218,30 @@ def cmd_assistente(args) -> int:
     l += ["", "TIPOS DE IMAGEM (bloco de estilo a colar no fim do prompt)"]
     for nome, t in estilo["tipos"].items():
         l += [f"- {nome} — {t['descricao']} Formato: {t['proporcao']}.", f"  Bloco: {t['bloco']}"]
-    l += ["", f"BLOCO NEGATIVO (sempre, como “Avoid: …”): {estilo['negativo']}", "", "PERSONAGENS (usar a ficha igual)"]
-    for c in personagens.values():
-        l.append(f"- {c['nome']}: {c['aparencia']}")
+    l += ["", f"BLOCO NEGATIVO (sempre, como “Avoid: …”): {estilo['negativo']}", "",
+          "PERSONAGENS: a ficha (campo “aparencia”, em inglês) está em personagens.json; copie-a igual no prompt "
+          "e use a model sheet indicada como referência."]
+    for chave, c in personagens.items():
+        ms = f"{chave}_model_sheet.jpg" if c.get("model_sheet") else "senhora_referencia.webp (sprite do jogo)" if chave == "senhora" else "sem model sheet"
+        l.append(f"- {c['nome'].split(',')[0].split(' (')[0]}: ficha “{chave}”; {ms}")
     l += ["", "CHECKLIST"]
     l += [f"- {i}" for i in CHECKLIST["comum"]]
     l += ["- Cenário: 16:9, sem pessoas, centro e base livres.",
-          "- Sprite: corpo inteiro, vertical, fundo transparente, igual à model sheet.",
-          "- Objeto: quadrado, centralizado, fundo transparente, sem mãos."]
+          "- Sprite: corpo inteiro, vertical, fundo transparente ou magenta, sem sombra, igual à model sheet.",
+          "- Objeto: quadrado, centralizado, fundo transparente ou magenta, sem mãos."]
     texto = "\n".join(l) + "\n"
     saida = ARTE / "assistente" / "INSTRUCOES.txt"
     saida.write_text(texto, encoding="utf-8")
-    print(f"✓ {saida.relative_to(RAIZ)} ({len(texto)} caracteres; GPT aceita até 8.000)")
+    print(f"✓ {saida.relative_to(RAIZ)} ({len(texto)} caracteres; manter abaixo de 8.000)")
+    # a habilidade do Gemini só aceita imagens como arquivo: as fichas vão no próprio texto
+    gemini = texto.rstrip("\n") + (
+        "\n\nARQUIVOS DE REFERÊNCIA: as imagens anexadas a esta habilidade (model sheets *_model_sheet.jpg, "
+        "senhora_referencia.webp, cenários aqua_*.jpg, objetos e o sprite medico_upa.webp como exemplo de sprite final)."
+        "\n\nFICHAS (o conteúdo de personagens.json)\n"
+        + "\n".join(f"- {chave}: {c['aparencia']}" for chave, c in personagens.items()) + "\n")
+    saida_g = ARTE / "assistente" / "INSTRUCOES_GEMINI.txt"
+    saida_g.write_text(gemini, encoding="utf-8")
+    print(f"✓ {saida_g.relative_to(RAIZ)} ({len(gemini)} caracteres; texto da habilidade do Gemini)")
     return 0
 
 
@@ -367,6 +379,31 @@ def pedido_da_issue(numero: int) -> tuple[str, str]:
     return m.group(1), m.group(2)
 
 
+def remover_fundo_magenta(img):
+    """Tira o fundo magenta puro (#FF00FF) pedido quando a ferramenta não gera
+    transparência. Magenta não aparece em nenhum personagem, então dá para
+    remover tudo, inclusive vãos fechados (entre pernas de cadeira, braço e corpo)."""
+    from PIL import Image, ImageChops, ImageFilter
+
+    rgb = img.convert("RGB")
+    l, a = rgb.size
+    cantos = [rgb.getpixel(c) for c in ((0, 0), (l - 1, 0), (0, a - 1), (l - 1, a - 1))]
+    if sum(1 for r, g, b in cantos if r > 180 and b > 180 and g < 90) < 3:
+        return None
+    r, g, b = rgb.split()
+    # "magentice": quanto vermelho e azul superam o verde
+    m = ImageChops.subtract(ImageChops.darker(r, b), g)
+    alfa = m.point(lambda v: 0 if v > 110 else (255 if v < 40 else int(255 * (110 - v) / 70)))
+    alfa = alfa.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(0.6))
+    # tira o reflexo rosado da borda: puxa vermelho/azul para o nível do verde onde há magenta
+    sem_rosa = Image.merge("RGB", [ImageChops.darker(r, ImageChops.add(g, m.point(lambda v: 255 if v < 40 else 0))),
+                                   g,
+                                   ImageChops.darker(b, ImageChops.add(g, m.point(lambda v: 255 if v < 40 else 0)))])
+    saida = sem_rosa.convert("RGBA")
+    saida.putalpha(alfa)
+    return saida
+
+
 def preparar(origem: Path, p: dict, estilo: dict, forcar: bool):
     from PIL import Image
 
@@ -377,9 +414,15 @@ def preparar(origem: Path, p: dict, estilo: dict, forcar: bool):
         img = img.convert("RGBA")
         minimo, _ = img.getchannel("A").getextrema()
         if minimo > 0:
-            msg = "a imagem não tem fundo transparente"
+            sem_fundo = remover_fundo_magenta(img)
+            if sem_fundo is not None:
+                img, minimo = sem_fundo, 0
+                avisos.append("fundo magenta removido automaticamente; confira as bordas")
+        if minimo > 0:
+            msg = ("a imagem não tem fundo transparente nem fundo magenta (#FF00FF). "
+                   "Peça de novo: “mesma imagem, sobre fundo magenta puro #FF00FF, liso, sem sombra”")
             if not forcar:
-                sys.exit(f"✗ {msg}. Peça uma nova versão com fundo transparente (ou use --forcar).")
+                sys.exit(f"✗ {msg} (ou use --forcar).")
             avisos.append(msg)
         caixa = img.getbbox()
         if caixa:
@@ -464,7 +507,7 @@ def main() -> int:
     a.add_argument("--historia", required=True)
     a.set_defaults(func=cmd_prompts)
 
-    a = sub.add_parser("assistente", help="gera arte/assistente/INSTRUCOES.txt (GPT/Gem)")
+    a = sub.add_parser("assistente", help="gera arte/assistente/INSTRUCOES.txt (Gem/Projeto)")
     a.set_defaults(func=cmd_assistente)
 
     a = sub.add_parser("issues", help="cria/atualiza uma issue por pedido no Project")

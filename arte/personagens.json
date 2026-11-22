@@ -6,44 +6,64 @@
    "nome": "Renato",
    "historia": "renato",
    "papel": "Paciente, 54 anos, em situação de rua há cerca de 8 meses. Reservado, educado, reflexivo. Ex-técnico de manutenção industrial.",
-   "aparencia": "Renato, a Brazilian man aged 54, lean build, light-brown weathered skin, short messy salt-and-pepper gray hair, short gray stubble, tired but gentle dark eyes, faint lines on the forehead; wears a faded blue-gray plaid flannel shirt with rolled sleeves over a dark gray t-shirt, worn brown work trousers, old dark-brown leather boots, a simple wristwatch; his clothes are simple and clean but worn; often holds an old brown notebook",
-   "expressoes_no_jogo": ["normal", "hesitante", "aberto", "despedida"],
-   "sprites_no_jogo": ["game/images/chars/renato_normal.webp", "game/images/chars/renato_hesitante.webp", "game/images/chars/renato_aberto.webp", "game/images/chars/renato_despedida.webp"],
-   "model_sheet": "https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view"
+   "aparencia": "Renato, a Brazilian man aged 54, lean build, warm tan weathered skin, messy wavy dark hair with gray streaks at the temples, short salt-and-pepper stubble beard, tired but gentle dark eyes, forehead lines; wears a dark charcoal-brown canvas zip jacket (worn, slightly faded) open over a beige button-up shirt, faded medium-blue jeans, old dark-brown leather work boots; his clothes are simple and clean but worn; often holds an old dark spiral notebook with a small taped paper label (no readable text)",
+   "expressoes_no_jogo": [
+    "normal",
+    "hesitante",
+    "aberto",
+    "despedida"
+   ],
+   "sprites_no_jogo": [
+    "game/images/chars/renato_normal.webp",
+    "game/images/chars/renato_hesitante.webp",
+    "game/images/chars/renato_aberto.webp",
+    "game/images/chars/renato_despedida.webp"
+   ],
+   "model_sheet": "https://drive.google.com/file/d/1gDNrDULU8bUiVmdcg90na1qN5kzox8t-/view",
+   "observacao": "Os sprites atuais do jogo (camisa xadrez azul, calça marrom) são da versão antiga e serão refeitos conforme a model sheet (decisão de 21/11/2026)."
   },
   "medico_upa": {
    "nome": "Médico da UPA (consultório 2)",
    "historia": "renato",
    "papel": "Médico do consultório 2. Aparece na Cena 4 e na alta.",
-   "aparencia": "a Brazilian male doctor in his mid-30s, dark brown skin, short black curly hair, neat short black beard, calm confident expression; wears a white lab coat over navy-blue scrubs, a stethoscope around the neck and a hospital ID badge",
-   "expressoes_no_jogo": ["neutro"],
-   "sprites_no_jogo": ["game/images/chars/medico_upa.webp"],
-   "model_sheet": "https://drive.google.com/drive/folders/1iKtSz57ASM9myTdTdguqHM8OKjvbgH6Q"
+   "aparencia": "a Brazilian male doctor in his mid-30s, tall athletic build, dark brown skin, very short black hair with tight curls and faded sides, short full black beard, calm attentive expression; wears a long white lab coat over navy-blue scrubs, a black stethoscope around the neck, an ID badge clipped to the coat, black sneakers",
+   "expressoes_no_jogo": [
+    "neutro"
+   ],
+   "sprites_no_jogo": [
+    "game/images/chars/medico_upa.webp"
+   ],
+   "model_sheet": "https://drive.google.com/file/d/1I0RVhYptQfIn-Qw9wwWQvrdcxcLxqjjr/view"
   },
   "assistente_social": {
    "nome": "Camila Ferreira, assistente social da UPA",
    "historia": "renato",
    "papel": "Assistente social, 38 anos, há 7 anos na UPA. Empática, firme e organizada.",
-   "aparencia": "Camila, a Brazilian woman aged 38, light-tan skin, shoulder-length wavy dark-brown hair tied in a low ponytail, thin dark-rimmed glasses, attentive kind expression; wears a brown knit cardigan over a patterned blouse in earthy tones, dark gray trousers, flat brown shoes, an ID badge on a lanyard; often holds beige paper folders",
-   "expressoes_no_jogo": ["neutra"],
-   "sprites_no_jogo": ["game/images/chars/assistente_social.webp"],
-   "model_sheet": "https://drive.google.com/file/d/1HALke0Qm9M-Y8eA84WGSH89Zrqjd23jR/view"
+   "aparencia": "Camila, a Brazilian woman aged 38, light-tan skin, shoulder-length curly dark-brown hair worn loose, round dark-rimmed glasses, attentive kind expression; wears an olive-green button-up overshirt with sleeves rolled to the forearm over a beige blouse, beige-khaki straight trousers with a brown belt, brown loafers, a wristwatch, an ID badge on a navy lanyard; often holds a kraft-brown spiral notebook or beige paper folders",
+   "expressoes_no_jogo": [
+    "neutra"
+   ],
+   "sprites_no_jogo": [
+    "game/images/chars/assistente_social.webp"
+   ],
+   "model_sheet": "https://drive.google.com/file/d/1HALke0Qm9M-Y8eA84WGSH89Zrqjd23jR/view",
+   "observacao": "O sprite atual (cardigã marrom, rabo de cavalo) é da versão antiga e será refeito conforme a model sheet (decisão de 21/11/2026)."
   },
   "colega_enfermagem": {
    "nome": "Lívia Souza, técnica de enfermagem (a colega da Cena 5)",
    "historia": "renato",
    "papel": "Técnica de enfermagem, 41 anos, há 6 anos na UPA. Na v4 é a colega do posto de enfermagem na Cena 5.",
-   "aparencia": "Livia, a Brazilian woman aged 41, warm tan skin, dark hair pulled back in a neat bun, welcoming face; wears a green nursing scrub uniform (top and trousers), white sneakers, a visible ID badge, a stethoscope around the neck, sometimes a clipboard",
+   "aparencia": "Livia, a Brazilian woman aged 41, warm tan skin, curly dark-brown hair gathered in a loose high bun with a few curls falling around the face, welcoming face; wears dark teal-green nursing scrubs (V-neck top with a chest pocket and matching trousers), white sneakers, a black wristwatch, an ID badge on a retractable clip; sometimes holds a clipboard",
    "expressoes_no_jogo": [],
    "sprites_no_jogo": [],
-   "observacao": "O sprite antigo game/images/chars/tecnica.webp usa uniforme branco; a model sheet pede uniforme verde. Seguir a model sheet.",
+   "observacao": "O sprite antigo game/images/chars/tecnica.webp usa uniforme branco; seguir a model sheet (uniforme verde-petróleo).",
    "model_sheet": "https://drive.google.com/file/d/12H-TEYWnKjrgXOhcxwhgS_JREBYudS7j/view"
   },
   "recepcionista": {
    "nome": "Recepcionista da UPA",
    "historia": "renato",
    "papel": "Primeira pessoa do serviço a perceber o que acontece na sala de espera. Na v4 é o papel do jogador na Cena 1 (não aparece como sprite).",
-   "aparencia": "the UPA receptionist exactly as in the attached model sheet: attentive, welcoming and firm, wearing the UPA staff uniform with an ID badge",
+   "aparencia": "the UPA receptionist, a Brazilian woman in her early 30s, warm brown skin, curly dark hair gathered in a high loose bun with curls falling around the face, attentive welcoming and firm expression; wears a navy-blue zip work jacket with a small green clinic logo on the chest (no readable text), a light-blue collared shirt, navy trousers, black work shoes, an ID badge on a blue lanyard",
    "expressoes_no_jogo": [],
    "sprites_no_jogo": [],
    "model_sheet": "https://drive.google.com/file/d/1jOE3WdKmWc9WL5nwVAeYgFMakFz5gSD6/view"
@@ -53,9 +73,23 @@
    "historia": "renato",
    "papel": "Paciente na sala de espera (ramo em que Renato é exposto na recepção).",
    "aparencia": "a Brazilian woman in her early 60s, fuller plus-size body, light-brown skin, gray-streaked hair in a low bun, simple floral yellow blouse and long brown skirt, flat brown shoes, small purse, arms crossed, disapproving expression",
-   "expressoes_no_jogo": ["desconfiada"],
-   "sprites_no_jogo": ["game/images/chars/senhora.webp"],
+   "expressoes_no_jogo": [
+    "desconfiada"
+   ],
+   "sprites_no_jogo": [
+    "game/images/chars/senhora.webp"
+   ],
    "model_sheet": ""
+  },
+  "marcos": {
+   "nome": "Marcos, agente social do Consultório na Rua",
+   "historia": "renato",
+   "papel": "Agente social do Consultório na Rua, 37 anos. Calmo, observador, respeitoso; conhece as pessoas do território pelo nome. Aparece na mensagem da Cena 7 e no epílogo.",
+   "aparencia": "Marcos, a Brazilian man aged 37, medium-brown skin, short curly black hair, short full black beard, calm friendly expression; wears a navy-blue utility vest with pockets over a navy polo shirt, beige cargo trousers, dark gray sneakers, a black wristwatch, an ID badge on a clip; often carries a dark backpack and a clipboard",
+   "expressoes_no_jogo": [],
+   "sprites_no_jogo": [],
+   "observacao": "O colete tem o nome da equipe escrito nas costas e no peito; nas imagens do jogo, sem texto legível.",
+   "model_sheet": "https://drive.google.com/file/d/1JOdJVxZ9wh4nlt4c8p4kRtwhsudJYqh5/view"
   }
  }
 }
